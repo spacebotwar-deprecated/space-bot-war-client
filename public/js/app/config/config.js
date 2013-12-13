@@ -16,6 +16,7 @@ require.config({
         "json2":"../libs/json2",
         "jasmine": "../libs/jasmine",
         "jasmine-html": "../libs/jasmine-html",
+        "login-radius": "https://hub.loginradius.com/cdn/include/js/LoginRadius.1.0",
 
         // Plugins
         "backbone.validateAll":"../libs/plugins/Backbone.validateAll",
@@ -44,6 +45,9 @@ require.config({
         "marionette":{
             "deps":["underscore", "backbone", "jquery"],
             "exports":"Marionette"
+        },
+        "login-radius" : {
+            exports : "LoginRadius_SocialLogin"
         },
         //Handlebars
         "handlebars":{
