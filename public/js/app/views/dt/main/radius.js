@@ -5,7 +5,7 @@
     LoginRadius_SocialLogin.util.ready(function () { 
         $ui = LoginRadius_SocialLogin.lr_login_settings;
         $ui.interfacesize = "";
-        $ui.apikey = "78855680-671c-4c70-b194-2e392a0a7c81";
+        $ui.apikey = "4d29635a-641c-4bf7-ac99-518ff94bcfd7";
         $ui.callback=""; 
         $ui.lrinterfacecontainer ="interfacecontainerdiv"; 
         LoginRadius_SocialLogin.init(options);

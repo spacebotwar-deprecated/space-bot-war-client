@@ -17,6 +17,7 @@ require.config({
         "jasmine": "../libs/jasmine",
         "jasmine-html": "../libs/jasmine-html",
         "login-radius": "../libs/login-radius",
+        "radius-hub": "https://hub.loginradius.com/cdn/include/js/LoginRadius.1.0",
 
         // Plugins
         "backbone.validateAll":"../libs/plugins/Backbone.validateAll",
@@ -33,6 +34,14 @@ require.config({
         "jqueryui":["jquery"],
         // jQuery mobile
         "jquerymobile":["jqueryui"],
+
+        // Radius
+        "login-radius": {
+            "exports":"LoginRadiusSDK"
+        },
+        "radius-hub":{
+            "exports":"LoginRadius_SocialLogin"
+        },
 
         // Backbone
         "backbone":{
