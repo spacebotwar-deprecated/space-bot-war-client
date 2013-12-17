@@ -4,7 +4,8 @@ function(    Backbone,   Marionette) {
        //"index" must be a method in AppRouter's controller
        appRoutes: {
            ""           : "index",
-           "login"      : "login"
+           "login"      : "login",
+           "register"   : "register"
        }
    });
 });
