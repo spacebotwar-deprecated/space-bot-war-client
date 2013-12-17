@@ -1,7 +1,10 @@
 var LoginRadiusSDK = function () {
+    console.log("login-radius:");
     var a = {
         isauthenticated: false,
-        onlogin: function () { },
+        onlogin: function () {
+            console.log("login-radius: ERROR. IN ONLOGIN");
+        },
 
         getUserprofile: function (c) {b.jsonpCall("https://hub.loginradius.com/UserProfile/" + a.getToken(), function (a) {c(a)})},
         
@@ -19,9 +22,12 @@ var LoginRadiusSDK = function () {
 
         senddirectmessage: function (c, d, f, e) { b.jsonpCall("https://hub.loginradius.com/directmessage/" + a.getToken() + "?sendto=" + c + "&subject=" + d + "&message=" + f, function (a) { e(a) }) },
 
-        updatestatus: function (e, g, f, h, i, j, c) { b.jsonpCall("https://hub.loginradius.com/status/update/" + a.getToken() + "?to=&title=" + e + "&url=" + g + "&imageurl=" + f + "&status=" + h + "&caption=" + i + "&description=" + j, function (a) { c(a) }) }}, 
+        updatestatus: function (e, g, f, h, i, j, c) { 
+            console.log("login-radius: updatestatus");
+            b.jsonpCall("https://hub.loginradius.com/status/update/" + a.getToken() + "?to=&title=" + e + "&url=" + g + "&imageurl=" + f + "&status=" + h + "&caption=" + i + "&description=" + j, function (a) { c(a) }) }}, 
         b = {
         jsonpCall: function (c, d) {
+            console.log("login-radius: jsunpCall");
             var a = "Loginradius" + Math.floor(1e18 * Math.random() + 1);
             window[a] = function (c) {
                 d(c);
@@ -38,6 +44,7 @@ var LoginRadiusSDK = function () {
             document.body.appendChild(b)
         },
         addEvent: function (c, b, d) {
+            console.log("login-radius: addEvent");
             var a = [];
             b instanceof Array ? a = b : a.push(b);
             for (i = 0; i < a.length; i++) a[i].attachEvent ? a[i].attachEvent("on" + c, function (a) {
@@ -45,7 +52,7 @@ var LoginRadiusSDK = function () {
             }) : a[i].addEventListener && a[i].addEventListener(c, d, false)
         }
     };
-
+    console.log("login-radius: about to do a() b()");
     a.getToken = function () {return sessionStorage.getItem("LRTokenKey")};
     b.addEvent("message", window, function (b) {-1 != b.origin.indexOf("hub.loginradius.com") && (sessionStorage.setItem("LRTokenKey", b.data), a.isauthenticated = true, a.onlogin())});
     return a

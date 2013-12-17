@@ -2,7 +2,7 @@ define( [   'App',  'backbone', 'marionette',   'jquery',   'login-radius',     
 function(    App,    Backbone,   Marionette,     $,          LoginRadiusSDK,     LoginRadius_SocialLogin,    Model,          template) {
     //ItemView provides some default rendering logic
 
-    alert('got here!!!');
+    //alert('got here!!!');
     LoginRadius_SocialLogin.util.ready(function () {
         $ui = LoginRadius_SocialLogin.lr_login_settings;
         $ui.interfacesize = "";

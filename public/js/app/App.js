@@ -1,5 +1,5 @@
-define([    'jquery',	'backbone', 'marionette',   'underscore',   'handlebars', 'jquery.json'],
-function (   $,		 Backbone,   Marionette,     _,		     Handlebars) {
+define([    'my-config',    'jquery',	'backbone', 'marionette',   'underscore',   'handlebars', 'jquery.json'],
+function (   MyConfig,       $,          Backbone,   Marionette,     _,              Handlebars) {
     var App = new Backbone.Marionette.Application();
 
     function isMobile() {
@@ -24,7 +24,7 @@ function (   $,		 Backbone,   Marionette,     _,		     Handlebars) {
     // Set up an event aggregator for the web socket
     //
     var init_web_socket = function() {
-	var wsUrl = window.wsUrl || "ws://spacebotwar.com:5000/ws/game/lobby";
+	var wsUrl = MyConfig.web_socket_url;
 	ws = new WebSocket(wsUrl);
 
 	ws.onerror = function(e) {
