@@ -23,14 +23,17 @@ function (   MyConfig,       $,          Backbone,   Marionette,     Lobby,     
     });
 
     App.mobile = isMobile();
-    lobby = new Lobby;
+    var lobby = new Lobby;
 
     App.addInitializer(lobby.init);
     
     App.vent.on("ws:connected", function(data) {
-    console.log("ws:connected - triggered");
+        console.log("ws:connected - triggered. ["+data+"]");
     });
 
+    Backbone.on("user:login", function(msg) {
+        console.log("user:login was triggered ["+msg.username+"]["+msg.password+"]");
+    });
     return App;
 });
 

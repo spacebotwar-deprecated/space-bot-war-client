@@ -25,9 +25,13 @@ function (   MyConfig,       $,           Backbone   ) {
                     var data    = $.evalJSON(e.data);
                     var route   = data.route;
                     var content = data.content;
-                    app.vent.trigger("ws:"+route, content);
-                    console.log("ws:"+route, e.data);
+                    app.vent.trigger("ws:recv:"+route, content);
+                    console.log("ws:recv:"+route, e.data);
                 };
+
+                app.vent.on("ws:send", function(data) {
+                    console.log("ws:send ");
+                });
             }
         };
     };

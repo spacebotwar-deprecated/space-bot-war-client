@@ -16,7 +16,7 @@ function (   $,          template,                       Backbone) {
         login   : function() {
             var username = this.ui.username.val();
             var password = this.ui.password.val();
-            alert('login! ['+username+']['+password+']');
+            Backbone.trigger("user:login", { username : username, password : password} );
         },
         lost_password   : function() {
             alert('lost password');
