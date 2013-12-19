@@ -1,21 +1,23 @@
-define([    'my-config',    'jquery',	'backbone', 'marionette',   'underscore',   'handlebars', 'jquery.json'],
+define([    'my-config',    'jquery',    'backbone', 'marionette',   'underscore',   'handlebars', 'jquery.json'],
 function (   MyConfig,       $,          Backbone,   Marionette,     _,              Handlebars) {
     var App = new Backbone.Marionette.Application();
 
     function isMobile() {
-	var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-	return ((/iPhone|iPod|iPad|Android|BlackBerry|Opera Mini|IEMobile/).test(userAgent));
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        return ((/iPhone|iPod|iPad|Android|BlackBerry|Opera Mini|IEMobile/).test(userAgent));
     }
 
     //Organize Application into regions corresponding to DOM elements
     //Regions can contain views, Layouts, or subregions nested as necessary
     App.addRegions({
-	headerRegion:"header",
-	mainRegion:"#main"
+        headerRegion    : "#header",
+        mainRegion      : "#column-center",
+        footerRegion    : "#footer",
+        rightRegion     : "#column-right",
     });
 
     App.addInitializer(function () {
-	Backbone.history.start();
+        Backbone.history.start();
     });
 
     App.mobile = isMobile();
@@ -24,33 +26,33 @@ function (   MyConfig,       $,          Backbone,   Marionette,     _,         
     // Set up an event aggregator for the web socket
     //
     var init_web_socket = function() {
-	var wsUrl = MyConfig.web_socket_url;
-	ws = new WebSocket(wsUrl);
+    var wsUrl = MyConfig.web_socket_url;
+    ws = new WebSocket(wsUrl);
 
-	ws.onerror = function(e) {
-	    App.vent.trigger("ws:error", e);
-	    console.log("ws:error",e);
-	};
+    ws.onerror = function(e) {
+        App.vent.trigger("ws:error", e);
+        console.log("ws:error",e);
+    };
 
-	ws.onopen = function() {
-	    App.vent.trigger("ws:connected");
-	    console.log("ws:connected");
-	};
+    ws.onopen = function() {
+        App.vent.trigger("ws:connected");
+        console.log("ws:connected");
+    };
 
-	ws.onmessage = function(e) {
-	    var data	= $.evalJSON(e.data);
-	    var type	= data.type;
-	    var content = data.content;
-	    App.vent.trigger("ws:"+type, content);
-	    console.log("ws:"+type, content);
-	};
+    ws.onmessage = function(e) {
+        var data    = $.evalJSON(e.data);
+        var type    = data.type;
+        var content = data.content;
+        App.vent.trigger("ws:"+type, content);
+        console.log("ws:"+type, content);
+    };
 
     }
 
     App.addInitializer(init_web_socket);
 
     App.vent.on("ws:connected", function(data) {
-	console.log("ws:connected - triggered");
+    console.log("ws:connected - triggered");
     });
 
     return App;
