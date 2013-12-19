@@ -11,9 +11,9 @@ function (   MyConfig,       $,          Backbone,   Marionette,     _,         
     //Regions can contain views, Layouts, or subregions nested as necessary
     App.addRegions({
         headerRegion    : "#header",
-        mainRegion      : "#column-center",
+        mainRegion      : "#main",
         footerRegion    : "#footer",
-        rightRegion     : "#column-right",
+        menuRegion      : "#menu",
     });
 
     App.addInitializer(function () {

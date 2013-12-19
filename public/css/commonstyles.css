@@ -3,51 +3,7 @@ body {
     background-repeat:repeat;
 }
 
-* {
-    margin      : 0;
-    padding     : 0;
-}
-
-#wrapper {
-    width       : 980px;
-    background  : silver;
-    margin      : 0 auto;
-    background-color    : rgba(255,255,255,0.0);
-}
-
-#header {
-    background  : white;
-    color       : black;
-    border      : 2px solid;
-    border-radius   : 10px;
-}
-
-#column-left {
-    width       : 250px;
-    float       : left;
-    background  : red;
-    border      : 2px solid;
-    border-radius   : 10px;
-}
-
-#column-center {
-    width       : 730px;
-    float       : left;
-    border      : 2px solid;
-    border-radius   : 10px;
-}
-
-#column-right {
-    width       : 240px;
-    float       : left;
-    border      : 2px solid;
-    border-radius   : 10px;
-}
-
-#footer {
-    clear       : both;
-    background  : green;
-    border      : 2px solid;
-    border-radius   : 10px;
+div {
+    background: white;
 }
 

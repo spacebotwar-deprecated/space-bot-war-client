@@ -1,9 +1,10 @@
-define([    'App',  'backbone', 'marionette',   'views/dt/main/welcome',    'views/dt/main/login',  'views/dt/main/header', 'views/dt/main/register',   'views/dt/main/right_menu'],
-function(    App,    Backbone,   Marionette,     ViewWelcome,                ViewLogin,              ViewHeader,             ViewRegister,               ViewRightMenu) {
+define([    'App',  'backbone', 'marionette',   'views/dt/main/welcome',    'views/dt/main/login',  'views/dt/main/header', 'views/dt/main/footer', 'views/dt/main/register',   'views/dt/main/menu'],
+function(    App,    Backbone,   Marionette,     ViewWelcome,                ViewLogin,              ViewHeader,             ViewFooter,             ViewRegister,               ViewMenu) {
     return Backbone.Marionette.Controller.extend({
         initialize:function (options) {
             App.headerRegion.show(new ViewHeader());
-            App.rightRegion.show(new ViewRightMenu());
+            App.menuRegion.show(new ViewMenu());
+            App.footerRegion.show(new ViewFooter());
         },
         //gets mapped to in AppRouter's appRoutes
         index   : function() {
