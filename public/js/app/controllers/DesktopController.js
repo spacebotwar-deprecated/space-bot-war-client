@@ -1,5 +1,9 @@
-define([    'App',  'backbone', 'marionette',   'views/dt/main/welcome',    'views/dt/main/login',  'views/dt/main/header', 'views/dt/main/footer', 'views/dt/main/register',   'views/dt/main/menu'],
-function(    App,    Backbone,   Marionette,     ViewWelcome,                ViewLogin,              ViewHeader,             ViewFooter,             ViewRegister,               ViewMenu) {
+define([    'App',  'backbone', 'marionette',   'views/dt/main/welcome',    'views/dt/main/login',  
+            'views/dt/main/header', 'views/dt/main/footer', 'views/dt/main/register',   'views/dt/main/menu',   
+            'views/dt/main/about',  'views/dt/main/faq',],
+function(    App,    Backbone,   Marionette,     ViewWelcome,                ViewLogin,              
+             ViewHeader,             ViewFooter,             ViewRegister,               ViewMenu,
+             ViewAbout,             ViewFaq) {
     return Backbone.Marionette.Controller.extend({
         initialize:function (options) {
             App.headerRegion.show(new ViewHeader());
