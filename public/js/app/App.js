@@ -1,6 +1,8 @@
-define([    'my-config',    'jquery',    'backbone', 'marionette',   'underscore',   'handlebars', 'jquery.json'],
-function (   MyConfig,       $,          Backbone,   Marionette,     _,              Handlebars) {
-    var App = new Backbone.Marionette.Application();
+define([    'my-config',    'jquery',    'backbone', 'marionette',   'components/lobby', 'underscore',   'handlebars', 'jquery.json'],
+function (   MyConfig,       $,          Backbone,   Marionette,     Lobby,              _,              Handlebars) {
+    var App,lobby;
+
+    App = new Backbone.Marionette.Application();
 
     function isMobile() {
         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -21,36 +23,10 @@ function (   MyConfig,       $,          Backbone,   Marionette,     _,         
     });
 
     App.mobile = isMobile();
-    var ws;
+    lobby = new Lobby;
 
-    // Set up an event aggregator for the web socket
-    //
-    var init_web_socket = function() {
-    var wsUrl = MyConfig.web_socket_url;
-    ws = new WebSocket(wsUrl);
-
-    ws.onerror = function(e) {
-        App.vent.trigger("ws:error", e);
-        console.log("ws:error",e);
-    };
-
-    ws.onopen = function() {
-        App.vent.trigger("ws:connected");
-        console.log("ws:connected");
-    };
-
-    ws.onmessage = function(e) {
-        var data    = $.evalJSON(e.data);
-        var type    = data.type;
-        var content = data.content;
-        App.vent.trigger("ws:"+type, content);
-        console.log("ws:"+type, content);
-    };
-
-    }
-
-    App.addInitializer(init_web_socket);
-
+    App.addInitializer(lobby.init);
+    
     App.vent.on("ws:connected", function(data) {
     console.log("ws:connected - triggered");
     });
