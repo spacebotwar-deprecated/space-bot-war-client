@@ -8,10 +8,15 @@ function (   $,          template,                       Backbone) {
             'click #login'      : 'login',
             'click #register'   : 'register'
         },
+        ui      : {
+            username    : '#username',
+            password    : '#password'
+        },
+
         login   : function() {
-            var username = $("#username").val();
-            var password = $("#password").val();
-            alert('login! username=['+username+'] password=['+password+']');
+            var username = this.ui.username.val();
+            var password = this.ui.password.val();
+            alert('login! ['+username+']['+password+']');
         },
         lost_password   : function() {
             alert('lost password');
