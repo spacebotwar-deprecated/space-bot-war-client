@@ -5,8 +5,9 @@ function (   $,          template,                       Backbone) {
     return Backbone.Marionette.ItemView.extend({
         template        : template,
         events          : {
-            'click #login'      : 'login',
-            'click #register'   : 'register'
+            'click #login'          : 'login',
+            'click #register'       : 'register',
+            'click #lost_password'  : 'lost_password'
         },
         ui      : {
             username    : '#username',

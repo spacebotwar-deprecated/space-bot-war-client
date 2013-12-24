@@ -31,9 +31,6 @@ function (   MyConfig,       $,          Backbone,   Marionette,     Lobby,     
         console.log("ws:connected - triggered. ["+data+"]");
     });
 
-    Backbone.on("user:login", function(msg) {
-        console.log("user:login was triggered ["+msg.username+"]["+msg.password+"]");
-    });
     return App;
 });
 
