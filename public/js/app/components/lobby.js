@@ -7,6 +7,7 @@ function (   MyConfig,       $,           Backbone   ) {
         var ws;
 
         var client_code = localStorage.client_code;
+        console.log("client code initialised from local storage : "+client_code);
 
         return {
             init    : function() {
@@ -53,6 +54,7 @@ function (   MyConfig,       $,           Backbone   ) {
 
                 Backbone.on("ws:recv:/lobby/get_client_code", function(data) {
                     client_code = data.content.client_code;
+                    localStorage.client_code = client_code;
                     console.log("client code is now "+client_code);
                 });
                 Backbone.on("ws:connected", function() {
