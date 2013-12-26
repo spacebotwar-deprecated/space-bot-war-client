@@ -32,10 +32,12 @@ function (   MyConfig,       $,           Backbone,   Humane) {
                     var data    = $.evalJSON(e.data);
                     var route   = data.route;
                     var content = data.content;
-                    Backbone.trigger("ws:recv:"+route, data);
                     console.log("ws:recv:"+route, e.data);
-                    // for now, on an error, put up a 'humane' message.
-                    if (content.code != 0) {
+                    if (content.code == 0) {
+                        Backbone.trigger("ws:recv:"+route, data);
+                    }
+                    else {
+                        // for now, on an error, put up a 'humane' message.
                         Humane.error("ERROR: "+content.code+" - "+content.message);
                     }
                 };
@@ -68,6 +70,7 @@ function (   MyConfig,       $,           Backbone,   Humane) {
                     };
                     ws.send(JSON.stringify(msg));
                 });
+
                 Backbone.on("ws:recv:/lobby/get_client_code", function(data) {
                     client_code = data.content.client_code;
                     localStorage.client_code = client_code;
