@@ -1,4 +1,4 @@
-define([    'my-config',    'jquery',    'backbone', 'marionette',   'components/lobby', 'underscore',   'handlebars', 'jquery.json'],
+define([    'my-config',    'jquery',    'backbone', 'marionette',   'components/lobby', 'underscore',   'handlebars', 'jquery.json', 'humane'],
 function (   MyConfig,       $,          Backbone,   Marionette,     Lobby,              _,              Handlebars) {
     var App,lobby;
 

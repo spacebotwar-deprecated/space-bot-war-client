@@ -1,13 +1,13 @@
-define([    'App',  'backbone', 'marionette',   'views/dt/main/welcome',    'views/dt/main/login',  
-            'views/dt/main/header', 'views/dt/main/footer', 'views/dt/main/register',   'views/dt/main/menu',   
-            'views/dt/main/about',  'views/dt/main/faq',],
-function(    App,    Backbone,   Marionette,     ViewWelcome,                ViewLogin,              
-             ViewHeader,             ViewFooter,             ViewRegister,               ViewMenu,
-             ViewAbout,             ViewFaq) {
+define([    'App',  'backbone', 'marionette',   'views/dt/main/welcome',    'views/dt/main/login_status',  
+            'views/dt/main/header', 'views/dt/main/footer', 'views/dt/main/register',   
+            'views/dt/main/about',  'views/dt/main/faq',    'models/login_status'],
+function(    App,    Backbone,   Marionette,     ViewWelcome,                ViewLoginStatus,              
+             ViewHeader,             ViewFooter,             ViewRegister,
+             ViewAbout,              ViewFaq,                ModelLoginStatus) {
     return Backbone.Marionette.Controller.extend({
         initialize:function (options) {
             App.headerRegion.show(new ViewHeader());
-            App.menuRegion.show(new ViewMenu());
+            App.menuRegion.show(new ViewLoginStatus({ model : new ModelLoginStatus()}));
             App.footerRegion.show(new ViewFooter());
         },
         //gets mapped to in AppRouter's appRoutes

@@ -1,5 +1,5 @@
-define([    'my-config',    'jquery',    'backbone', 'jquery.json'],
-function (   MyConfig,       $,           Backbone   ) {
+define([    'my-config',    'jquery',    'backbone', 'humane',  'jquery.json'],
+function (   MyConfig,       $,           Backbone,   Humane) {
 
     // The Lobby is responsible for handling login and registration
     // 
@@ -8,6 +8,7 @@ function (   MyConfig,       $,           Backbone   ) {
 
         var client_code = localStorage.client_code;
         console.log("client code initialised from local storage : "+client_code);
+        Humane.error = Humane.spawn({ addnCls: 'humane-libnotify-error', timeout : 3000});
 
         return {
             init    : function() {
@@ -24,6 +25,7 @@ function (   MyConfig,       $,           Backbone   ) {
                 ws.onopen = function() {
                     Backbone.trigger("ws:connected");
                     console.log("ws:connected");
+                    Humane.log("Connection made");
                 };
 
                 ws.onmessage = function(e) {
@@ -32,6 +34,10 @@ function (   MyConfig,       $,           Backbone   ) {
                     var content = data.content;
                     Backbone.trigger("ws:recv:"+route, data);
                     console.log("ws:recv:"+route, e.data);
+                    // for now, on an error, put up a 'humane' message.
+                    if (content.code != 0) {
+                        Humane.error("ERROR: "+content.code+" - "+content.message);
+                    }
                 };
 
                 Backbone.on("ws:send", function(data) {
@@ -51,7 +57,17 @@ function (   MyConfig,       $,           Backbone   ) {
                     };
                     ws.send(JSON.stringify(msg));
                 });
-
+                // The user has logged out
+                Backbone.on("user:logout", function() {
+                    console.log("BACKBONE: user:logout ");
+                    var msg = {
+                        route   : "/lobby/logout",
+                        content : {
+                            client_code : client_code
+                        }
+                    };
+                    ws.send(JSON.stringify(msg));
+                });
                 Backbone.on("ws:recv:/lobby/get_client_code", function(data) {
                     client_code = data.content.client_code;
                     localStorage.client_code = client_code;

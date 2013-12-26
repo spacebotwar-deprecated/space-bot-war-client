@@ -19,6 +19,7 @@ require.config({
         "jasmine-html": "../libs/jasmine-html",
         "login-radius": "../libs/login-radius",
         "radius-hub": "https://hub.loginradius.com/cdn/include/js/LoginRadius.1.0",
+        "humane": "../libs/humane",
 
         // Plugins
         "backbone.validateAll":"../libs/plugins/Backbone.validateAll",
