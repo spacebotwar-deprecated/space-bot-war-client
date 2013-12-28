@@ -1,6 +1,6 @@
-define([    'my-config',    'jquery',    'backbone', 'marionette',   'components/lobby', 'underscore',   'handlebars', 'jquery.json', 'humane'],
-function (   MyConfig,       $,          Backbone,   Marionette,     Lobby,              _,              Handlebars) {
-    var App,lobby;
+define([    'my-config',    'jquery',    'backbone', 'marionette',   'components/start_server', 'underscore',   'handlebars', 'jquery.json', 'humane'],
+function (   MyConfig,       $,          Backbone,   Marionette,     StartServer,              _,              Handlebars) {
+    var App,start_server;
 
     App = new Backbone.Marionette.Application();
 
@@ -23,9 +23,9 @@ function (   MyConfig,       $,          Backbone,   Marionette,     Lobby,     
     });
 
     App.mobile = isMobile();
-    var lobby = new Lobby;
+    var start_server = new StartServer;
 
-    App.addInitializer(lobby.init);
+    App.addInitializer(start_server.init);
     
     App.vent.on("ws:connected", function(data) {
         console.log("ws:connected - triggered. ["+data+"]");

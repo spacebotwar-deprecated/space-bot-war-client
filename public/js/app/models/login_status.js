@@ -11,8 +11,8 @@ function(    $,          Backbone) {
         
         // Model Constructor
         initialize: function() {
-            Backbone.on("ws:recv:/lobby/login_with_password", this.login_success, this);
-            Backbone.on("ws:recv:/lobby/logout", this.logout_success, this);
+            Backbone.on("ws:recv:/login_with_password", this.login_success, this);
+            Backbone.on("ws:recv:/logout", this.logout_success, this);
         },
 
         logout_success : function(data) {
