@@ -5,6 +5,7 @@ function (   MyConfig,       $,           Backbone,   Humane) {
     // 
     var StartServer = function() {
         var ws;
+        var ws_m;
 
         var client_code = localStorage.client_code;
         console.log("client code initialised from local storage : "+client_code);
@@ -20,7 +21,7 @@ function (   MyConfig,       $,           Backbone,   Humane) {
                     Backbone.trigger("ws:error", e);
                     console.log("ws:error",e);
     
-               };
+                };
 
                 ws.onopen = function() {
                     Backbone.trigger("ws:connected");
@@ -42,10 +43,27 @@ function (   MyConfig,       $,           Backbone,   Humane) {
                     }
                 };
 
+                wsm = new WebSocket(MyConfig.web_socket_match_url);
+                wsm.onmessage = function(e) {
+                    var data    = $.evalJSON(e.data);
+                    var route   = data.route;
+                    var content = data.content;
+                    console.log("wsm:recv:"+route, e.data);
+                    Backbone.trigger("wsm:recv:"+route, data);
+                };
+
                 Backbone.on("ws:send", function(data) {
                     console.log("ws:send "+JSON.stringify(data));
                 });
-                
+
+                Backbone.on("user:register", function(data) {
+                    var msg = {
+                        route   : "/foo",
+                        content : {},
+                    };
+                    ws.send(JSON.stringify(msg));
+                });
+
                 // The user has logged in
                 Backbone.on("user:login", function(data) {
                     console.log("BACKBONE: user:login "+JSON.stringify(data));

@@ -30,6 +30,7 @@ function (   $,          template_logged_in,                 template_logged_out
             alert('lost password');
         },
         register        : function() {
+            Backbone.trigger("user:register", {} );
             alert('register');
         },
         initialize      : function() {
