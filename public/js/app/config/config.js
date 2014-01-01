@@ -7,6 +7,7 @@ require.config({
         "my-config":"../libs/my-config",
         "jquery":"//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min",
         "jqueryui":"//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min",
+        "ocanvas":"http://cdnjs.cloudflare.com/ajax/libs/ocanvas/2.5.0/ocanvas.min",
         "jquerymobile":"../libs/jquery.mobile",
         "jqueryviewport": "../libs/jquery.viewport",
         "underscore":"../libs/lodash",
@@ -26,6 +27,7 @@ require.config({
         "backbone.validateAll":"../libs/plugins/Backbone.validateAll",
         "bootstrap":"../libs/plugins/bootstrap",
         "text":"../libs/plugins/text",
+        "image":"../libs/plugins/image",
         "jasminejquery": "../libs/plugins/jasmine-jquery",
         "jquery.json" : "../libs/plugins/jquery.json.min"
     },
@@ -48,7 +50,9 @@ require.config({
         "radius-hub":{
             "exports":"LoginRadius_SocialLogin"
         },
-
+        "ocanvas":{
+            "exports":"oCanvas"
+        },
         // Backbone
         "backbone":{
             // Depends on underscore/lodash and jQuery
