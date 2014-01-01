@@ -5,9 +5,10 @@ require.config({
     paths:{
         // Core Libraries
         "my-config":"../libs/my-config",
-        "jquery":"../libs/jquery-2.0.3",
-        "jqueryui":"../libs/jqueryui",
+        "jquery":"//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min",
+        "jqueryui":"//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min",
         "jquerymobile":"../libs/jquery.mobile",
+        "jqueryviewport": "../libs/jquery.viewport",
         "underscore":"../libs/lodash",
         "backbone":"../libs/backbone",
         "marionette":"../libs/backbone.marionette",
@@ -36,6 +37,9 @@ require.config({
         "jqueryui":["jquery"],
         // jQuery mobile
         "jquerymobile":["jqueryui"],
+        
+        // viewport
+        "jqueryviewport" : ["jqueryui"],
 
         // Radius
         "login-radius": {

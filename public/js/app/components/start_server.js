@@ -48,7 +48,7 @@ function (   MyConfig,       $,           Backbone,   Humane) {
                     var data    = $.evalJSON(e.data);
                     var route   = data.route;
                     var content = data.content;
-                    console.log("wsm:recv:"+route, e.data);
+                    //console.log("wsm:recv:"+route, e.data);
                     Backbone.trigger("wsm:recv:"+route, data);
                 };
 

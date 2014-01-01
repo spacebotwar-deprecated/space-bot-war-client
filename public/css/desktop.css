@@ -1,3 +1,32 @@
 @import url("bootstrap.css");
 @import url("commonstyles.css");
 @import url("jackedup.css");
+@import url("jqueryui.css");
+
+
+
+#draggable {
+    width: 800px;
+    height: 600px;
+    left: 300px;
+    top: 200px;
+    border: 1px solid #cc3;
+}
+
+#viewport_binder {
+    width: 1400px;
+    height: 1000px;
+    left: -600px;
+    top: -400px;
+    border: 1px solid #cc3;
+    position: absolute;
+}
+
+#viewport {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000;
+    position: relative;
+    overflow: hidden;
+}
+
