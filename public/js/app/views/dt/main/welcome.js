@@ -17,7 +17,7 @@ function(    App,    Backbone,   Marionette,     $,          Model,          tem
             this.$( ".draggable" ).draggable({containment: "parent"});
             var canvas = this.$("#draggable_canvas")[0];
             this.context = canvas.getContext('2d');
-            this.context.drawImage(this.canvas_image, 0, 0);
+            this.context.drawImage(this.canvas_image, 0, 0, 1024, 1024, 0, 0, 1024, 1024);
         },
 
         // View Event Handlers
