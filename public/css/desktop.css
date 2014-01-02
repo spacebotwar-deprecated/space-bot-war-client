@@ -29,17 +29,17 @@
     overflow: hidden;
 }
 .arena_viewport_binder {
-    width: 1448px;
-    height: 1448px;
-    left: -424px;
-    top: -424px;
+    width: 5400px;
+    height: 5400px;
+    left: -2400px;
+    top: -2400px;
     border: 1px solid #cc3;
     position: absolute;
 }
 
 .draggable_canvas {
-    width: 1024px;
-    height: 1024px;
-//    left:   -212px;
-//    top:    -212px;
+    width: 3000px;
+    height: 3000px;
+    left:   1200px;
+    top:    1200px;
 }
