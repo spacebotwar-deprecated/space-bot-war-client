@@ -20,8 +20,8 @@ function(    App,    Backbone,   Marionette,     $,          Model,          tem
             // so perhaps that has something to do with it
             canvas.height = 3000;
             canvas.width = 3000;
-            var context = this.context;
-            context = canvas.getContext('2d');
+            var context = canvas.getContext('2d');
+            context.scale(0.5,0.5);
             context.clearRect(0,0,3000,3000);
             context.beginPath();
             context.arc(1500,1500,1495,0,(Math.PI*2), true);
