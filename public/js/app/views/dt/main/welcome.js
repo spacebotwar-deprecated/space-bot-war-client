@@ -23,11 +23,9 @@ function(    App,    Backbone,   Marionette,     $,          Model,          tem
             var context = this.context;
             context = canvas.getContext('2d');
             context.clearRect(0,0,3000,3000);
-//            context.drawImage(image_starmap, 0, 0, 1024, 1024);
             context.beginPath();
-            context.moveTo(188,130);
-            context.bezierCurveTo(140,10,388,10,388,170);
-            context.lineWidth = 10;
+            context.arc(1500,1500,1495,0,(Math.PI*2), true);
+            context.lineWidth = 2;
             context.strokeStyle = "red";
             context.stroke();
         },
