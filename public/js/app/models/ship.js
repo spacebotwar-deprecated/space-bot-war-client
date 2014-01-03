@@ -41,7 +41,11 @@ function(    $,          Backbone,   ModelImages) {
         //
         render  : function(context) {
             console.log("Model:Ship:render "+this.get('id')+" x="+this.get('x')+" y="+this.get('y'));
-            context.drawImage(this.image, this.get('x'), this.get('y'));
+            context.save();
+            context.translate(this.get('x'), this.get('y'));
+            context.rotate( this.get('orientation'));
+            context.drawImage(this.image, -20, -20);
+            context.restore();
         }
 
     });
