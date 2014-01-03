@@ -1,5 +1,5 @@
-define([    "jquery",   "backbone"],
-function(    $,          Backbone) {
+define([    "jquery",   "backbone", 'models/images'],
+function(    $,          Backbone,   ModelImages) {
     // Creates a new Backbone Model class object
     var Ship = Backbone.Model.extend({
 
@@ -17,11 +17,13 @@ function(    $,          Backbone) {
             previous_x  : 0,
             previous_y  : 0,
             previous_orientation    : 0.6,
-            tick        : 0
+            tick        : 0,
         },
         
         // Model Constructor
         initialize: function() {
+            this.images = new ModelImages();
+            this.image = this.images.get('ship');
         },
         tick : function() {
             // On each 'tick' of the server, record the previous value of x,y and orientation
@@ -34,6 +36,12 @@ function(    $,          Backbone) {
         // Get's called automatically by Backbone when the set and/or save methods are called (Add your own logic)
         validate: function(attrs) {
 
+        },
+        // It's a bit odd rendering in the model, revist this!
+        //
+        render  : function(context) {
+            console.log("Model:Ship:render "+this.get('id')+" x="+this.get('x')+" y="+this.get('y'));
+            context.drawImage(this.image, this.get('x'), this.get('y'));
         }
 
     });

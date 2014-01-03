@@ -4,6 +4,7 @@ function(    $,          Backbone,  CollectionsCompetitors,     CollectionsShips
     var Match = Backbone.Model.extend({
 
         defaults : {
+            tick_count  : 0
         },
         
         // Model Constructor
@@ -20,16 +21,19 @@ function(    $,          Backbone,  CollectionsCompetitors,     CollectionsShips
         },
 
         stats : function(data) {
-            console.log(JSON.stringify(this));
+            console.log("model stats");
         },
 
         // It would be nice if the model 'set' method also recursively set the collections
         // but I don't think it does. So we have to do it here.
         match_tick : function(data) {
-              var ships = this.get("ships");
-              ships.tick();
-              ships.set(data.content.ships);
-              this.stats();
+            var ships = this.get("ships");
+            ships.tick();
+            ships.set(data.content.ships);
+
+            // updating 'tick_count' ensures that the view is triggered on every model tick
+            this.set('tick_count', this.get('tick_count') + 1);
+            this.stats();
         },
 
         match_status : function(data) {
