@@ -5,9 +5,10 @@ function (   MyConfig,       $,           Backbone,   Humane) {
     // 
     var StartServer = function() {
         var ws;
-        var ws_m;
-
+        var wsm;
+        var wsp;
         var client_code = localStorage.client_code;
+        
         console.log("client code initialised from local storage : "+client_code);
         Humane.error = Humane.spawn({ addnCls: 'humane-libnotify-error', timeout : 3000});
 
@@ -55,6 +56,18 @@ function (   MyConfig,       $,           Backbone,   Humane) {
                 Backbone.on("ws:send", function(data) {
                     console.log("ws:send "+JSON.stringify(data));
                 });
+
+                // test of player web socket
+                wsp = new WebSocket(MyConfig.web_socket_player_url);
+                wsp.onmessage = function(e) {
+                    var data    = $.evalJSON(e.data);
+                    var route   = data.route;
+                    var content = data.content;
+                    console.log("wsp:recv:"+route, e.data);
+                };
+                
+
+
 
                 Backbone.on("user:register", function(data) {
                     var msg = {
