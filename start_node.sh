@@ -1,2 +1,2 @@
-PORT=8002 nodemon
-
+PORT=8002
+nodemon

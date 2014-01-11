@@ -1,37 +1,39 @@
 {
-    "name":"SpaceBotWar",
-    "title":"SpaceBotWar",
-    "description":"SpaceBotWar",
-    "version":"1.1.0",
-    "homepage":"http://spacebotwar.com",
-    "author":{
-        "name":"Iain C Docherty",
-        "email":"spacebotwar@iain-docherty.com",
-        "url":"icydee.com"
-    },
-    "repository":{
-        "type":"git",
-        "url":"git@github.com:icydee/space-bot-war-client.git"
-    },
-    "bugs":{
-        "url":"https://github.com/icydee/space-bot-war-client/issues"
-    },
-    "licenses":[
-        {
-            "type":"",
-            "url":""
-        }
-    ],
-    "dependencies":{
-        "express":"3.x"
-    },
-    "devDependencies":{
-        "express":"3.x",
-        "grunt":"~0.4.1",
-        "grunt-contrib-requirejs":"~0.4.0",
-        "grunt-contrib-jshint":"~0.3.0",
-        "uglify-js":"~2.2.5"
-    },
-    "main":"./server/server",
-    "keywords":["SpaceBotWar"]
+  "name": "SpaceBotWar",
+  "title": "SpaceBotWar",
+  "description": "SpaceBotWar",
+  "version": "1.1.0",
+  "homepage": "http://spacebotwar.com",
+  "author": {
+    "name": "Iain C Docherty",
+    "email": "spacebotwar@iain-docherty.com",
+    "url": "icydee.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:icydee/space-bot-war-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/icydee/space-bot-war-client/issues"
+  },
+  "licenses": [
+    {
+      "type": "",
+      "url": ""
+    }
+  ],
+  "dependencies": {
+    "express": "3.x"
+  },
+  "devDependencies": {
+    "express": "3.x",
+    "grunt": "~0.4.1",
+    "grunt-contrib-requirejs": "~0.4.0",
+    "grunt-contrib-jshint": "~0.3.0",
+    "uglify-js": "~2.2.5"
+  },
+  "main": "./server/server.js",
+  "keywords": [
+    "SpaceBotWar"
+  ]
 }
