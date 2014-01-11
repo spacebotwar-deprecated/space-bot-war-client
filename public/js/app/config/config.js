@@ -36,7 +36,7 @@ require.config({
         // Twitter Bootstrap jQuery plugins
         "bootstrap":["jquery"],
         // jQueryUI
-        "jqueryui":["jquery"],
+        "jqueryui": ["jquery"],
         // jQuery mobile
         "jquerymobile":["jqueryui"],
         
@@ -92,6 +92,6 @@ require.config({
         helperDirectory: "templates/helpers/",
         i18nDirectory: "templates/i18n/",
 
-        compileOptions: {}        // options object which is passed to Handlebars compiler
+        compileOptions: {} // options object which is passed to Handlebars compiler
     }
 });

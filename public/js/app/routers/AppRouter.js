@@ -1,11 +1,17 @@
-define([    'backbone', 'marionette'], 
-function(    Backbone,   Marionette) {
-   return Backbone.Marionette.AppRouter.extend({
-       //"index" must be a method in AppRouter's controller
-       appRoutes: {
-           ""           : "index",
-           "login"      : "login",
-           "register"   : "register"
+define([
+    'backbone',
+    'marionette'
+],
+function(
+    Backbone,
+    Marionette
+) {
+    return Backbone.Marionette.AppRouter.extend({
+        // These should be implemented in DesktopController and MobileController
+        appRoutes: {
+            ""         : "index",
+            "login"    : "login",
+            "register" : "register"
        }
-   });
+    });
 });
