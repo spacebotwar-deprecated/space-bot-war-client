@@ -1,2 +1,2 @@
-PORT=8002
-nodemon
+# This is actually meant to be one line...
+PORT=8002 nodemon
