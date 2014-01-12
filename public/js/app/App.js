@@ -4,6 +4,8 @@ define([
     'backbone',
     'marionette',
     'components/lobby',
+    'components/player',
+    'components/match',
     'underscore',
     'handlebars',
     'jquery.json',
@@ -15,13 +17,17 @@ function(
     Backbone,
     Marionette,
     Lobby,
+    Player,
+    Match,
     _,
     Handlebars
 ) {
-    var App, lobby;
+    var App, lobby, player, match;
 
     App = new Backbone.Marionette.Application();
-    lobby = new Lobby();
+    lobby   = new Lobby();
+    player  = new Player();
+    match   = new Match();
 
     App.mobile = (function() {
         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -41,12 +47,10 @@ function(
         Backbone.history.start();
     });
 
-    // Init the lobby
+    // Init the various web socket connections
     App.addInitializer(lobby.init);
-    
-    App.vent.on("ws:connected", function(data) {
-        console.log("ws:connected - triggered. [" + data + "]");
-    });
+    App.addInitializer(player.init);
+    App.addInitializer(match.init);
 
     return App;
 });

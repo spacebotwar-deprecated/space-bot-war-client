@@ -23,7 +23,7 @@ function(
         self.init = function() {
             // In here 'this' refers to the Marionette App.
 
-            self.connection = new Connection(MyConfig.webSocketUrls.lobby);
+            self.connection = new Connection(MyConfig.webSocketUrls.lobby, "ws");
             self.connection.init();
 
             Backbone.on("ws:send", function(data) {
@@ -72,7 +72,7 @@ function(
                 self.connection.send(msg);
             });
         };
-    }
+    };
     
     return Lobby;
 });

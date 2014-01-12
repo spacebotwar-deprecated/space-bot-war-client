@@ -9,27 +9,28 @@ function(
     Humane
 ) {
 
-    function Connection(url) {
-        var self = this;
-        self.url = url;
+    function Connection(url, prefix) {
+        var self    = this;
+        self.url    = url;
+        self.prefix = prefix;
         
         self.init = function() {
             self.connection = new WebSocket(self.url);
 
-            self.connection.onerror = self.onError;
-            self.connection.onopen = self.onOpen;
-            self.connection.onmessage = self.onMessage;
+            self.connection.onerror     = self.onError;
+            self.connection.onopen      = self.onOpen;
+            self.connection.onmessage   = self.onMessage;
 
         };
 
         self.onError = function(e) {
-            Backbone.trigger("ws:error", e);
-            console.log("ws:error", e);
+            Backbone.trigger(self.prefix+":error", e);
+            console.log(self.prefix+":error", e);
         };
 
         self.onOpen = function() {
-            Backbone.trigger("ws:connected");
-            console.log("ws:connected");
+            Backbone.trigger(self.prefix+":connected");
+            console.log(self.prefix+":connected");
             Humane.log("Connection made!");
         };
 
@@ -37,10 +38,10 @@ function(
             var data    = $.evalJSON(e.data);
             var route   = data.route;
             var content = data.content;
-            console.log("ws:recv:" + route, e.data);
+            console.log(self.prefix+":recv:" + route, e.data);
 
             if (content.code == 0) {
-                Backbone.trigger("ws:recv:" + route, data);
+                Backbone.trigger(self.prefix+":recv:" + route, data);
             }
             else {
                 // for now, on an error, put up a 'humane' message.
