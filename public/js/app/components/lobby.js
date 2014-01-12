@@ -34,7 +34,7 @@ function(
             Backbone.on("user:login", function(data) {
                 console.log("BACKBONE: user:login " + JSON.stringify(data));
                 var msg = {
-                    route   : "/lobby/login_with_password",
+                    route   : "/login_with_password",
                     content : {
                         password    : data.password,
                         username    : data.username,
@@ -48,7 +48,7 @@ function(
             Backbone.on("user:logout", function() {
                 console.log("BACKBONE: user:logout ");
                 var msg = {
-                    route   : "/lobby/logout",
+                    route   : "/logout",
                     content : {
                         client_code : Session.getClientCode()
                     }
@@ -56,7 +56,7 @@ function(
                 self.connection.send(msg);
             });
 
-            Backbone.on("ws:recv:/lobby/get_client_code", function(data) {
+            Backbone.on("ws:recv:/get_client_code", function(data) {
                 var clientCode = data.content.client_code;
                 Session.setClientCode(clientCode);
                 console.log("clientCode is now " + clientCode);
@@ -64,7 +64,7 @@ function(
 
             Backbone.on("ws:connected", function() {
                 var msg = {
-                    route   : "/lobby/get_client_code",
+                    route   : "/get_client_code",
                     content : {
                         client_code : Session.getClientCode()
                     }
