@@ -15,6 +15,7 @@ function(
         self.prefix = prefix;
         
         self.init = function() {
+            console.log('Debug: attempting connection to ' + self.url);
             self.connection = new WebSocket(self.url);
 
             self.connection.onerror     = self.onError;
