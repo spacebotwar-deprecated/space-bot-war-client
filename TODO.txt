@@ -10,3 +10,5 @@ first parameter indicating the success of the  call?
 -Implement the Forgot Password  stuff.
 
 -Clean out dependencies.
+
+-Add a debug-mode-only logger

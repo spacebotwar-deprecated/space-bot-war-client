@@ -6,6 +6,7 @@ define([
     'components/lobby',
     'components/player',
     'components/match',
+    'components/start',
     'underscore',
     'handlebars',
     'jquery.json',
@@ -19,15 +20,17 @@ function(
     Lobby,
     Player,
     Match,
+    Start,
     _,
     Handlebars
 ) {
-    var App, lobby, player, match;
 
-    App = new Backbone.Marionette.Application();
-    lobby   = new Lobby();
-    player  = new Player();
-    match   = new Match();
+    var App     = new Backbone.Marionette.Application(),
+        lobby   = new Lobby(),
+        player  = new Player(),
+        match   = new Match(),
+        start   = new Start()
+    ;
 
     App.mobile = (function() {
         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -49,8 +52,9 @@ function(
 
     // Init the various web socket connections
     App.addInitializer(lobby.init);
-    App.addInitializer(player.init);
     App.addInitializer(match.init);
+    App.addInitializer(player.init);
+    App.addInitializer(start.init);
 
     return App;
 });

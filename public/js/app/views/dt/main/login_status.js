@@ -4,10 +4,10 @@ function (   $,          template_logged_in,                 template_logged_out
     return Backbone.Marionette.ItemView.extend({
         render : function() {
             if (this.model.get('logged_in')) {
-                $(this.el).empty().html(template_logged_in(this.model.attributes));
+                $(this.el).html(template_logged_in(this.model.attributes));
             }
             else {
-                $(this.el).empty().html(template_logged_out(this.model.attributes));
+                $(this.el).html(template_logged_out(this.model.attributes));
             }
         },
         events          : {
