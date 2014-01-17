@@ -3,7 +3,6 @@ define([
     'jquery',
     'backbone',
     'marionette',
-    'components/lobby',
     'components/player',
     'components/match',
     'components/start',
@@ -17,7 +16,6 @@ function(
     $,
     Backbone,
     Marionette,
-    Lobby,
     Player,
     Match,
     Start,
@@ -26,7 +24,6 @@ function(
 ) {
 
     var App     = new Backbone.Marionette.Application(),
-        lobby   = new Lobby(),
         player  = new Player(),
         match   = new Match(),
         start   = new Start()
@@ -51,7 +48,6 @@ function(
     });
 
     // Init the various web socket connections
-    App.addInitializer(lobby.init);
     App.addInitializer(match.init);
     App.addInitializer(player.init);
     App.addInitializer(start.init);
