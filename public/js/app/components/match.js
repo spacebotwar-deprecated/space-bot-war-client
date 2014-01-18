@@ -22,12 +22,12 @@ function(
             // Vas: this is throwing WebSocket errors in my face while I'm 
             //      trying to debug something else. Not doing anything anyway.
             //      Commented out for now.
-            // self.connection = new Connection(MyConfig.webSocketUrls.match, "wsm");
-            // self.connection.init();
+            self.connection = new Connection(MyConfig.webSocketUrls.match, "wsm");
+            self.connection.init();
 
-            // Backbone.on("wsm:send", function(data) {
-            //     console.log("wsm:send " + JSON.stringify(data));
-            // });
+            Backbone.on("wsm:send", function(data) {
+                console.log("wsm:send " + JSON.stringify(data));
+            });
         };
     };
     
