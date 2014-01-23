@@ -14,4 +14,4 @@ tasks =
                 - do stuff with the css and images (maybe? TODO!)
         ###
 
-gulp.task task, taskDefinitions[task] for task in Object.keys tasks
+gulp.task name, task for name, task of tasks
