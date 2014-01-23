@@ -2,7 +2,7 @@
 
 gulp = require 'gulp'
 
-taskDefinitions =
+tasks =
     build: () ->
         console.log 'building the code thing'
 
@@ -14,5 +14,4 @@ taskDefinitions =
                 - do stuff with the css and images (maybe? TODO!)
         ###
 
-tasks = Object.keys taskDefinitions
-gulp.task task, taskDefinitions[task] for task in tasks
+gulp.task task, taskDefinitions[task] for task in Object.keys tasks
