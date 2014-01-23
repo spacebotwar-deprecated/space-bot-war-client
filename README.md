@@ -17,3 +17,8 @@ first parameter indicating the success of the  call?
 - Implement the Forgot Password  stuff.
 - Clean out dependencies.
 - Add a debug-mode-only logger
+
+- Lastly, look at the following gulpjs modules: jshint, concat, bump, 
+coffeelint, size, closure-compiler
+- Look into using Coffeescript for this project rather than vanilla JavaScript.
+(much less painful, IMO)
