@@ -26,7 +26,9 @@ given ($task) {
     }
     when (m/runserver|server|dev-server/i) {
         $commands = qq{
-            echo "Development server not implemented!";
+            echo "Warning: dev-server implementation still in progress!";
+            cd ../dev-server
+            PORT=8003 nodemon dev-server.js
         };
     }
     default {
@@ -41,3 +43,10 @@ given ($task) {
 }
 
 system $commands;
+
+END {
+    # For fun. Who cares? .... *Right?*
+    say '';
+    say 'Thanks for visiting. Do come again!';
+    say '';
+}
