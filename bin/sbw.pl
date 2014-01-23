@@ -25,7 +25,7 @@ given ($task) {
         };
     }
     when (/server/i) {
-        my $port = $ARGV[1] // 8002;
+        my $port = $ARGV[1] // 8001;
         $commands = qq{
             echo "Warning: dev-server implementation still in progress!";
             cd ../dev-server
