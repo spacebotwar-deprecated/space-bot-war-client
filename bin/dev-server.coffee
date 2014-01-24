@@ -1,17 +1,17 @@
 `"use strict"`
 
-express   = require 'express'
-app       = express()
-http      = require 'http'
-path      = require 'path'
-port      = if process.env.PORT? then process.env.PORT else 8001
-servePath = path.join __dirname, '..', 'public'
+express  = require 'express'
+app      = express()
+http     = require 'http'
+path     = require 'path'
+port     = if process.env.PORT? then process.env.PORT else 8001
+pathBase = path.join __dirname, '..'
 
-# Server Configuration
 app.configure () ->
 
-    # Tell express to serve files from /public.
-    app.use express.static servePath
+    # Serve files from /public and /src.
+    for directory in ['src', 'public']
+        app.use express.static path.join pathBase, directory
     
     # Complain as loudly as possible when an error occurs.
     app.use express.errorHandler
@@ -24,5 +24,5 @@ server = http.createServer app
 server.listen port
 
 console.log 'Welcome to SpaceBotWar!'
-console.log "Serving files from #{servePath}."
-console.log "Hit http://localhost:#{port} to start debugging!!"
+console.log "Hit http://localhost:#{port} and git to work!!"
+console.log '...see what I did there? :P'

@@ -1,0 +1,4 @@
+{
+    // So we can see what it's doing if it messes up.
+    "verbose": true
+}
