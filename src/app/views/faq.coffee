@@ -1,7 +1,14 @@
-define([    'jquery',   'hbs!templates/all/main/faq',  'backbone', 'marionette'],
-function (   $,          template,                       Backbone) {
-    //ItemView provides some default rendering logic
-    return Backbone.Marionette.ItemView.extend({
-        template:template
-    });
-});
+define [
+    'jquery'
+    'hbs!templates/dt/main/faq'
+    'backbone'
+    'marionette'
+], (
+    $
+    templateFaq
+    Backbone
+) ->
+    class Faq extends Backbone.Marionette.ItemView
+        template: templateFaq
+
+    return Faq

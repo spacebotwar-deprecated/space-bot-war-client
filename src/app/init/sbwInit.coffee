@@ -4,7 +4,7 @@ define [
     Humane
 ) ->
 
-    class SBWInit
+    class SbwInit
         constructor: () ->
             @humane()
 
@@ -13,4 +13,4 @@ define [
                 addnCls: 'humane-libnotify-error'
                 timeout: 3000
 
-    return SBWInit
+    return SbwInit

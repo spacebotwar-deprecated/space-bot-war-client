@@ -1,19 +1,20 @@
-define( [   'App',  'backbone', 'marionette',   'jquery',   'hbs!templates/all/main/welcome/intro'],
-function(    App,    Backbone,   Marionette,     $,          template_intro) {
-    
-    return Backbone.Marionette.Layout.extend( {
+define [
+    'App'
+    'backbone'
+    'marionette'
+    'jquery'
+    'hbs!templates/all/main/welcome/intro'
+], (
+    App
+    Backbone
+    Marionette
+    $
+    templateIntro
+) ->
+    class Intro extends Backbone.Marionette.Layout
+        template: templateIntro
 
-        template: template_intro,
-        
-        initialize : function() {
-        },
-        
-        render : function() {
-            this.$el.empty().html(this.template);
-        },
+        render: () ->
+            @$el.html(@template)
 
-        events: {
-        }
-    });
-});
-
+    return Intro

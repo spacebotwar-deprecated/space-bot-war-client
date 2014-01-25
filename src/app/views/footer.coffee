@@ -1,7 +1,14 @@
-define([    'jquery',   'hbs!templates/dt/main/footer', 'backbone', 'marionette'],
-function (   $,          template,                       Backbone) {
-    //ItemView provides some default rendering logic
-    return Backbone.Marionette.ItemView.extend({
-        template:template
-    });
-});
+define [
+    'jquery'
+    'hbs!templates/dt/main/footer'
+    'backbone'
+    'marionette'
+], (
+    $
+    templateFooter
+    Backbone
+) ->
+    class Footer extends Backbone.Marionette.ItemView
+        template: templateFooter
+
+    return Footer

@@ -9,6 +9,6 @@ define [
 ) ->
 
     class Competitors extends Backbone.Collection
-        @model: Competitor
+        model: Competitor
 
     return Competitors

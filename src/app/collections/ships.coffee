@@ -8,7 +8,7 @@ define [
     Ship
 ) ->
     class Ships extends Backbone.Collection
-        @model: Ship
+        model: Ship
 
         # Let the collection know that a tick has occurred
         # Perhaps we should do this with an event, but I am not sure

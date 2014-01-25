@@ -19,14 +19,16 @@ define [
 ) ->
     
     class Welcome extends Backbone.Marionette.Layout
-        @template = templateWelcome
+        template = templateWelcome
 
-        @regions =
+        regions =
             intro : '#intro'
             arena : '#arena'
 
-        @render = () ->
+        render = () ->
             @$el.html(@template)
             @intro.show new ViewWelcomeIntro
             @arena.show new ViewWelcomeArena
                 model : new ModelMatch
+
+    return Welcome
