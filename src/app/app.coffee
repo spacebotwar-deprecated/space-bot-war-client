@@ -24,11 +24,11 @@ define [
     Handlebars
 ) ->
 
-    App     = new Backbone.Marionette.Application()
-    lobby   = new Lobby()
-    player  = new Player()
-    match   = new Match()
-    start   = new Start()
+    App     = new Backbone.Marionette.Application
+    lobby   = new Lobby
+    player  = new Player
+    match   = new Match
+    start   = new Start
 
     App.mobile = (() ->
         userAgent = navigator.userAgent || navigator.vendor || window.opera;
