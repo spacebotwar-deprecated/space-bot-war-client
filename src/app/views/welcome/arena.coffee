@@ -39,16 +39,17 @@ define [
 
         ## TODO: haven't I seen this code before??????
         render: () ->
-            this.$el.empty().html(this.template);
-            console.log("######### arena render! ##############");
+            @$el.html this.template
+            console.log "######### arena (welcome) render! ##############"
            
-            this.$( ".draggable_canvas" ).draggable({containment: "parent"});
-            var canvas = this.$("#draggable_canvas")[0];
+            @$(".draggable_canvas").draggable
+                containment: "parent"
+            canvas = @$("#draggable_canvas")[0]
+
             # TODO I have no idea why, but at this point canvas is 300x150
             # so I have to set it to this size. Note, default is 300x150
             # so perhaps that has something to do with it
-            canvas.height = 3000;
-            canvas.width = 3000;
-            var context = canvas.getContext('2d');
-            context.scale(0.5,0.5);
-            this.context = context
+            canvas.height = 3000
+            canvas.width = 3000
+            @context = canvas.getContext '2d'
+            @context.scale 0.5, 0.5
