@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "footer.js",
+  "sourceRoot": "",
+  "sources": [
+    "footer.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,KAAA;oSAAA;;CAAA,CAAA,CAKG,GALH,EAAO,CAMH,CANG,EAAA,EAKJ,gBALI;CAUH,OAAA,IAAA;CAAA,GAAM;CACF;;;;;CAAA;;CAAA,EAAU,KAAV,MAAA;;CAAA;;CADiB,OAAQ,EAAW;CAGxC,KAAA,KAAO;CAbX,EAKG;CALH"
+}

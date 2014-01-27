@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "sbwInit.js",
+  "sourceRoot": "",
+  "sources": [
+    "sbwInit.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,CAAA,CAEG,GAFH,EAAO,CAGH;CAGA,MAAA,CAAA;CAAA,GAAM;CACW,EAAA,GAAA,WAAA;CACT,GAAC,EAAD,EAAA;CADJ,MAAa;;CAAb,EAGQ,GAAR,GAAQ;CACG,EAAQ,EAAf,CAAM,SAAN;CACI,CAAS,KAAT,GAAA,cAAA;CAAA,CACS,EADT,GACA,GAAA;CAHA,SACW;CAJnB,MAGQ;;CAHR;;CADJ;CASA,MAAA,IAAO;CAfX,EAEG;CAFH"
+}

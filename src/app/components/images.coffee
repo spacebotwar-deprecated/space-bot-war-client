@@ -1,16 +1,14 @@
-define([
-    'my-config',
-    'jquery',
+define [
+    'my-config'
+    'jquery'
     'image!/img/sp_ship.png'
-],
-function(
-    MyConfig,
-    $,
+], (
+    MyConfig
+    $
     ImageShip
-) {
+) ->
 
-    return {
-        ship    : new ImageShip()
-    };
-});
+    images =
+        ship : new ImageShip
 
+    return images

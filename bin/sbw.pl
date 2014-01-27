@@ -10,25 +10,30 @@ use feature 'switch';
 
 
 my $task = $ARGV[0] // "";
-my $commands;
 
 given ($task) {
     when (/(build|otherGulpTask)/i) {
-        $commands = qq{
+        run_command(qq{
             cd ..;
             gulp --require coffee-script $1;
-        }; 
+        });
+    }
+    when (/compile/) {
+        run_command(qq{
+            cd ../src/app;
+            perl compile_coffeescript.pl
+        });
     }
     when (/test|t/i) {
-        $commands = qq{
+        run_command(qq{
             echo "Testng not implemented!";
-        };
+        });
     }
     when (/server/i) {
         my $port = $ARGV[1] // 8001;
-        $commands = qq{
+        run_command(qq{
             PORT=$port nodemon dev-server.coffee -e coffee;
-        };
+        });
     }
     when (/help/i) {
         display_help_message();
@@ -36,16 +41,13 @@ given ($task) {
     }
     default {
         if ($_) {
-            say "FATAL ERROR: I don't know what '$_' is!";
+            die "I don't know what '$_' is!";
         }
         else {
-            say 'FATAL ERROR: No task provided';
+            die 'No task provided';
         }
-        exit;
     }
 }
-
-system $commands;
 
 
 sub display_help_message {
@@ -59,12 +61,11 @@ sub display_help_message {
         help       you're looking at it.
 
     };
+
     print $message;
 }
 
-END {
-    # For fun. Who cares? .... *Right?*
-    say "\n";
-    say 'Thanks for visiting. Do come again!';
-    say "\n";
+sub run_command {
+    my $foo = shift;
+    system $foo;
 }

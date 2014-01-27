@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "desktopInit.js",
+  "sourceRoot": "",
+  "sources": [
+    "desktopInit.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,CAAA,CAKG,EALI,CAAP,CAKG,EACC,IADD,MALI,GAAA,SAAA;CAaH,EAAA,CAAA,GAAO,UAAP;CAAA,EAGG,CAAH,KAAA;AACgB,CAAZ,CAAY,CAAA,GAAZ,IAAA,GAAA;CAJJ,KAGoB;AAIpB,CAPA,EAOA,CAAA,GAPA;CAUI,EAAD,EAAH,MAAA;CAvBJ,EAKG;CALH"
+}

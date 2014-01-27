@@ -1,59 +1,52 @@
-define([    "jquery",   "backbone", "collections/competitors",  "collections/ships"],
-function(    $,          Backbone,  CollectionsCompetitors,     CollectionsShips) {
-    // Creates a new Backbone Model class object
-    var Match = Backbone.Model.extend({
+define [
+    "jquery"
+    "backbone"
+    "collections/competitors"
+    "collections/ships"
+], (
+    $
+    Backbone
+    CollectionCompetitors
+    CollectionShips
+) ->
+    class Match extends Backbone.Model
 
-        defaults : {
-            tick_count  : 0
-        },
+        defaults:
+            tick_count : 0
         
-        // Model Constructor
-        initialize: function() {
-            var competitors = new CollectionsCompetitors(this.get("competitors"));
-            this.set("competitors", competitors);
+        # Model Constructor
+        initialize: () ->
+            competitors = new CollectionCompetitors @get "competitors"
+            @set "competitors", competitors
 
-            var ships = new CollectionsShips(this.get("ships"));
-            this.set("ships", ships);
+            ships = new CollectionShips @get "ships"
+            @set "ships", ships
 
-            Backbone.on("wsm:recv:/match_tick",     this.match_tick, this);
-            Backbone.on("wsm:recv:/match_status",   this.match_status, this);
-            this.on('change', this.stats, this);
-        },
+            Backbone.on "wsm:recv:/match_tick",     @match_tick, @
+            Backbone.on "wsm:recv:/match_status",   @match_status, @
+            @on 'change', @stats, @
 
-        stats : function(data) {
-            console.log("model stats");
-        },
+        stats: (data={}) ->
+            console.log "model stats"
 
-        // It would be nice if the model 'set' method also recursively set the collections
-        // but I don't think it does. So we have to do it here.
-        match_tick : function(data) {
-            var ships = this.get("ships");
-            ships.tick();
-            ships.set(data.content.ships);
-
-            // updating 'tick_count' ensures that the view is triggered on every model tick
-            this.set('tick_count', this.get('tick_count') + 1);
-            this.stats();
-        },
-
-        match_status : function(data) {
-            var ships = this.get("ships");
+        # It would be nice if the model 'set' method also recursively set the
+        # collections but I don't think it does. So we have to do it here.
+        match_tick: (data={}) ->
+            ships = @get "ships"
             ships.tick()
-            ships.set(data.content.ships);
-        },
+            ships.set data.content.ships
 
-        // Propagate the tick down to the components.
-        tick : function() {
-            this.get("ships").tick();
-        },
+            # updating 'tick_count' ensures that the view is triggered on every model tick
+            @set 'tick_count', @get('tick_count') + 1
+            @stats()
 
-        // Get's called automatically by Backbone when the set and/or save methods are called (Add your own logic)
-        validate: function(attrs) {
+        match_status: (data={}) ->
+            ships = @get "ships"
+            ships.tick()
+            ships.set data.content.ships
 
-        }
+        # Propagate the tick down to the components.
+        tick: () ->
+            @get("ships").tick()
 
-    });
-
-    // Returns the Model class
-    return Match;
-});
+    return Match

@@ -1,20 +1,15 @@
-define([    "jquery",   "backbone", 'image!/img/sp_ship.png'],
-function(    $,          Backbone,   ImageShip) {
-    var Images = Backbone.Model.extend({
+define [
+    "jquery"
+    "backbone"
+    'image!/img/sp_ship.png'
+], (
+    $
+    Backbone
+    ImageShip
+) ->
+    class Images extends Backbone.Model
+        defaults:
+            id   : 0
+            ship : ImageShip
 
-        defaults : {
-            id      : 0,
-            ship    : ImageShip,
-        },
-        
-        initialize: function() {
-            ship    : ImageShip
-        },
-
-        validate: function(attrs) {
-        }
-
-    });
-
-    return Images;
-});
+    return Images

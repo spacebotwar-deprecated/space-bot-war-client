@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "images.js",
+  "sourceRoot": "",
+  "sources": [
+    "images.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,CAAA,CAIG,GAJH,EAAO,CAKH,EALG,aAAA;CAUH,KAAA,EAAA;CAAA,EACI,CADJ,EAAA;AACW,CAAP,CAAO,CAAA,CAAP,EAAA,GAAA;CADJ,KAAA;CAGA,KAAA,KAAO;CAbX,EAIG;CAJH"
+}

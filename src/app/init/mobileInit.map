@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "mobileInit.js",
+  "sourceRoot": "",
+  "sources": [
+    "mobileInit.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,CAAA,CASG,EATI,CAAP,EAAO,CAUH,CAVG,EAAA,CASJ,CATI,KAAA,GAAA,QAAA;CAgBH,EAA8B,CAA9B,CAAA,CAAQ,YAAR;CAAA,EAGgC,CAAhC,CAHA,CAGQ,cAAR;CAHA,EAKG,CAAH,KAAA;AACgB,CAAZ,CAAY,CAAA,GAAZ,IAAA,GAAA;CANJ,KAKoB;CAGhB,EAAD,EAAH,MAAA;CAxBJ,EASG;CATH"
+}

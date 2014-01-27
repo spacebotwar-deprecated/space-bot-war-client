@@ -1,25 +1,18 @@
-define([
+define [
 
-],
-function(
+], (
 
-) {
-    function Session() {
-        var self = this;
+) ->
+    class Session
+        constructor: () ->
+            {@clientCode} = localStorage
 
-        self.clientCode = localStorage.clientCode;
+        getClientCode: () ->
+            return @clientCode
 
-        self.getClientCode = function() {
-            return self.clientCode;
-        };
-
-        self.setClientCode = function(newClientCode) {
-            if (newClientCode) {
-                localStorage.clientCode = newClientCode;
-                self.clientCode = newClientCode;
-            }
-        };
-    }
+        setClientCode: (newClientCode) ->
+            return if !newClientCode
+            localStorage.clientCode = newClientCode
+            @clientCode = clientCode
 
     return new Session();
-});

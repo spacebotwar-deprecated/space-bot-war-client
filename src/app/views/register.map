@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "register.js",
+  "sourceRoot": "",
+  "sources": [
+    "register.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,KAAA;oSAAA;;CAAA,CAAA,CAKG,GALH,EAAO,CAMH,CANG,EAAA,qBAAA;CAUH,OAAA,MAAA;CAAA,GAAM;CACF;;;;;CAAA;;CAAA,EAAU,KAAV;;CAAA;;CADmB,OAAQ,EAAW;CAG1C,OAAA,GAAO;CAbX,EAKG;CALH"
+}

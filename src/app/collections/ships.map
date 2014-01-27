@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "ships.js",
+  "sourceRoot": "",
+  "sources": [
+    "ships.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,KAAA;oSAAA;;CAAA,CAAA,CAIG,CAAA,EAJH,EAAO,CAKH,CALG,GAAA;CASH,OAAA,GAAA;CAAA,GAAM;CACF;;;;;CAAA;;CAAA,EAAO,CAAP,CAAA;;CAAA,EAKM,CAAN,KAAM;CACD,EAAK,CAAL,KAAM,MAAP;CACS,GAAD,aAAJ;CADJ,QAAM;CANV,MAKM;;CALN;;CADgB,OAAQ;CAU5B,IAAA,MAAO;CAnBX,EAIG;CAJH"
+}

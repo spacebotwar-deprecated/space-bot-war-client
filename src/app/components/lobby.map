@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "lobby.js",
+  "sourceRoot": "",
+  "sources": [
+    "lobby.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA;CAAA"
+}

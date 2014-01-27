@@ -22,3 +22,6 @@ first parameter indicating the success of the  call?
 coffeelint, size, closure-compiler
 - Look into using Coffeescript for this project rather than vanilla JavaScript.
 (much less painful, IMO)
+
+# This might be the command to compile all the coffeescript code.
+coffee -cm ./**/*.coffee

@@ -1,36 +1,33 @@
-define([
-    'my-config',
-    'jquery',
-    'backbone',
+define [
+    'my-config'
+    'jquery'
+    'backbone'
     'components/connection'
-],
-function(
-    MyConfig,
-    $,
-    Backbone,
+], (
+    MyConfig
+    $
+    Backbone
     Connection
-) {
+) ->
 
-    // The Player server is responsible for getting the next move from a player
-    // TODO: This does not really belong here it is just for test purposes for now
-    // 
-    var Player = function() {
-        var self = this;
+    # The Player server is responsible for getting the next move from a player
+    # TODO: This does not really belong here it is just for test purposes for now
+    #
+    class Player
+        init: () ->
+            # In  here 'this' refers to the Marionette App defined in app.js
 
-        self.init = function() {
-            // In here 'this' refers to the Marionette App.
+            # Vas: this is throwing WebSocket errors in my face while I'm 
+            #      trying to debug something else. Not doing anything anyway.
+            #      Commented out for now. (And is now old/broken :D)
+            # self.connection = new Connection(MyConfig.webSocketUrls.player, "wsm");
+            # self.connection.init();
 
-            // Vas: I don't see this doing anything  atm so commenting to  avoid
-            //      confusion while debugging other stuff.
-            // self.connection = new Connection(MyConfig.web_socket_player_url,"wsp");
-            // self.connection.init();
+            # Backbone.on("wsm:send", function(data) {
+            #     console.log("wsm:send " + JSON.stringify(data));
+            # });
 
-            // Backbone.on("wsp:send", function(data) {
-            //     console.log("wsp:send " + JSON.stringify(data));
-            // });
-        };
-    };
-    
-    return Player;
-});
-
+            # Just to indicate this works
+            console.log 'Player.init()'
+ 
+    return Player

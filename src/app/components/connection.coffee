@@ -1,60 +1,50 @@
-define([
+define [
     'backbone',
     'marionette',
     'humane'
-],
-function(
+], (
     Backbone,
     Marionette,
     Humane
-) {
+) ->
 
-    function Connection(url, prefix) {
-        var self    = this;
-        self.url    = url;
-        self.prefix = prefix;
+    class Connection
+
+        constructor: (url, prefix) ->
+            @url    = url
+            @prefix = prefix
         
-        self.init = function() {
-            console.log('Debug: attempting connection to ' + self.url);
-            self.connection = new WebSocket(self.url);
+        init: () ->
+            console.log "Debug: attempting connection to #{@url}"
+            @connection = new WebSocket @url
 
-            self.connection.onerror     = self.onError;
-            self.connection.onopen      = self.onOpen;
-            self.connection.onmessage   = self.onMessage;
+            @connection.onerror     = @onError
+            @connection.onopen      = @onOpen
+            @connection.onmessage   = @onMessage
 
-        };
+        onError: () ->
+            console.log "#{@prefix}:error", e
+            Backbone.trigger "#{@prefix}:error", e
 
-        self.onError = function(e) {
-            console.log(self.prefix + ":error", e);
-            Backbone.trigger(self.prefix + ":error", e);
-        };
+        onOpen: () ->
+            Backbone.trigger "#{@prefix}:connected"
+            console.log "#{@prefix}:connected"
+            console.log "Successfully connected to #{@url}"
 
-        self.onOpen = function() {
-            Backbone.trigger(self.prefix + ":connected");
-            console.log(self.prefix + ":connected");
-            console.log("Successfully connected to " + self.url); 
-        };
+        onMessage: () ->
+            data    = $.evalJSON e.data
+            route   = data.route
+            content = data.content
+            console.log "#{@prefix}:recv:#{route}", e.data
 
-        self.onMessage = function(e) {
-            var data    = $.evalJSON(e.data);
-            var route   = data.route;
-            var content = data.content;
-            console.log(self.prefix + ":recv:" + route, e.data);
+            if content.code == 0
+                Backbone.trigger "#{@prefix}:recv:#{route}", data
+            else
+                # For now, on an error, put up a 'humane' message.
+                Humane.error content.message
+                console.error "ERROR: #{content.code} - #{content.message}"
 
-            if (content.code == 0) {
-                Backbone.trigger(self.prefix + ":recv:" + route, data);
-            }
-            else {
-                // for now, on an error, put up a 'humane' message.
-                Humane.error(content.message);
-                console.error("ERROR: " + content.code + " - " + content.message);
-            }
-        };
+        send: () ->
+            @connection.send JSON.stringify data
 
-        self.send = function(data) {
-            self.connection.send(JSON.stringify(data));
-        };
-    }
-
-    return Connection;
-});
+    return Connection

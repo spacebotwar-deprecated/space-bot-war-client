@@ -1,44 +1,35 @@
-define([
-    "jquery",
+define [
+    "jquery"
     "backbone"
-],
-function(
-    $,
+], (
+    $
     Backbone
-) {
+) ->
     
-    // Creates a new Backbone Model class object
-    return Backbone.Model.extend({
-
-        defaults : {
-            username    : '',
-            user_id     : 0,
-            logged_in   : false
-        },
+    class LoginStatus extends Backbone.Model
+        defaults:
+            username : ''
+            userId   : 0
+            loggedIn : false
         
-        initialize: function() {
-            Backbone.on("ws:recv:/login_with_password", this.login_success, this);
-            Backbone.on("ws:recv:/logout", this.logout_success, this);
-        },
+        initialize: () ->
+            Backbone.on "ws:recv:/login_with_password", @loginSuccess, @
+            Backbone.on "ws:recv:/logout", @logoutSuccess, @
 
-        logout_success : function(data) {
-            this.set({
-                username    : '',
-                user_id     : 0,
+        logoutSuccess: () ->
+            @set
+                username    : ''
+                user_id     : 0
                 logged_in   : false
-            });
 
-            console.log("MODEL: LOGOUT: logout_success");
-        },
+            console.log "MODEL: LOGOUT: logout_success"
 
-        login_success : function(data) {
-            this.set({
-                username    : data.content.username,
-                user_id     : data.content.user_id,
+        loginSuccess: (data={}) ->
+            @set
+                username    : data.content.username
+                user_id     : data.content.user_id
                 logged_in   : true
-            });
-            console.log("MODEL: LOGIN: login_success "+JSON.stringify(data));
-        }
 
-    }); 
-});
+            console.log "MODEL: LOGIN: login_success #{JSON.stringify data}"
+
+    return LoginStatus

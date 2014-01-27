@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "competitors.js",
+  "sourceRoot": "",
+  "sources": [
+    "competitors.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,KAAA;oSAAA;;CAAA,CAAA,CAIG,GAJH,EAAO,CAKH,CALG,SAAA;CAUH,OAAA,SAAA;CAAA,GAAM;CACF;;;;;CAAA;;CAAA,EAAO,EAAP,KAAA;;CAAA;;CADsB,OAAQ;CAGlC,UAAO;CAbX,EAIG;CAJH"
+}
