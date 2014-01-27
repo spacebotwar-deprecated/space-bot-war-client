@@ -2,7 +2,7 @@ define [
     "app"
     "routers/AppRouter"
     "controllers/DesktopController"
-    "init/setupOtherStuff"
+    "init/sbwInit"
 ], (
     App
     AppRouter

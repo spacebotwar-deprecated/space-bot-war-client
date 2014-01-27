@@ -1,5 +1,5 @@
 require.config
-    baseUrl: 'src/app'
+    baseUrl: './app'
 
     paths:
         # Core Libraries

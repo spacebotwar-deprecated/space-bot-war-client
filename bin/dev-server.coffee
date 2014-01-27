@@ -7,6 +7,8 @@ path     = require 'path'
 port     = if process.env.PORT? then process.env.PORT else 8001
 pathBase = path.join __dirname, '..'
 
+# TODO:  recompile the CoffeeScript!
+
 app.configure () ->
 
     # Serve files from /public and /src.
