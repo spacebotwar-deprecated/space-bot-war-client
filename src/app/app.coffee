@@ -9,7 +9,6 @@ define [
     'app/components/start'
     'underscore'
     'handlebars'
-    'jquery.json'
     'humane'
 ], (
     MyConfig
@@ -22,9 +21,10 @@ define [
     Start
     _
     Handlebars
+    Humane
 ) ->
 
-    App     = new Backbone.Marionette.Application
+    app     = new Backbone.Marionette.Application
     lobby   = new Lobby
     player  = new Player
     match   = new Match
@@ -32,19 +32,19 @@ define [
 
     # Organize Application into regions corresponding to DOM elements
     # Regions can contain views, Layouts, or subregions nested as necessary
-    App.addRegions
+    app.addRegions
         headerRegion : "#header"
         mainRegion   : "#main"
         footerRegion : "#footer"
         menuRegion   : "#menu"
 
-    App.addInitializer () ->
+    app.addInitializer () ->
         Backbone.history.start();
 
     # Init the various web socket connections
-    App.addInitializer lobby.init
-    App.addInitializer match.init
-    App.addInitializer player.init
-    App.addInitializer start.init
+    app.addInitializer lobby.init
+    app.addInitializer match.init
+    app.addInitializer player.init
+    app.addInitializer start.init
 
-    return App
+    return app

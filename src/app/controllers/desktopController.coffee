@@ -1,15 +1,15 @@
 define [
-    'app'
+    'app/app'
     'backbone'
     'marionette'
-    'views/dt/main/welcome'
-    'views/dt/main/login_status' 
-    'views/dt/main/header'
-    'views/dt/main/footer'
-    'views/dt/main/register'
-    'views/dt/main/about'
-    'views/dt/main/faq'
-    'models/login_status'
+    'app/views/welcome'
+    'app/views/loginStatus' 
+    'app/views/header'
+    'app/views/footer'
+    'app/views/register'
+    'app/views/about'
+    'app/views/faq'
+    'app/models/loginStatus'
 ], (
     App
     Backbone

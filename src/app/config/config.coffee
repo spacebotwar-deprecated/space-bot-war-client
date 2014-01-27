@@ -5,8 +5,8 @@ require.config
     paths:
         # Core Libraries
         "my-config"      : "js-libs/my-config"
-        # "jquery"         : "//ajax.googleapis.com/ajax/js-libs/jquery/1.10.2/jquery.min"
-        # "jqueryui"       : "//ajax.googleapis.com/ajax/js-libs/jqueryui/1.10.3/jquery-ui.min"
+        "jquery"         : "js-libs/jquery"
+        "jqueryui"       : "js-libs/jqueryui"
         # "ocanvas"        : "http://cdnjs.cloudflare.com/ajax/js-libs/ocanvas/2.5.0/ocanvas.min"
         "jqueryviewport" : "js-libs/jquery.viewport"
         "underscore"     : "js-libs/lodash"
@@ -32,8 +32,6 @@ require.config
         
         # jQueryUI
         "jqueryui" : ["jquery"]
-        
-        # jQuery mobile
         
         # viewport
         "jqueryviewport" : ["jqueryui"]

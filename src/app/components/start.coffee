@@ -2,8 +2,8 @@ define [
     'my-config'
     'jquery'
     'backbone'
-    'components/connection'
-    'components/session'
+    'app/components/connection'
+    'app/components/session'
     'humane'
 ], (
     MyConfig

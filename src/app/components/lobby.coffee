@@ -1,3 +1,10 @@
+define [
+
+], (
+
+) ->
+    console.log 'lobby load'
+
 # define([
 #     'my-config',
 #     'jquery',

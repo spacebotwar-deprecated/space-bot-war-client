@@ -2,7 +2,7 @@ define [
     'my-config'
     'jquery'
     'backbone'
-    'components/connection'
+    'app/components/connection'
 ], (
     MyConfig
     $
