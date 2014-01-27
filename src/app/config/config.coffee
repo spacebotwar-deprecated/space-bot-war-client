@@ -1,32 +1,29 @@
 require.config
-    baseUrl: './app'
+
+    baseUrl: '/'
 
     paths:
         # Core Libraries
-        "my-config"      : "../libs/my-config"
-        "jquery"         : "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min"
-        "jqueryui"       : "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min"
-        "ocanvas"        : "http://cdnjs.cloudflare.com/ajax/libs/ocanvas/2.5.0/ocanvas.min"
-        "jquerymobile"   : "../libs/jquery.mobile"
-        "jqueryviewport" : "../libs/jquery.viewport"
-        "underscore"     : "../libs/lodash"
-        "backbone"       : "../libs/backbone"
-        "marionette"     : "../libs/backbone.marionette"
-        "handlebars"     : "../libs/handlebars"
-        "hbs"            : "../libs/hbs"
-        "i18nprecompile" : "../libs/i18nprecompile"
-        "json2"          : "../libs/json2"
-        "login-radius"   : "../libs/login-radius"
-        "radius-hub"     : "https://hub.loginradius.com/cdn/include/js/LoginRadius.1.0"
-        "humane"         : "../libs/humane"
+        "my-config"      : "js-libs/my-config"
+        # "jquery"         : "//ajax.googleapis.com/ajax/js-libs/jquery/1.10.2/jquery.min"
+        # "jqueryui"       : "//ajax.googleapis.com/ajax/js-libs/jqueryui/1.10.3/jquery-ui.min"
+        # "ocanvas"        : "http://cdnjs.cloudflare.com/ajax/js-libs/ocanvas/2.5.0/ocanvas.min"
+        "jqueryviewport" : "js-libs/jquery.viewport"
+        "underscore"     : "js-libs/lodash"
+        "backbone"       : "js-libs/backbone"
+        "marionette"     : "js-libs/backbone.marionette"
+        "handlebars"     : "js-libs/handlebars"
+        "hbs"            : "js-libs/hbs"
+        "i18nprecompile" : "js-libs/i18nprecompile"
+        "json2"          : "js-libs/json2"
+        "humane"         : "js-libs/humane"
 
         # Plugins
-        "backbone.validateAll" : "../libs/plugins/Backbone.validateAll"
-        "bootstrap"            : "../libs/plugins/bootstrap"
-        "text"                 : "../libs/plugins/text"
-        "image"                : "../libs/plugins/image"
-        "jasminejquery"        : "../libs/plugins/jasmine-jquery"
-        "jquery.json"          : "../libs/plugins/jquery.json.min"
+        "backbone.validateAll" : "js-libs/plugins/Backbone.validateAll"
+        "bootstrap"            : "js-libs/plugins/bootstrap"
+        "text"                 : "js-libs/plugins/text"
+        "image"                : "js-libs/plugins/image"
+        "jquery.json"          : "js-libs/plugins/jquery.json.min"
 
     # Sets the configuration for your third party scripts that are not AMD compatible
     shim:
@@ -37,18 +34,10 @@ require.config
         "jqueryui" : ["jquery"]
         
         # jQuery mobile
-        "jquerymobile" : ["jqueryui"]
         
         # viewport
         "jqueryviewport" : ["jqueryui"]
 
-        # Radius
-        "login-radius":
-            "exports" : "LoginRadiusSDK"
-        
-        "radius-hub":
-            "exports" : "LoginRadius_SocialLogin"
-        
         "ocanvas":
             "exports" : "oCanvas"
         
@@ -82,3 +71,26 @@ require.config
 
         # Options object which is passed to Handlebars compiler.
         compileOptions    : {}
+
+requirejs [
+], (
+
+) ->
+    # THIS is the main entry point of the application!
+    console.log "O-hai there!"
+
+    # Figure out weather this is Mobile or Desktop to conditionally include
+    # the correct code. (It's not a size thing, it's loading the correct
+    # templates and CSS, in case you were wondering...)
+    userAgent = navigator.userAgent or navigator.vendor or window.opera
+    mobile = /iPhone|iPod|iPad|Android|BlackBerry|Opera Mini|IEMobile/.test userAgent
+
+    if not mobile
+        require ['app/init/desktopInit'], (thing={}) ->
+            console.log thing
+    else
+        # TODO: fix this miserable mess!
+        error =  'We have absolutely zero mobile support! Use with caution!'
+        alert error
+        throw new Error error
+        require 'init/mobileInit'

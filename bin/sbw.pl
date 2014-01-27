@@ -8,7 +8,6 @@ use v5.10;
 # on my v5.14 box. :/
 use feature 'switch';
 
-
 my $task = $ARGV[0] // "";
 
 given ($task) {

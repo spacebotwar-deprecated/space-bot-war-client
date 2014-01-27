@@ -1,24 +1,20 @@
 define [
-    "app"
-    "routers/AppRouter"
-    "controllers/DesktopController"
-    "init/sbwInit"
+    "app/app"
+    "app/routers/appRouter"
+    "app/controllers/desktopController"
+    "app/init/sbwInit"
 ], (
     App
     AppRouter
-    AppController
-    sbwInit
+    DesktopppController
+    SbwInit
 ) ->
-    
-    # This is the main entry point of the application.
-    console.log 'O-hai there! :D'
-
     # Add in the routes.
     App.appRouter = new AppRouter
         controller: new AppController
 
     # Setup other stuff that is desktop/mobile agnostic.
-    new sbwInit
+    new SbwInit
     
     # Start Marionette Application in desktop mode (default)
     App.start()

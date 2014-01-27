@@ -3,10 +3,10 @@ define [
     'jquery'
     'backbone'
     'marionette'
-    'components/lobby'
-    'components/player'
-    'components/match'
-    'components/start'
+    'app/components/lobby'
+    'app/components/player'
+    'app/components/match'
+    'app/components/start'
     'underscore'
     'handlebars'
     'jquery.json'
@@ -29,11 +29,6 @@ define [
     player  = new Player
     match   = new Match
     start   = new Start
-
-    App.mobile = (() ->
-        userAgent = navigator.userAgent || navigator.vendor || window.opera;
-        ((/iPhone|iPod|iPad|Android|BlackBerry|Opera Mini|IEMobile/).test(userAgent));
-    )()
 
     # Organize Application into regions corresponding to DOM elements
     # Regions can contain views, Layouts, or subregions nested as necessary
