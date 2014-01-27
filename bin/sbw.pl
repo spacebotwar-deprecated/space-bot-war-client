@@ -32,7 +32,7 @@ given ($task) {
     when (/server/i) {
         my $port = $ARGV[1] // 8001;
         run_command(qq{
-            PORT=$port nodemon dev-server.coffee -e coffee;
+            PORT=$port nodemon dev-server.coffee -e coffee,html;
         });
     }
     when (/help/i) {
