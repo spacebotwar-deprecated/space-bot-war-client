@@ -1,11 +1,11 @@
 define [
-    "jquery"
     "backbone"
-    "collections/competitors"
-    "collections/ships"
+    "marionette"
+    "app/collections/competitors"
+    "app/collections/ships"
 ], (
-    $
     Backbone
+    Marionette
     CollectionCompetitors
     CollectionShips
 ) ->

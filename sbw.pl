@@ -17,10 +17,10 @@ given ($task) {
         });
     }
     when (/develop/i) {
-        my $port = $ARGV[1] // "";
-        my $foo  = $port ? "PORT=$port" : "";
+        my $port = $ARGV[1] or 8001;
         run_command(qq{
-            $foo gulp develop --require coffee-script;
+            export PORT=1203;
+            gulp develop --require coffee-script;
         })
     }
     when (/help/i) {

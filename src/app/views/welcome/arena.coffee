@@ -1,16 +1,11 @@
 define [
-    'App'
     'backbone'
     'marionette'
-    'jquery'
-    'hbs!templates/all/main/welcome/arena'
+    'hbs!templates/welcome/arena'
     'image!/img/starmap1.jpg'
-    'jqueryui'
 ], (
-    App
     Backbone
     Marionette
-    $
     templateWelcomeArena
     imageStarmap
 ) ->

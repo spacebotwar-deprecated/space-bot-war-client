@@ -1,14 +1,15 @@
 define [
-    'jquery'
-    'hbs!templates/all/main/loggedIn'
-    'hbs!templates/all/main/loggedOut'
     'backbone'
     'marionette'
+    'jquery'
+    'hbs!templates/main/loggedIn'
+    'hbs!templates/main/loggedOut'
 ], (
+    Backbone
+    Marionette
     $
     templateLoggedIn
     templateLoggedOut
-    Backbone
 ) ->
     class LoginStatus extends Backbone.Marionette.ItemView
         render: () ->

@@ -1,27 +1,21 @@
 define [
     'my-config'
-    'jquery'
     'backbone'
     'marionette'
+    'jquery'
     'app/components/lobby'
     'app/components/player'
     'app/components/match'
     'app/components/start'
-    'underscore'
-    'handlebars'
-    'humane'
 ], (
     MyConfig
-    $
     Backbone
     Marionette
+    $
     Lobby
     Player
     Match
     Start
-    _
-    Handlebars
-    Humane
 ) ->
 
     app     = new Backbone.Marionette.Application

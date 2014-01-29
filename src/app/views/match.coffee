@@ -1,12 +1,10 @@
 define [
-    'App'
     'backbone'
     'marionette'
     'jquery'
     'models/match'
     'jqueryui'
 ], (
-    App
     Backbone
     Marionette
     $

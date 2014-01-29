@@ -1,12 +1,11 @@
 define [
-    'jquery'
-    'hbs!templates/dt/main/header'
     'backbone'
     'marionette'
+    'hbs!templates/main/header'
 ], (
-    $
-    templateHeader
     Backbone
+    Marionette
+    templateHeader
 ) ->
     class Header extends Backbone.Marionette.ItemView
         template: templateHeader

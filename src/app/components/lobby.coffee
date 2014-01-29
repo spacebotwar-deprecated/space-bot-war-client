@@ -3,7 +3,11 @@ define [
 ], (
 
 ) ->
-    console.log 'lobby load'
+    # Entry point for the Space Bot War Chat system.
+    class Lobby
+        init: () ->
+            # Here 'this' is the Marionette application defined in app/app.js
+    return Lobby
 
 # define([
 #     'my-config',

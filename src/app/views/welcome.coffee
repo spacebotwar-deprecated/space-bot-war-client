@@ -2,20 +2,17 @@ define [
     'app/app'
     'backbone'
     'marionette'
-    'jquery'
-    'hbs!templates/all/main/welcome'
     'app/views/welcome/intro'
     'app/views/welcome/arena'
     'app/models/match'
+    'hbs!templates/main/welcome'
 ], (
-    App
     Backbone
     Marionette
-    $
-    templateWelcome
     ViewWelcomeIntro
     ViewWelcomeArena
     ModelMatch
+    templateWelcome
 ) ->
     
     class Welcome extends Backbone.Marionette.Layout

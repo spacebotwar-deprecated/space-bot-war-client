@@ -1,9 +1,9 @@
 define [
-    "jquery"
     "backbone"
+    "marionette"
 ], (
-    $
     Backbone
+    Marionette
 ) ->
     
     class LoginStatus extends Backbone.Model

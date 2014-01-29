@@ -1,14 +1,14 @@
 define [
-    "jquery"
     "backbone"
-    "models/ship"
+    "marionette"
+    "app/models/ship"
 ], (
-    $
     Backbone
-    Ship
+    Marionette
+    ModelShip
 ) ->
     class Ships extends Backbone.Collection
-        model: Ship
+        model: ModelShip
 
         # Let the collection know that a tick has occurred
         # Perhaps we should do this with an event, but I am not sure

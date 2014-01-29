@@ -1,15 +1,15 @@
 define [
-    "jquery"
     "backbone"
-    'image!/img/sp_ship.png'
+    "marionette"
+    'image!img/sp_ship.png'
 ], (
-    $
     Backbone
+    Marionette
     ImageShip
 ) ->
     class Images extends Backbone.Model
         defaults:
             id   : 0
             ship : ImageShip
-
+    
     return Images

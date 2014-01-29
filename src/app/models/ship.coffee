@@ -1,10 +1,11 @@
 define [
-    "jquery"
     "backbone"
-    'models/images'
+    "marionette"
+    'app/models/images'
 ], (
     $
     Backbone
+    Marionette
     ModelImages
 ) ->
     class Ship extends Backbone.Model

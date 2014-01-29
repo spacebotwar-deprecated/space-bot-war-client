@@ -23,6 +23,7 @@ path    = require 'path'
 
 startDevelopmentWebServer = (port) ->
     port = port or process.env.PORT or 8001
+    console.log process.env
     app = connect()
     app.use connect.logger 'dev'
     for directory in ['src', 'public']
@@ -31,6 +32,7 @@ startDevelopmentWebServer = (port) ->
 
     console.log 'Welcome to SpaceBotWar!'
     console.log "Hit http://localhost:#{port} and git to work!!"
+    # ^ see what I did there! ;-)
 
 
 

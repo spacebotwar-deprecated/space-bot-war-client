@@ -13,6 +13,7 @@ require.config
         "backbone"       : "js-libs/backbone"
         "marionette"     : "js-libs/backbone.marionette"
         "handlebars"     : "js-libs/handlebars"
+        "i18nprecompile" : "js-libs/i18nprecompile"
         "hbs"            : "js-libs/hbs"
         "json2"          : "js-libs/json2"
         "humane"         : "js-libs/humane"

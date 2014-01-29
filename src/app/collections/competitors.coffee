@@ -1,10 +1,10 @@
 define [
-    "jquery"
     "backbone"
-    "models/competitor"
+    "marionette"
+    "app/models/competitor"
 ], (
-    $
     Backbone
+    Marionette
     Competitor
 ) ->
 

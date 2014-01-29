@@ -1,14 +1,10 @@
 define [
-    'App'
     'backbone'
     'marionette'
-    'jquery'
-    'hbs!templates/all/main/welcome/intro'
+    'hbs!templates/main/welcome/intro'
 ], (
-    App
     Backbone
     Marionette
-    $
     templateIntro
 ) ->
     class Intro extends Backbone.Marionette.Layout

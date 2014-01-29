@@ -1,14 +1,13 @@
 define [
-    'jquery'
     'backbone'
     'marionette'
-    'hbs!templates/all/main/register'
+    'hbs!templates/main/register'
 ], (
-    $
     Backbone
-    template
+    Marionette
+    templateRegister
 ) ->
     class Register extends Backbone.Marionette.ItemView
-        template: template
+        template: templateRegister
 
     return Register

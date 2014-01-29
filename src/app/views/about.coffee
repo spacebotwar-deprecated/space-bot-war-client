@@ -1,12 +1,11 @@
 define [
-    'jquery'
-    'hbs!templates/dt/main/about'
     'backbone'
     'marionette'
+    'hbs!templates/main/about'
 ], (
-    $
-    templateAbout
     Backbone
+    Marionette
+    templateAbout
 ) ->
     class About extends Backbone.Marionette.ItemView
         template: templateAbout
