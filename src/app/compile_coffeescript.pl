@@ -1,5 +1,12 @@
 #!/usr/bin/perl
 
+=head2
+
+    NOTE:   this is a temp script while getting the client to use.
+            the next step here is to use a GulpJS task.
+
+=cut
+
 use strict;
 use warnings;
 use v5.10;
@@ -9,8 +16,7 @@ use Data::Dumper;
 
 use File::Spec;
 
-# TODO: cpanm IPC::System::Simple
-#use autodie qw(system);
+use autodie qw(system);
 
 my $compiled_count = 0;
 find(\&wanted, './');

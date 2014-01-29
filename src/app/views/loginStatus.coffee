@@ -1,7 +1,7 @@
 define [
     'jquery'
-    'hbs!templates/all/main/logged_in'
-    'hbs!templates/all/main/logged_out'
+    'hbs!templates/all/main/loggedIn'
+    'hbs!templates/all/main/loggedOut'
     'backbone'
     'marionette'
 ], (

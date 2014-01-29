@@ -1,12 +1,12 @@
 define [
-    'App'
+    'app/app'
     'backbone'
     'marionette'
     'jquery'
     'hbs!templates/all/main/welcome'
-    'views/dt/main/welcome/intro'
-    'views/dt/main/welcome/arena'
-    'models/match'
+    'app/views/welcome/intro'
+    'app/views/welcome/arena'
+    'app/models/match'
 ], (
     App
     Backbone

@@ -14,7 +14,6 @@ require.config
         "marionette"     : "js-libs/backbone.marionette"
         "handlebars"     : "js-libs/handlebars"
         "hbs"            : "js-libs/hbs"
-        "i18nprecompile" : "js-libs/i18nprecompile"
         "json2"          : "js-libs/json2"
         "humane"         : "js-libs/humane"
 
@@ -64,11 +63,8 @@ require.config
     # hbs config
     hbs:
         templateExtension : "html"
-        helperDirectory   : "templates/helpers/"
-        i18nDirectory     : "templates/i18n/"
-
-        # Options object which is passed to Handlebars compiler.
-        compileOptions    : {}
+        disableI18n       : true
+        disableHelpers    : true
 
 requirejs [
 ], (
@@ -85,10 +81,15 @@ requirejs [
 
     if not mobile
         require ['app/init/desktopInit'], (thing={}) ->
+            # do something
             console.log thing
     else
         # TODO: fix this miserable mess!
-        error =  'We have absolutely zero mobile support! Use with caution!'
+        error =  '
+            We have absolutely zero mobile support! Use with caution!
+        '
         alert error
         throw new Error error
-        require 'init/mobileInit'
+        require ['init/mobileInit'], (thing={}) ->
+            # do something
+            console.log thing
