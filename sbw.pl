@@ -16,6 +16,13 @@ given ($task) {
             gulp $1 --require coffee-script;
         });
     }
+    when (/develop/i) {
+        my $port = $ARGV[1] // "";
+        my $foo  = $port ? "PORT=$port" : "";
+        run_command(qq{
+            $foo gulp develop --require coffee-script;
+        })
+    }
     when (/help/i) {
         display_help_message();
         exit;
@@ -48,5 +55,7 @@ sub display_help_message {
 
 sub run_command {
     my $foo = shift;
+    # TODO: do we need to strip all the weird whitespace of this?
+    # say $foo;
     system $foo;
 }
