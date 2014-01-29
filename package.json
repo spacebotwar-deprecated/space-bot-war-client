@@ -20,7 +20,10 @@
     "express": "3.x",
     "gulp": "~3.5.x",
     "coffee-script": "~1.6.x",
-    "gulp-nodemon": "~0.1.2"
+    "gulp-util": "~2.2.13",
+    "connect": "~2.12.0",
+    "chalk": "~0.4.0",
+    "gulp-coffee": "~1.3.0"
   },
   "main": "./dev-server/dev-server.coffee",
   "keywords": [

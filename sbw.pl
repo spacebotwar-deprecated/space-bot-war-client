@@ -13,18 +13,7 @@ my $task = $ARGV[0] // "";
 given ($task) {
     when (/(build|test|compile|develop)/i) {
         run_command(qq{
-            cd ..;
-            gulp --require coffee-script $1;
-        });
-    }
-    # TODO: make nodemon watch the src/app dir for changes to .coffee files AND
-    # changes in the src/templates dir for .html files. Also, nodemon should
-    # be launched from the gulp develop task. Work to be done.
-    when (/server/i) {
-        die;
-        my $port = $ARGV[1] // 8001;
-        run_command(qq{
-            PORT=$port nodemon dev-server.coffee -e coffee,html;
+            gulp $1 --require coffee-script;
         });
     }
     when (/help/i) {

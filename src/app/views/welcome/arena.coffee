@@ -24,7 +24,7 @@ define [
         canvasTick: () ->
             if @context?
 
-                console.log '######### arena canvasTick ##############'
+                console.log '####### arena canvasTick #######'
                 @context.clearRect 0, 0, 3000, 3000
                 @context.beginPath()
                 @context.arc 1500, 1500, 1495, 0, Math.PI * 2, yes
