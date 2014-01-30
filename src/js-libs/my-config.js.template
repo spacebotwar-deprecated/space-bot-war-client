@@ -13,8 +13,6 @@ define([], function() {
             arena: 'ws://spacebotwar.com:5000/ws/arena',
             // Play a game
             match: 'ws://spacebotwar.com:5000/ws/match',
-            // Player code
-            player: 'ws://spacebotwar.com:5000/ws/player'
         },
         // Unused for the moment
         radius_api_key: "78855680-671c-4c70-b194-2e392a0a7c81"

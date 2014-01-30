@@ -17,7 +17,7 @@ given ($task) {
         });
     }
     when (/develop/i) {
-        my $port = $ARGV[1] or 8001;
+        my $port = $ARGV[1] || 8001;
         run_command(qq{
             export PORT=1203;
             gulp develop --require coffee-script;
