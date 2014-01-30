@@ -22,8 +22,8 @@ function(
 
             // Vas: I don't see this doing anything  atm so commenting to  avoid
             //      confusion while debugging other stuff.
-            self.connection = new Connection(MyConfig.web_socket_player_url,"wsp");
-            self.connection.init();
+//            self.connection = new Connection(MyConfig.webSocketUrls.player,"wsp");
+//            self.connection.init();
 
             Backbone.on("wsp:send", function(data) {
                 console.log("wsp:send " + JSON.stringify(data));
