@@ -11,7 +11,7 @@ use feature 'switch';
 my $task = $ARGV[0] // "";
 
 given ($task) {
-    when (/(build|test|compile|develop)/i) {
+    when (/(build|test|compile)/i) {
         run_command(qq{
             gulp $1 --require coffee-script;
         });
@@ -19,8 +19,7 @@ given ($task) {
     when (/develop/i) {
         my $port = $ARGV[1] || 8001;
         run_command(qq{
-            export PORT=1203;
-            gulp develop --require coffee-script;
+            PORT=$port gulp develop --require coffee-script;
         })
     }
     when (/help/i) {
@@ -55,7 +54,11 @@ sub display_help_message {
 
 sub run_command {
     my $foo = shift;
-    # TODO: do we need to strip all the weird whitespace of this?
+    
+    # Strip any whitespace or newlines off. I don't know weather it prevents
+    # any errors but it makes $foo read more clearly when printed. Or something.
+    $foo =~ s/  //g;
+    $foo =~ s/\n//g;
     # say $foo;
     system $foo;
 }

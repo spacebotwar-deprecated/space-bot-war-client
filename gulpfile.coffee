@@ -23,7 +23,6 @@ path    = require 'path'
 
 startDevelopmentWebServer = (port) ->
     port = port or process.env.PORT or 8001
-    console.log process.env
     app = connect()
     app.use connect.logger 'dev'
     for directory in ['src', 'public']
@@ -45,7 +44,7 @@ tasks =
         throw new Error 'Error: Testing not implemented!'
 
     build: () ->
-        console.log 'building the code thing'
+        console.log 'Not implemented!'
 
         ###
             TODO:
