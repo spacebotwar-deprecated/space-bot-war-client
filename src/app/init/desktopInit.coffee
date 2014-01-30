@@ -6,12 +6,12 @@ define [
 ], (
     App
     AppRouter
-    DesktopppController
+    DesktopController
     SbwInit
 ) ->
     # Add in the routes.
     App.appRouter = new AppRouter
-        controller: new AppController
+        controller: new DesktopController
 
     # Setup other stuff that is desktop/mobile agnostic.
     new SbwInit

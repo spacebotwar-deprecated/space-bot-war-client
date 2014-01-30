@@ -7,7 +7,12 @@ define [
     Marionette
     ImageShip
 ) ->
-    class Images extends Backbone.Model
+    # class Images extends Backbone.Model
+    #     defaults:
+    #         id   : 0
+    #         ship : ImageShip
+
+    Images = Backbone.Model.extend
         defaults:
             id   : 0
             ship : ImageShip

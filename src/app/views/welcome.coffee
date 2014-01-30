@@ -1,5 +1,4 @@
 define [
-    'app/app'
     'backbone'
     'marionette'
     'app/views/welcome/intro'
