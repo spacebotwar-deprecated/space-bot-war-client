@@ -1,7 +1,7 @@
 define [
     'backbone'
     'marionette'
-    'hbs!templates/main/footer'
+    'hbs!/templates/main/footer'
 ], (
     Backbone
     Marionette

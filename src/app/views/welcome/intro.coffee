@@ -2,7 +2,7 @@ define [
     'app/app'
     'backbone'
     'marionette'
-    'hbs!templates/welcome/intro'
+    'hbs!/templates/welcome/intro'
 ], (
     App
     Backbone

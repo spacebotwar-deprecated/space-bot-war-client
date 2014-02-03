@@ -1,7 +1,7 @@
 define [
     'backbone'
     'marionette'
-    'hbs!templates/welcome/arena'
+    'hbs!/templates/welcome/arena'
     'image!/img/starmap1.jpg'
 ], (
     Backbone

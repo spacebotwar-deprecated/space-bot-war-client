@@ -4,7 +4,7 @@ define [
     'app/views/welcome/intro'
     'app/views/welcome/arena'
     'app/models/match'
-    'hbs!templates/main/welcome'
+    'hbs!/templates/main/welcome'
 ], (
     Backbone
     Marionette

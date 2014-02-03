@@ -2,8 +2,8 @@ define [
     'backbone'
     'marionette'
     'jquery'
-    'hbs!templates/main/loggedIn'
-    'hbs!templates/main/loggedOut'
+    'hbs!/templates/main/loggedIn'
+    'hbs!/templates/main/loggedOut'
 ], (
     Backbone
     Marionette
