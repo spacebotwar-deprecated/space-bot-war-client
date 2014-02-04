@@ -3,11 +3,13 @@ define [
     'marionette'
     'hbs!/templates/welcome/arena'
     'image!/img/starmap1.jpg'
+    'jqueryviewport'
 ], (
     Backbone
     Marionette
     templateWelcomeArena
     imageStarmap
+    ViewPort
 ) ->
     class Arena extends Backbone.Marionette.Layout
         template: templateWelcomeArena
@@ -36,7 +38,7 @@ define [
         render: () ->
             @$el.html this.template()
             console.log "######### arena (welcome) render! ##############"
-            
+
             @$(".draggable_canvas").draggable
                 containment: "parent"
             canvas = @$("#draggable_canvas")[0]
