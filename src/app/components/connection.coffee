@@ -1,14 +1,14 @@
 define [
-    'backbone',
-    'marionette',
-    'humane',
-    'jquery',
+    'backbone'
+    'marionette'
+    'humane'
+    'jquery'
     'jquery.json'
 ], (
-    Backbone,
-    Marionette,
-    Humane,
-    $,
+    Backbone
+    Marionette
+    Humane
+    $
     JSON
 ) ->
 
@@ -49,7 +49,7 @@ define [
                 console.error "ERROR: #{content.code} - #{content.message}"
 
         send: (data={}) =>
-            console.log "Sending #{JSON.stringify data} to  #{@url}"
-            #@connection.send JSON.stringify data
+            console.log "Sending #{$.toJSON data} to  #{@url}"
+            #@connection.send $.toJSON data
 
     return Connection

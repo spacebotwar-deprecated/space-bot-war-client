@@ -3,12 +3,14 @@ define [
     'marionette'
     'hbs!/templates/welcome/arena'
     'image!/img/starmap1.jpg'
+    'jquery'
     'jqueryviewport'
 ], (
     Backbone
     Marionette
     templateWelcomeArena
     imageStarmap
+    $
     ViewPort
 ) ->
     class Arena extends Backbone.Marionette.Layout
@@ -31,8 +33,10 @@ define [
 
                 # Render each ship
                 ships = @model.get 'ships'
-                ships.each () ->
-                    ship.render @context
+                ships.each (ship) =>
+                    # I don't know how to do this in coffee.script
+                    #`$(this).render(_this.context)`
+                    ship.render(@context)
 
         ## TODO: haven't I seen this code before??????
         render: () ->

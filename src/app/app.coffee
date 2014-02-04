@@ -44,7 +44,7 @@ define [
     # Warning: I don't have enough nice words to describe how I feel about this
     # piece of code. So I won't use nice words.
     # This is the dumbest piece of shit hack I've done in ages. After hours
-    # of trying to figure this out I find that it's just Marionette being 
+    # of trying to figure this out I find that it's just Marionette being
     # fucking retarded and trying to do everything itself.
     # TODO: really, I mean it, revamp the template loading, real good.
     Backbone.Marionette.TemplateCache.prototype.loadTemplate = (foo) -> foo
