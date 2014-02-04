@@ -44,7 +44,8 @@ define [
                 Humane.error content.message
                 console.error "ERROR: #{content.code} - #{content.message}"
 
-        send: () ->
-            @connection.send JSON.stringify data
+        send: (data={}) ->
+            console.log "Sending #{JSON.stringify data} to  #{@url}"
+            #@connection.send JSON.stringify data
 
     return Connection
