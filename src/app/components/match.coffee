@@ -27,6 +27,6 @@ define [
             # });
 
             # Just to indicate this works
-            console.log 'Match.init()'
+            #console.log 'Match.init()'
 
     return Match

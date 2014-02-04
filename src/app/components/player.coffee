@@ -28,6 +28,6 @@ define [
             # });
 
             # Just to indicate this works
-            console.log 'Player.init()'
+            #console.log 'Player.init()'
  
     return Player

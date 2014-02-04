@@ -22,16 +22,16 @@ define [
             @connection.onopen      = @onOpen
             @connection.onmessage   = @onMessage
 
-        onError: () ->
+        onError: (e={}) ->
             console.log "#{@prefix}:error", e
             Backbone.trigger "#{@prefix}:error", e
 
-        onOpen: () ->
+        onOpen: (e={}) ->
             Backbone.trigger "#{@prefix}:connected"
             console.log "#{@prefix}:connected"
             console.log "Successfully connected to #{@url}"
 
-        onMessage: () ->
+        onMessage: (e={}) ->
             data    = $.evalJSON e.data
             route   = data.route
             content = data.content

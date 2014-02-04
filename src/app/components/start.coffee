@@ -17,17 +17,12 @@ define [
     # The Start Module is responsible for handling login and registration
     #
     class Start
-        init: () ->
-            # In here 'this' refers to the Marionette App defined in app.js
+        init: () =>
+
             @connection = new Connection MyConfig.webSocketUrls.start, 'ws'
             @connection.init()
 
             @initEvents()
-
-            # Not used
-            # Backbone.on("ws:send", function(data) {
-            #   console.log("ws:send " + JSON.stringify(data));
-            # });
                
         initEvents: () ->
 

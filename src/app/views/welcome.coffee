@@ -22,7 +22,7 @@ define [
             arena : '#arena'
 
         render = () ->
-            @$el.html(@template)
+            @$el.html @template()
             @intro.show new ViewWelcomeIntro
             @arena.show new ViewWelcomeArena
                 model : new ModelMatch

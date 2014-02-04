@@ -81,9 +81,9 @@ requirejs [
     mobile = /iPhone|iPod|iPad|Android|BlackBerry|Opera Mini|IEMobile/.test userAgent
 
     if not mobile
-        require ['app/init/desktopInit'], (thing={}) ->
+        require ['app/init/desktopInit'], () ->
             # do something
-            console.log thing
+            alert 'loaded'
     else
         # TODO: fix this miserable mess!
         error =  '

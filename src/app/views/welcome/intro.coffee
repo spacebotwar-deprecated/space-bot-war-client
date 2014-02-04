@@ -13,4 +13,4 @@ define [
         template: templateWelcomeIntro
 
         render: () ->
-            @$el.html(@template)
+            @$el.html @template()

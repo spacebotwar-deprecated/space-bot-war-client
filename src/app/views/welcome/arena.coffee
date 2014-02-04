@@ -34,9 +34,9 @@ define [
 
         ## TODO: haven't I seen this code before??????
         render: () ->
-            @$el.html this.template
+            @$el.html this.template()
             console.log "######### arena (welcome) render! ##############"
-           
+            
             @$(".draggable_canvas").draggable
                 containment: "parent"
             canvas = @$("#draggable_canvas")[0]

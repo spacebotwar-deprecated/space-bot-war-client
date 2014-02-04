@@ -11,6 +11,6 @@ define [
         template: templateIntro
 
         render: () ->
-            @$el.html(@template)
+            @$el.html @template()
 
     return Intro
