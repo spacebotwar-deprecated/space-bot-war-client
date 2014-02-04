@@ -1,11 +1,15 @@
 define [
     'backbone',
     'marionette',
-    'humane'
+    'humane',
+    'jquery',
+    'jquery.json'
 ], (
     Backbone,
     Marionette,
-    Humane
+    Humane,
+    $,
+    JSON
 ) ->
 
     class Connection
@@ -13,7 +17,7 @@ define [
         constructor: (url, prefix) ->
             @url    = url
             @prefix = prefix
-        
+
         init: () ->
             console.log "Debug: attempting connection to #{@url}"
             @connection = new WebSocket @url
@@ -22,16 +26,16 @@ define [
             @connection.onopen      = @onOpen
             @connection.onmessage   = @onMessage
 
-        onError: (e={}) ->
+        onError: (e={}) =>
             console.log "#{@prefix}:error", e
             Backbone.trigger "#{@prefix}:error", e
 
-        onOpen: (e={}) ->
+        onOpen: (e={}) =>
             Backbone.trigger "#{@prefix}:connected"
             console.log "#{@prefix}:connected"
             console.log "Successfully connected to #{@url}"
 
-        onMessage: (e={}) ->
+        onMessage: (e={}) =>
             data    = $.evalJSON e.data
             route   = data.route
             content = data.content
@@ -44,7 +48,7 @@ define [
                 Humane.error content.message
                 console.error "ERROR: #{content.code} - #{content.message}"
 
-        send: (data={}) ->
+        send: (data={}) =>
             console.log "Sending #{JSON.stringify data} to  #{@url}"
             #@connection.send JSON.stringify data
 

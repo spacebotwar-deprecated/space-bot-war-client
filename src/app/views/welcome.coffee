@@ -13,7 +13,7 @@ define [
     ModelMatch
     templateWelcome
 ) ->
-    
+
     class Welcome extends Backbone.Marionette.Layout
         template: templateWelcome
 
@@ -28,3 +28,4 @@ define [
                 model : new ModelMatch
 
     return Welcome
+
