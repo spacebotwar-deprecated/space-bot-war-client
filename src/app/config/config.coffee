@@ -29,38 +29,38 @@ require.config
     shim:
         # Twitter Bootstrap jQuery plugins
         "bootstrap" : ["jquery"]
-        
+
         # jQueryUI
         "jqueryui" : ["jquery"]
-        
+
         # viewport
         "jqueryviewport" : ["jqueryui"]
 
         "ocanvas":
             "exports" : "oCanvas"
-        
+
         # Backbone
         "backbone":
             # Depends on underscore/lodash and jQuery
             "deps" : ["underscore", "jquery"]
             # Exports the global window.Backbone object
             "exports" : "Backbone"
-        
+
         # Marionette
         "marionette":
             "deps" : ["underscore", "backbone", "jquery"]
             "exports" : "Marionette"
-        
+
         # Handlebars
         "handlebars":
             "exports" : "Handlebars"
-        
+
         # Backbone.validateAll plugin that depends on Backbone
         "backbone.validateAll" : ["backbone"]
 
         "jquery.json":
             "deps" : ["jquery"]
-    
+
     # hbs config
     hbs:
         templateExtension : "html"
@@ -83,7 +83,6 @@ requirejs [
     if not mobile
         require ['app/init/desktopInit'], () ->
             # do something
-            alert 'loaded'
     else
         # TODO: fix this miserable mess!
         error =  '
