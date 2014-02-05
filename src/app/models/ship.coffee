@@ -23,7 +23,7 @@ define [
     #         previous_y           : 0
     #         previous_orientation : 0.6
     #         tick                 : 0
-        
+
     #     # Model Constructor
     #     initialize: () ->
     #         @images = new ModelImages
@@ -62,7 +62,7 @@ define [
             previous_y           : 0
             previous_orientation : 0.6
             tick                 : 0
-        
+
         # Model Constructor
         initialize: () ->
             @images = new ModelImages
@@ -80,7 +80,7 @@ define [
         render: (context={}) ->
             console.log "Model:Ship:render #{@get 'id'} x=#{@get 'x'} y=#{@get 'y'}"
             context.save()
-            context.translate @get('x' + 1000), 1000 - @get 'y'
+            context.translate @get('x') + 1000, 1000 - @get 'y'
             context.rotate @get 'orientation'
             context.drawImage @image, -20, -20
             context.restore()
