@@ -4,8 +4,6 @@ use strict;
 use warnings;
 use v5.10;
 
-# I don't know weather this is needed or not. Seems to work with or without
-# on my v5.14 box. :/
 use feature 'switch';
 
 my $task = $ARGV[0] // "";
