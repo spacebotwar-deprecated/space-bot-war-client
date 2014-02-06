@@ -11,13 +11,13 @@ my $task = $ARGV[0] // "";
 given ($task) {
     when (/(build|test|compile)/i) {
         run_command(qq{
-            gulp $1 --require coffee-script;
+            gulp $1 --require coffee-script/register;
         });
     }
     when (/develop/i) {
         my $port = $ARGV[1] || 8001;
         run_command(qq{
-            PORT=$port gulp develop --require coffee-script;
+            PORT=$port gulp develop --require coffee-script/register;
         })
     }
     when (/help/i) {

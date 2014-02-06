@@ -22,15 +22,16 @@ http    = require 'http'
 path    = require 'path'
 
 startDevelopmentWebServer = (port) ->
-    port = port or process.env.PORT or 8001
+    port or= process.env.PORT or 8001
     app = connect()
     app.use connect.logger 'dev'
     for directory in ['src', 'public']
         app.use connect.static path.join __dirname, directory
-    http.createServer(app).listen(port)
+    http.createServer app
+    .listen port
 
-    console.log 'Welcome to SpaceBotWar!'
-    console.log "Hit http://localhost:#{port} and git to work!!"
+    gutil.log 'Server:', 'Welcome to SpaceBotWar!'
+    gutil.log 'Server:', "Hit http://localhost:#{port} and git to work!!"
     # ^ see what I did there! ;-)
 
 
@@ -62,10 +63,11 @@ tasks =
         gulp.watch 'src/templates/**/*.html', ['compile']
 
     compile: () ->
-        # TODO: this is ugly, Coffeescript 1.7.0 allows this to look nicer, but 
-        # we have dependencies that need 1.6.3. For now. :D
-        gulp.src(['src/app/**/*.coffee'])
-            .pipe(coffee({bare:yes, sourceMap:yes}).on('error', gutil.log))
-            .pipe(gulp.dest('src/app'))
+        gulp.src ['src/app/**/*.coffee']
+            .pipe coffee(
+                bare      : yes
+                sourceMap : yes
+            ).on 'error', gutil.log
+            .pipe gulp.dest 'src/app'
 
 gulp.task name, task for name, task of tasks

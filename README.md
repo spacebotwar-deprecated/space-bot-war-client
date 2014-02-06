@@ -24,5 +24,4 @@ with this, sometime?? :)
 - Find a way to not need to use global versions of gulp and coffee because they
 can only be updated manually, which is annoying because combined, they update 
 (fairly) often.
-- Look at the following gulpjs modules: jshint, concat, bump, 
-coffeelint, size
+- Look at the following gulpjs modules: jshint, coffeelint, size
