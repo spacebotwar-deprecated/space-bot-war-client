@@ -48,10 +48,11 @@ tasks =
 
         ###
             TODO:
-                - Concat all files
-                - Test all the stuff (QUnit, JSHint)
-                - Uglify it
-                - do stuff with the css and images (maybe? TODO!)
+                - Compile all the CoffeeScript to JavaScript
+                - Use r.js to concatenate it and all deps
+                - Run the Google Closure Compiler on it
+                - Dump the remains into public/dist to be used my 
+                  public/production.html (which also needs to be done)
         ###
 
     develop: () ->
