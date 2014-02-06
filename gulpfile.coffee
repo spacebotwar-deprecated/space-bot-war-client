@@ -2,6 +2,7 @@
 
 gulp    = require 'gulp'
 gutil   = require 'gulp-util'
+bower   = require 'bower'
 chalk   = require 'chalk'
 
 # Gulp plugins
@@ -30,8 +31,8 @@ startDevelopmentWebServer = (port) ->
     http.createServer app
     .listen port
 
-    gutil.log 'Server:', 'Welcome to SpaceBotWar!'
-    gutil.log 'Server:', "Hit http://localhost:#{port} and git to work!!"
+    gutil.log 'Welcome to SpaceBotWar!'
+    gutil.log "Hit http://localhost:#{port} and git to work!!"
     # ^ see what I did there! ;-)
 
 
@@ -40,34 +41,46 @@ startDevelopmentWebServer = (port) ->
     Just a clean way to define tasks. Because OCD.
 ###
 tasks =
-    test: () ->
-        # TODO
-        throw new Error 'Error: Testing not implemented!'
+    test:
+        deps: []
+        func: () ->
+            # TODO
+            gutil.log chalk.red 'Error: Testing not implemented!'
 
-    build: () ->
-        console.log 'Not implemented!'
+    build:
+        deps: ['compile', 'test']
+        func: () ->
 
-        ###
-            TODO:
-                - Compile all the CoffeeScript to JavaScript
-                - Use r.js to concatenate it and all deps
-                - Run the Google Closure Compiler on it
-                - Dump the remains into public/dist to be used my 
-                  public/production.html (which also needs to be done)
-        ###
+            ###
+                TODO:
+                    - Use r.js to concatenate it and all deps
+                    - Run the Google Closure Compiler on it
+                    - Dump the remains into public/dist to be used my 
+                      public/production.html (which also needs to be done)
+            ###
 
-    develop: () ->
-        startDevelopmentWebServer()
+    develop: 
+        deps: ['compile']
+        func: () ->
+            startDevelopmentWebServer()
 
-        gulp.watch 'src/app/**/*.coffee', ['compile']
-        gulp.watch 'src/templates/**/*.html', ['compile']
+            gulp.watch 'src/app/**/*.coffee', ['compile']
+            gulp.watch 'src/templates/**/*.html', ['compile']
 
-    compile: () ->
-        gulp.src ['src/app/**/*.coffee']
-            .pipe coffee(
-                bare      : yes
-                sourceMap : yes
-            ).on 'error', gutil.log
-            .pipe gulp.dest 'src/app'
+    compile:
+        deps: []
+        func: () ->
+            gulp.src ['src/app/**/*.coffee']
+                .pipe coffee(
+                    bare      : yes
+                    sourceMap : yes
+                ).on 'error', gutil.log
+                .pipe gulp.dest 'src/app'
 
-gulp.task name, task for name, task of tasks
+    updatedeps:
+        deps: []
+        func: () ->
+            # npm update
+            # bower install
+
+gulp.task name, task.deps, task.func for name, task of tasks

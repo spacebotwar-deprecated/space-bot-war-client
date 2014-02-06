@@ -1,0 +1,19 @@
+{
+  "name": "SpaceBotWar",
+  "version": "0.0.4",
+  "homepage": "https://github.com/spacebotwar/space-bot-war-client",
+  "authors": [
+    "Vasari <nmccallum7@gmail.com>"
+  ],
+  "description": "SpaceBotWar",
+  "license": "null",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/js-libs",
+    "test",
+    "tests"
+  ]
+}

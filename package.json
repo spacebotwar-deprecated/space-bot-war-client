@@ -22,9 +22,9 @@
     "coffee-script": "*",
     "connect": "*",
     "chalk": "*",
-
     "gulp-coffee": "*",
-    "gulp-coffeelint": "*"
+    "gulp-coffeelint": "*",
+    "bower": "*"
   },
   "main": "./sbw.pl develop",
   "keywords": [
