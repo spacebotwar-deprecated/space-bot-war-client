@@ -13,7 +13,7 @@ define [
 
         defaults:
             tick_count : 0
-        
+
         # Model Constructor
         initialize: () ->
             competitors = new CollectionCompetitors @get "competitors"
@@ -26,27 +26,25 @@ define [
             Backbone.on "wsm:recv:/match_status",   @match_status, @
             @on 'change', @stats, @
 
-        stats: (data={}) ->
-            console.log "model stats"
+        match_tick: (data={}) ->
+            @tick_ships data
+
+            # updating 'tick_count' ensures that the view is triggered on every model tick
+            console.log "######## model/match.coffee tick ########"
+            @set 'tick_count', @get('tick_count') + 1
+
+        match_status: (data={}) ->
+            @tick_ships data
 
         # It would be nice if the model 'set' method also recursively set the
         # collections but I don't think it does. So we have to do it here.
-        match_tick: (data={}) ->
+        tick_ships: (data={}) ->
             ships = @get "ships"
             ships.tick()
             ships.set data.content.ships
 
-            # updating 'tick_count' ensures that the view is triggered on every model tick
-            @set 'tick_count', @get('tick_count') + 1
-            @stats()
+        stats: (data={}) ->
+            console.log "model/match change"
 
-        match_status: (data={}) ->
-            ships = @get "ships"
-            ships.tick()
-            ships.set data.content.ships
-
-        # Propagate the tick down to the components.
-        tick: () ->
-            @get("ships").tick()
 
     return Match

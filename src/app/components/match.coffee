@@ -15,19 +15,12 @@ define [
     class Match
         init: () ->
             # In  here 'this' refers to the Marionette App defined in app.js
-
-            # Vas: this is throwing WebSocket errors in my face while I'm
-            #      trying to debug something else. Not doing anything anyway.
-            #      Commented out for now.
-            if MyConfig.displayWelcomeMatch?
+            if MyConfig.displayWelcomeMatch? and MyConfig.displayWelcomeMatch
                 @connection = new Connection MyConfig.webSocketUrls.match, "wsm"
                 @connection.init()
 
             Backbone.on "wsm:send", (data) ->
                 console.log "wsm:send " + JSON.stringify(data)
-
-            # Just to indicate this works
-            console.log "Match.init()"
 
     return Match
 

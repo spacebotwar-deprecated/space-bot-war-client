@@ -18,12 +18,19 @@ define [
 
         initialize: () ->
             @canvasImage = imageStarmap
-            @listenTo @model, 'change', @canvasTick
+            @listenTo @model, 'change', @modelChange
+            @canvasTick()
 
-        canvasTick: () ->
+        modelChange: () ->
+            # The model changes every 500ms (typically)
+            @lastTickTime  = Date.now()
+
+        canvasTick: () =>
+            # The canvas ticks 60 times a second (every 16.7 ms)
             if @context?
+                interval = Date.now() - @lastTickTime
 
-                console.log '####### arena canvasTick #######'
+#                console.log "####### arena canvasTick #{Date.now()} #{interval} #{@lastTickTime} #######"
                 @context.clearRect 0, 0, 3000, 3000
                 @context.beginPath()
                 @context.arc 1500, 1500, 1495, 0, Math.PI * 2, yes
@@ -34,11 +41,12 @@ define [
                 # Render each ship
                 ships = @model.get 'ships'
                 ships.each (ship) =>
-                    # I don't know how to do this in coffee.script
-                    #`$(this).render(_this.context)`
-                    ship.render(@context)
+                    ship.render(@context, interval)
+            requestAnimationFrame(@canvasTick)
 
-        ## TODO: haven't I seen this code before??????
+        # TODO: also appears in view/match.coffee at some point we should
+        #   factor it out...
+        #
         render: () ->
             @$el.html this.template()
             console.log "######### arena (welcome) render! ##############"
@@ -47,9 +55,6 @@ define [
                 containment: "parent"
             canvas = @$("#draggable_canvas")[0]
 
-            # TODO I have no idea why, but at this point canvas is 300x150
-            # so I have to set it to this size. Note, default is 300x150
-            # so perhaps that has something to do with it
             canvas.height = 3000
             canvas.width = 3000
             @context = canvas.getContext '2d'
