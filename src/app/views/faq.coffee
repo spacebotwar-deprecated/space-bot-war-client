@@ -1,13 +1,14 @@
 define [
     'backbone'
     'marionette'
-    'hbs!/templates/main/faq'
+    'app/util/templates'
 ], (
     Backbone
     Marionette
-    templateFaq
+    Templates
 ) ->
+    Templates.load 'main/faq', 'mainFaq'
     class Faq extends Backbone.Marionette.ItemView
-        template: templateFaq
+        template: Templates.get 'mainFaq'
 
     return Faq

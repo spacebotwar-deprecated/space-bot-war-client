@@ -29,7 +29,7 @@ startDevelopmentWebServer = (port) ->
     for directory in ['src', 'public']
         app.use connect.static path.join __dirname, directory
     http.createServer app
-    .listen port
+        .listen port
 
     gutil.log 'Welcome to SpaceBotWar!'
     gutil.log "Hit http://localhost:#{port} and git to work!!"

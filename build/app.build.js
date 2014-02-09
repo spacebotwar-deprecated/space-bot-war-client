@@ -1,22 +1,11 @@
-// ({
-//     baseUrl: '../src',
-//     dir: "../public/dist",
-//     name: 'app/config/config',
-//     mainConfigFile: '../src/app/config/config.js',
-//     optimize: 'none',
-//     optimizeCss: 'none',
-
-//     onBuildRead: function(name, path) {
-//         console.log(name + ', ' + path);
-//     }
-// })
-
 ({
     baseUrl: '../src',
     //mainConfigFile: '../src/app/config/config.js',
     name: 'app/config/config',
     out: '../public/dist/build.js',
     keepBuildDir: true,
+    optimize: 'none',
+    optimizeCss: 'none',
 
     paths: {
         "my-config": "js-libs/my-config",
@@ -59,50 +48,5 @@
         "jquery.json": {
             "deps": ["jquery"]
         }
-    },
-
-    hbs: {
-        templateExtension: "html",
-        disableI18n: true,
-        disableHelpers: true
-    },
-
-    onBuildRead: function(name, path, contents) {
-        console.log(name + ', ' + path);
-        // console.log(contents);
-
-        return contents;
     }
-}) 
-
-/*
-({
-    baseUrl: 'src',
-    out: 'Lacuna-Web-Client-jQuery-Build.js',
-    name: 'load',
-
-    keepBuildDir: true,
-
-    shim: {
-        jqueryUI: ['jquery'], // Attach jQueryUI to jQuery.
-        underscore: {
-            exports: '_'
-        },
-        zebra_cookie: ['jquery'] // Attach zebra_cookie to jQuery.
-    },
-
-    paths: {
-        jquery: 'js/jquery',
-        jqueryUI: 'js/jqueryUI',
-        zebra_cookie: 'js/zebra_cookie',
-        underscore: 'js/underscore'
-    },
-
-    onBuildRead: function(name, path, contents) {
-        console.log(name + ', ' + path + ', ' + contents);
-
-        return contents;
-    }
-    
 })
-*/

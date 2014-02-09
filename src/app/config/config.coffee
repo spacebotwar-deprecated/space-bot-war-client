@@ -13,8 +13,6 @@ require.config
         "backbone"       : "js-libs/backbone"
         "marionette"     : "js-libs/backbone.marionette"
         "handlebars"     : "js-libs/handlebars"
-        "i18nprecompile" : "js-libs/i18nprecompile"
-        "hbs"            : "js-libs/hbs"
         "json2"          : "js-libs/json2"
         "humane"         : "js-libs/humane"
 
@@ -61,12 +59,6 @@ require.config
         "jquery.json":
             "deps" : ["jquery"]
 
-    # hbs config
-    hbs:
-        templateExtension : "html"
-        disableI18n       : true
-        disableHelpers    : true
-
 requirejs [
 ], (
 
@@ -90,6 +82,6 @@ requirejs [
         '
         alert error
         throw new Error error
-        require ['init/mobileInit'], (thing={}) ->
+        require ['app/init/mobileInit'], (thing={}) ->
             # do something
             console.log thing

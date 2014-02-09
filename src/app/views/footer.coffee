@@ -1,13 +1,14 @@
 define [
     'backbone'
     'marionette'
-    'hbs!/templates/main/footer'
+    'app/util/templates'
 ], (
     Backbone
     Marionette
-    templateFooter
+    Templates
 ) ->
+    Templates.load 'main/footer', 'mainFooter'
     class Footer extends Backbone.Marionette.ItemView
-        template: templateFooter
+        template: Templates.get 'mainFooter'
 
     return Footer

@@ -1,13 +1,14 @@
 define [
     'backbone'
     'marionette'
-    'hbs!/templates/main/about'
+    'app/util/templates'
 ], (
     Backbone
     Marionette
-    templateAbout
+    Templates
 ) ->
+    Templates.load 'main/about', 'mainAbout'
     class About extends Backbone.Marionette.ItemView
-        template: templateAbout
+        template: Templates.get 'mainAbout'
 
     return About

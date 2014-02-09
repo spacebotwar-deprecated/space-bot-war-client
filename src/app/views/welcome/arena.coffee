@@ -1,20 +1,21 @@
 define [
+    'jquery'
     'backbone'
     'marionette'
-    'hbs!/templates/welcome/arena'
     'image!/img/starmap1.jpg'
-    'jquery'
     'jqueryviewport'
+    'app/util/templates'
 ], (
+    $
     Backbone
     Marionette
-    templateWelcomeArena
     imageStarmap
-    $
     ViewPort
+    Templates
 ) ->
+    Templates.load 'welcome/arena', 'welcomeArena'
     class Arena extends Backbone.Marionette.Layout
-        template: templateWelcomeArena
+        template: Templates.get 'welcomeArena'
 
         initialize: () ->
             @canvasImage = imageStarmap

@@ -12,9 +12,10 @@ define [
 ) ->
 
     class Match extends Backbone.Marionette.ItemView
+        # TODO: this 'template' var is undefined. Is it doing anything?
         template: template
         # TODO: does this constructor *really* need the empty object?
-        model: new ModelMatch({})
+        model: new ModelMatch {}
 
         render: () ->
             @$el.html(template);

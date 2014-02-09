@@ -1,16 +1,18 @@
 define [
     'backbone'
     'marionette'
-    'hbs!/templates/main/welcome/intro'
+    'app/util/templates'
 ], (
     Backbone
     Marionette
-    templateIntro
+    Templates
 ) ->
+    Templates.load 'main/welcome/intro', 'mainWelcomeIntro'
     class Intro extends Backbone.Marionette.Layout
-        template: templateIntro
+        template: Templates.get 'mainWelcomeIntro'
 
         render: () ->
-            @$el.html @template()
+            console.log 'Rendering intro'
+            #@$el.html @template()
 
     return Intro

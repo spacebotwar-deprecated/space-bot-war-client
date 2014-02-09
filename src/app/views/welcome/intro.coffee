@@ -2,15 +2,13 @@ define [
     'app/app'
     'backbone'
     'marionette'
-    'hbs!/templates/welcome/intro'
+    'app/util/templates'
 ], (
     App
     Backbone
     Marionette
-    templateWelcomeIntro
+    Templates
 ) ->
+    Templates.load 'welcome/intro', 'welcomeIntro'
     class WelcomeIntro extends Backbone.Marionette.Layout
-        template: templateWelcomeIntro
-
-        render: () ->
-            @$el.html @template()
+        template: Templates.get 'welcomeIntro'

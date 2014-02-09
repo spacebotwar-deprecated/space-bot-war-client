@@ -1,11 +1,11 @@
 define [
-    "app"
+    "app/app"
     "jquery"
-    "routers/AppRouter"
-    "controllers/MobileController"
+    "app/routers/appRouter"
+#    "app/controllers/MobileController"
     "backbone"
     "marionette"
-    "jquerymobile"
+#    "jquerymobile"
     "backbone.validateAll"
 ], (
     App

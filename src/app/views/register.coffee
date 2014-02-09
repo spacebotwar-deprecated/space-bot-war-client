@@ -1,13 +1,14 @@
 define [
     'backbone'
     'marionette'
-    'hbs!/templates/main/register'
+    'app/util/templates'
 ], (
     Backbone
     Marionette
-    templateRegister
+    Templates
 ) ->
+    Templates.load 'main/register', 'mainRegister'
     class Register extends Backbone.Marionette.ItemView
-        template: templateRegister
+        template: Templates.get 'mainRegister'
 
     return Register

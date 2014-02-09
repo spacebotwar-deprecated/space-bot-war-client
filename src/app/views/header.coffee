@@ -1,13 +1,14 @@
 define [
     'backbone'
     'marionette'
-    'hbs!/templates/main/header'
+    'app/util/templates'
 ], (
     Backbone
     Marionette
-    templateHeader
+    Templates
 ) ->
+    Templates.load 'main/header', 'mainHeader'
     class Header extends Backbone.Marionette.ItemView
-        template: templateHeader
+        template: Templates.get 'mainHeader'
 
     return Header

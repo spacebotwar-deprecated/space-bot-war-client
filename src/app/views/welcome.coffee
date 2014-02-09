@@ -4,18 +4,18 @@ define [
     'app/views/welcome/intro'
     'app/views/welcome/arena'
     'app/models/match'
-    'hbs!/templates/main/welcome'
+    'app/util/templates'
 ], (
     Backbone
     Marionette
     ViewWelcomeIntro
     ViewWelcomeArena
     ModelMatch
-    templateWelcome
+    Templates
 ) ->
-
+    Templates.load 'main/welcome', 'mainWelcome'
     class Welcome extends Backbone.Marionette.Layout
-        template: templateWelcome
+        template: Templates.get 'mainWelcome'
 
         regions:
             intro : '#intro'
