@@ -3,7 +3,7 @@
     baseUrl: '../src',
     //mainConfigFile: '../src/app/config/config.js',
     // node r.js -o name=path/to/almond include=main out=main-built.js wrap=true
-    name: 'js-libs/almond',
+    name: 'js-libs/almond/almond',
     // name: 'app/config/config',
     include: 'app/config/config',
     out: '../public/dist/build.js',
@@ -17,27 +17,21 @@
     "backbone.babysitter": "js-libs/backbone.babysitter/lib/amd/backbone.babysitter",
     "backbone.wreqr": "js-libs/backbone.wreqr/lib/amd/backbone.wreqr",
     "handlebars": "js-libs/handlebars/handlebars.amd",
-    "my-config": "js-libs/my-config",
-    "jquery": "js-libs/jquery",
+    "underscore": "js-libs/lodash/dist/lodash",
+    "lodash": "js-libs/lodash/dist/lodash",
+    "humane": "js-libs/humane-js/humane",
+    "jquery": "js-libs/jquery/jquery",
+    "jqueryviewport": "js-libs/jquery.viewport/jquery.viewport",
+    "bootstrap": "js-libs/bootstrap/dist/js/bootstrap",
     "jqueryui": "js-libs/jqueryui",
-    "jqueryviewport": "js-libs/jquery.viewport",
-    "underscore": "js-libs/lodash",
-    "json2": "js-libs/json2",
-    "humane": "js-libs/humane",
-    "backbone.validateAll": "js-libs/plugins/Backbone.validateAll",
-    "bootstrap": "js-libs/plugins/bootstrap",
-    "text": "js-libs/plugins/text",
-    "image": "js-libs/plugins/image",
-    "jquery.json": "js-libs/plugins/jquery.json.min"
+    "jquery.json": "js-libs/plugins/jquery.json.min",
+    "my-config": "js-libs/my-config",
+    "image": "js-libs/requirejs-plugins/src/image"
   },
   shim: {
     "bootstrap": ["jquery"],
     "jqueryui": ["jquery"],
-    "jqueryviewport": ["jqueryui"],
-    "ocanvas": {
-      "exports": "oCanvas"
-    },
-    "backbone.validateAll": ["backbone"],
-    "jquery.json": ["jquery"]
+    "jquery.json": ["jquery"],
+    "jqueryviewport": ["jqueryui"]
   }
 })

@@ -9,47 +9,41 @@ require.config
         "backbone.babysitter" : "js-libs/backbone.babysitter/lib/amd/backbone.babysitter"
         "backbone.wreqr"      : "js-libs/backbone.wreqr/lib/amd/backbone.wreqr"
 
+        # I don't know what to call this bunch of weirdos
         "handlebars"          : "js-libs/handlebars/handlebars.amd"
+        "underscore"          : "js-libs/lodash/dist/lodash"
+        "lodash"              : "js-libs/lodash/dist/lodash"
+        "humane"              : "js-libs/humane-js/humane"
 
-        # Everything below (not using Bower) is wrong.
-        # Core Libraries
-        "my-config"      : "js-libs/my-config"
-        "jquery"         : "js-libs/jquery"
-        "jqueryui"       : "js-libs/jqueryui"
-        # "ocanvas"        : "http://cdnjs.cloudflare.com/ajax/js-libs/ocanvas/2.5.0/ocanvas.min"
-        "jqueryviewport" : "js-libs/jquery.viewport"
-        "underscore"     : "js-libs/lodash"
-        # "backbone"       : "js-libs/backbone"
-        # "marionette"     : "js-libs/backbone.marionette"
-        # "handlebars"     : "js-libs/handlebars"
-        "json2"          : "js-libs/json2"
-        "humane"         : "js-libs/humane"
+        # jQuery and friends
+        "jquery"              : "js-libs/jquery/jquery"
+        "jqueryviewport"      : "js-libs/jquery.viewport/jquery.viewport"
+        "bootstrap"           : "js-libs/bootstrap/dist/js/bootstrap"
+
+        # This does not use Bower because jQueryUI needs to be built after
+        # downloaded. For now, it will sit here.
+        # TODO: get jQueryUI to be managed by Bower!
+        "jqueryui"            : "js-libs/jqueryui"
+
+        # This is hosted on  Google Code, which, Bower can't download from.
+        "jquery.json"    : "js-libs/plugins/jquery.json.min"
+
+        # We can't use Bower to manage our own configuration module.
+        "my-config"           : "js-libs/my-config"
 
         # Plugins
-        "backbone.validateAll" : "js-libs/plugins/Backbone.validateAll"
-        "bootstrap"            : "js-libs/plugins/bootstrap"
-        "text"                 : "js-libs/plugins/text"
-        "image"                : "js-libs/plugins/image"
-        "jquery.json"          : "js-libs/plugins/jquery.json.min"
+        "image"          : "js-libs/requirejs-plugins/src/image"
 
     # Sets the configuration for your third party scripts that are not AMD compatible
     shim:
-        # Twitter Bootstrap jQuery plugins
-        "bootstrap" : ["jquery"]
+        # Get all these guys together.
+        "bootstrap"   : ["jquery"]
+        "jqueryui"    : ["jquery"]
+        "jquery.json" : ["jquery"]
 
-        # jQueryUI
-        "jqueryui" : ["jquery"]
-
-        # viewport
+        # *sigh* ... and you, too...
         "jqueryviewport" : ["jqueryui"]
 
-        "ocanvas":
-            "exports" : "oCanvas"
-
-        # Backbone.validateAll plugin that depends on Backbone
-        "backbone.validateAll" : ["backbone"]
-
-        "jquery.json": ["jquery"]
 
 requirejs [
 ], (

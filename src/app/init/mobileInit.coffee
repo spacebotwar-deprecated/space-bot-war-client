@@ -6,7 +6,7 @@ define [
     "backbone"
     "marionette"
 #    "jquerymobile"
-    "backbone.validateAll"
+#    "backbone.validateAll"
 ], (
     App
     $
