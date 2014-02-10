@@ -24,7 +24,8 @@
     "chalk": "*",
     "gulp-coffee": "*",
     "gulp-coffeelint": "*",
-    "bower": "*"
+    "bower": "*",
+    "amdclean": "~1.0.0"
   },
   "main": "./sbw.pl develop",
   "keywords": [

@@ -4,9 +4,12 @@ gulp    = require 'gulp'
 gutil   = require 'gulp-util'
 bower   = require 'bower'
 chalk   = require 'chalk'
+fs      = require 'fs'
 
 # Gulp plugins
 coffee = require 'gulp-coffee'
+
+cleanAMD = require 'amdclean'
 
 
 
@@ -48,9 +51,12 @@ tasks =
             gutil.log chalk.red 'Error: Testing not implemented!'
 
     build:
-        deps: ['compile', 'test']
+        deps: []    #['compile', 'test']
         func: () ->
-
+            # code = fs.readFileSync 'public/dist/build.js'
+            # cleanCode = cleanAMD.clean
+            #     code: code
+            # fs.writeFileSync 'public/dist/build.js', cleanCode
             ###
                 TODO:
                     - Use r.js to concatenate it and all deps

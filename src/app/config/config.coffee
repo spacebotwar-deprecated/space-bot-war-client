@@ -3,6 +3,15 @@ require.config
     baseUrl: '/'
 
     paths:
+        # Backbone and all it's things
+        "backbone"            : "js-libs/backbone-amd/backbone"
+        "marionette"          : "js-libs/marionette/lib/core/amd/backbone.marionette"
+        "backbone.babysitter" : "js-libs/backbone.babysitter/lib/amd/backbone.babysitter"
+        "backbone.wreqr"      : "js-libs/backbone.wreqr/lib/amd/backbone.wreqr"
+
+        "handlebars"          : "js-libs/handlebars/handlebars.amd"
+
+        # Everything below (not using Bower) is wrong.
         # Core Libraries
         "my-config"      : "js-libs/my-config"
         "jquery"         : "js-libs/jquery"
@@ -10,9 +19,9 @@ require.config
         # "ocanvas"        : "http://cdnjs.cloudflare.com/ajax/js-libs/ocanvas/2.5.0/ocanvas.min"
         "jqueryviewport" : "js-libs/jquery.viewport"
         "underscore"     : "js-libs/lodash"
-        "backbone"       : "js-libs/backbone"
-        "marionette"     : "js-libs/backbone.marionette"
-        "handlebars"     : "js-libs/handlebars"
+        # "backbone"       : "js-libs/backbone"
+        # "marionette"     : "js-libs/backbone.marionette"
+        # "handlebars"     : "js-libs/handlebars"
         "json2"          : "js-libs/json2"
         "humane"         : "js-libs/humane"
 
@@ -37,27 +46,10 @@ require.config
         "ocanvas":
             "exports" : "oCanvas"
 
-        # Backbone
-        "backbone":
-            # Depends on underscore/lodash and jQuery
-            "deps" : ["underscore", "jquery"]
-            # Exports the global window.Backbone object
-            "exports" : "Backbone"
-
-        # Marionette
-        "marionette":
-            "deps" : ["underscore", "backbone", "jquery"]
-            "exports" : "Marionette"
-
-        # Handlebars
-        "handlebars":
-            "exports" : "Handlebars"
-
         # Backbone.validateAll plugin that depends on Backbone
         "backbone.validateAll" : ["backbone"]
 
-        "jquery.json":
-            "deps" : ["jquery"]
+        "jquery.json": ["jquery"]
 
 requirejs [
 ], (

@@ -3,7 +3,11 @@ define [
 ], (
     Handlebars
 ) ->
-    
+
+    # Handlebars AMD seems to do this for some reason. The Handlebars we all
+    # know and love is hidden in this 'default' thing.
+    Handlebars = Handlebars.default
+
     class Templates
 
         constructor: () ->
