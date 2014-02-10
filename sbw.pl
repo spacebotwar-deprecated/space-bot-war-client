@@ -42,7 +42,7 @@ sub display_help_message {
     Available tasks:
         build      builds the js code, basically a wrapper around 'gulp build'
         test       not implemented.
-        server     runs the development server, can pass in the port to run on
+        develop    runs the development server, can pass in the port to run on
         help       you're looking at it.
 
     };
