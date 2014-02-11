@@ -1,7 +1,7 @@
 define [
     "backbone"
     "marionette"
-    'image!img/sp_ship.png'
+    'image!/img/sp_ship.png'
 ], (
     Backbone
     Marionette
