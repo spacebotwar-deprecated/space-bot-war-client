@@ -5,7 +5,7 @@ define [
     Backbone
     Marionette
 ) ->
-    class Image extends Backbone.Model
+    class ModelImage extends Backbone.Model
         defaults:
             width   : 10
             height  : 10
@@ -25,8 +25,9 @@ define [
                 ctx.fillStyle = "red"
                 ctx.fill()
                 img = new Image()
-                @defaultImage = canvas.toDataURL("image/png")
+                img.src = canvas.toDataURL("image/png")
+                @defaultImage = img
 
-            @image = @defaultImage
+            @set("image", @defaultImage)
 
-    return Image
+    return ModelImage

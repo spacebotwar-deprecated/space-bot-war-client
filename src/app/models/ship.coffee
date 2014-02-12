@@ -1,15 +1,13 @@
 define [
     "backbone"
     "marionette"
-    'app/models/images'
-    "app/collections/images"
+    "app/models/image_cache"
 ], (
     Backbone
     Marionette
-    ModelImages
     ImageCache
 ) ->
-    Ship = Backbone.Model.extend
+    class Ship extends Backbone.Model
         defaults:
             id                   : 0
             owner_id             : 0
@@ -28,14 +26,7 @@ define [
             delta_x              : 0
             delta_y              : 0
             delta_orientation    : 0
-
-        # Model Constructor
-        initialize: () ->
-            ImageCache.add([
-                id :        "ship"
-                #uri :       "something-or-other"
-            ])
-            @image = @ImageCache.get 'ship'
+            image                : ImageCache.getImage('ship')
 
         tick: () ->
             # On each 'tick' of the server, record the previous value of x,y and orientation
@@ -73,7 +64,7 @@ define [
             context.translate x + 1000, 1000 - y
             context.rotate 0 - o
 
-            context.drawImage @image, -20, -20
+            context.drawImage(@get("image").get("image"), -20, -20)
             context.restore()
 
     return Ship
