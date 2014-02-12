@@ -26,7 +26,6 @@ define [
             delta_x              : 0
             delta_y              : 0
             delta_orientation    : 0
-            image                : ImageCache.getImage('ship')
 
         tick: () ->
             # On each 'tick' of the server, record the previous value of x,y and orientation
@@ -38,7 +37,7 @@ define [
         # It's a bit odd rendering in the model, revist this!
         # TODO: don't render inside the model. WTF?
         render: (context={}, interval=0) ->
-            console.log "Model:Ship:render #{@get 'id'} x=#{@get 'x'} y=#{@get 'y'}"
+#            console.log "Model:Ship:render #{@get 'id'} x=#{@get 'x'} y=#{@get 'y'}"
             context.save()
             fraction = interval / 500
 
@@ -63,8 +62,8 @@ define [
 
             context.translate x + 1000, 1000 - y
             context.rotate 0 - o
-
-            context.drawImage(@get("image"), -20, -20)
+            image = ImageCache.getImage('/img/sp_ship.png')
+            context.drawImage(image, -20, -20)
             context.restore()
 
     return Ship

@@ -39,7 +39,7 @@ define [
             data    = $.evalJSON e.data
             route   = data.route
             content = data.content
-            console.log "#{@prefix}:recv:#{route}", e.data
+            #console.log "#{@prefix}:recv:#{route}", e.data
 
             if content.code == 0
                 Backbone.trigger "#{@prefix}:recv:#{route}", data

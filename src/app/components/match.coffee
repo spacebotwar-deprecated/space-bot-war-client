@@ -20,7 +20,7 @@ define [
                 @connection.init()
 
             Backbone.on "wsm:send", (data) ->
-                console.log "wsm:send " + JSON.stringify(data)
+                #console.log "wsm:send " + JSON.stringify(data)
 
     return Match
 

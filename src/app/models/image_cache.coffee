@@ -12,7 +12,7 @@ define [
 
         @getImage : (uri) ->
             if not @cache.id
-                @cache.id = new ModelImage uri
+                @cache.id = new ModelImage uri : uri
             return @cache.id.getImage()
 
     return ImageCache

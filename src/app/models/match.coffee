@@ -30,7 +30,7 @@ define [
             @tick_ships data
 
             # updating 'tick_count' ensures that the view is triggered on every model tick
-            console.log "######## model/match.coffee tick ########"
+            #console.log "######## model/match.coffee tick ########"
             @set 'tick_count', @get('tick_count') + 1
 
         match_status: (data={}) ->
@@ -44,7 +44,7 @@ define [
             ships.set data.content.ships
 
         stats: (data={}) ->
-            console.log "model/match change"
+            #console.log "model/match change"
 
 
     return Match

@@ -34,6 +34,11 @@ define [
 
         getImage: () ->
             img = @get("image")
+            if not img
+                img = new Image
+                img.src = @get("uri")
+                @set("image", img)
+
             if not img or not img.complete
                 return @defaultImage
             return img
