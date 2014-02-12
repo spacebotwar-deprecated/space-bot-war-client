@@ -2,10 +2,12 @@ define [
     "backbone"
     "marionette"
     'app/models/images'
+    "app/collections/images"
 ], (
     Backbone
     Marionette
     ModelImages
+    ImageCache
 ) ->
     Ship = Backbone.Model.extend
         defaults:
@@ -29,8 +31,11 @@ define [
 
         # Model Constructor
         initialize: () ->
-            @images = new ModelImages
-            @image = @images.get 'ship'
+            ImageCache.add([
+                id :        "ship"
+                #uri :       "something-or-other"
+            ])
+            @image = @ImageCache.get 'ship'
 
         tick: () ->
             # On each 'tick' of the server, record the previous value of x,y and orientation
