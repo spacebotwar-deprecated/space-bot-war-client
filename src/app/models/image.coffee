@@ -1,15 +1,18 @@
 define [
     "backbone"
     "marionette"
+    "jquery"
 ], (
     Backbone
     Marionette
+    $
 ) ->
     class ModelImage extends Backbone.Model
         defaults:
-            width   : 10
-            height  : 10
-            image   : 0
+            uri             : ''
+            width           : 10
+            height          : 10
+            image           : 0
 
         # Class method to return a default image
         @defaultImage : 0
@@ -18,16 +21,21 @@ define [
             if not @defaultImage
                 # This creates a default image (a red square) until the real image loads
                 canvas = document.createElement("canvas")
-                canvas.width = 10
-                canvas.height = 10
+                canvas.width = 60
+                canvas.height = 60
                 ctx = canvas.getContext("2d")
-                ctx.rect(0,0,10,10)
+                ctx.rect(0,0,60,60)
                 ctx.fillStyle = "red"
                 ctx.fill()
                 img = new Image()
                 img.src = canvas.toDataURL("image/png")
                 @defaultImage = img
 
-            @set("image", @defaultImage)
+
+        getImage: () ->
+            img = @get("image")
+            if not img or not img.complete
+                return @defaultImage
+            return img
 
     return ModelImage

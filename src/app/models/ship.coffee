@@ -64,7 +64,7 @@ define [
             context.translate x + 1000, 1000 - y
             context.rotate 0 - o
 
-            context.drawImage(@get("image").get("image"), -20, -20)
+            context.drawImage(@get("image"), -20, -20)
             context.restore()
 
     return Ship
