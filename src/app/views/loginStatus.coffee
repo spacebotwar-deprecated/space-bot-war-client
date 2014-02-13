@@ -9,11 +9,14 @@ define [
     $
     Templates
 ) ->
+
     Templates.load 'main/loggedIn', 'mainLoggedIn'
     Templates.load 'main/loggedOut', 'mainLoggedOut'
+    Templates.load 'login/register', 'loginRegister'
+    
     class LoginStatus extends Backbone.Marionette.ItemView
         render: () ->
-            if (@model.get 'logged_in')?
+            if @model.get 'loggedIn'
                 template = Templates.get 'mainLoggedIn'
             else
                 template = Templates.get 'mainLoggedOut'
@@ -43,10 +46,12 @@ define [
             alert 'Not implemented!'
         
         register: () ->
-            Backbone.trigger "user:register", {}
-            alert 'register'
+            #Backbone.trigger "user:register", {}
+            template = Templates.get 'loginRegister'
+            $ @el
+                .html template()
         
         initialize: () ->
-            @model.bind 'change:logged_in', @render, @
+            @model.bind 'change:loggedIn', @render, @
 
-    return LoginStatus
+    LoginStatus

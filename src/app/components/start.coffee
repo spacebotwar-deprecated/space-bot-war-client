@@ -50,7 +50,6 @@ define [
             Backbone.on "ws:recv:/get_client_code", (data={}) =>
                 clientCode = data.content.client_code
                 Session.setClientCode clientCode
-                console.log "clientCode is now #{clientCode}"
 
             # Called when a connection to a WebSocket on the server is
             # established. Note, this is called for any WebSocket, while
