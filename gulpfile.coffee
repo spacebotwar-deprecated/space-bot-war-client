@@ -9,8 +9,6 @@ fs      = require 'fs'
 # Gulp plugins
 coffee = require 'gulp-coffee'
 
-cleanAMD = require 'amdclean'
-
 
 
 ###
