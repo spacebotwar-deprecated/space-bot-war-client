@@ -3,34 +3,34 @@ define [
     'backbone'
     'marionette'
     'app/views/welcome'
-    'app/views/loginStatus' 
+    'app/views/user' 
     'app/views/header'
     'app/views/footer'
     'app/views/register'
     'app/views/about'
     'app/views/faq'
-    'app/models/loginStatus'
+    'app/models/user'
 ], (
     App
     Backbone
     Marionette
     ViewWelcome
-    ViewLoginStatus
+    ViewUser
     ViewHeader
     ViewFooter
     ViewRegister
     ViewAbout
     ViewFaq
-    ModelLoginStatus
+    ModelUser
 ) ->
     class DesktopController extends Backbone.Marionette.Controller 
         initialize: (options) ->
-            App.menuRegion.show new ViewLoginStatus
-                model: new ModelLoginStatus
+            App.menuRegion.show new ViewUser
+                model: new ModelUser
             App.headerRegion.show new ViewHeader
             App.footerRegion.show new ViewFooter
 
-        # These are mapped to AppRouter's route declarations.
+        # These are mapped to appRouter's route declarations.
         index: () ->
             App.mainRegion.show new ViewWelcome
 
@@ -40,4 +40,4 @@ define [
         register: () ->
             App.mainRegion.show new ViewRegister
 
-    return DesktopController
+    DesktopController

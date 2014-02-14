@@ -32,7 +32,6 @@ define [
 
         onOpen: (e={}) =>
             Backbone.trigger "#{@prefix}:connected"
-            console.log "#{@prefix}:connected"
             console.log "Successfully connected to #{@url}"
 
         onMessage: (e={}) =>

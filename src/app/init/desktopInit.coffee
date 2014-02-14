@@ -15,6 +15,6 @@ define [
 
     # Setup other stuff that is desktop/mobile agnostic.
     new SbwInit
-    
+
     # Start Marionette Application in desktop mode (default)
     App.start()

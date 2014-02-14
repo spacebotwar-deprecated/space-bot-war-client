@@ -6,11 +6,17 @@ define [
     Marionette
 ) ->
     
-    class LoginStatus extends Backbone.Model
+    class User extends Backbone.Model
         defaults:
             username : ''
             userId   : 0
-            loggedIn : false
+
+            # Used to determine which template to display in the view
+            # Note: I tried using constants but was having trouble with Backbone
+            # and prototypes. It seems Backbone does some weird stuff with prototypes
+            # behind the scenes.
+            # 0 = logged out, 1 = logged in, 2 = registering
+            state    : 0
         
         initialize: () ->
             # Setup the events for when login or logout requests succeed.
@@ -21,7 +27,7 @@ define [
             @set
                 username    : ''
                 userId      : 0
-                loggedIn    : false
+                state       : 0
 
             console.log "MODEL: LOGOUT: logout_success"
 
@@ -29,8 +35,8 @@ define [
             @set
                 username    : data.content.username
                 userId      : data.content.user_id
-                loggedIn    : true
+                state       : 1
 
             console.log "MODEL: LOGIN: login_success #{JSON.stringify data}"
 
-    return LoginStatus
+    User
