@@ -13,7 +13,7 @@ require.config
         "handlebars"          : "js-libs/handlebars/handlebars.amd"
         "underscore"          : "js-libs/lodash/dist/lodash"
         "lodash"              : "js-libs/lodash/dist/lodash"
-        "humane"              : "js-libs/humane-js/humane"
+        "humane-js"           : "js-libs/humane-js/humane"
 
         # jQuery and friends
         "jquery"              : "js-libs/jquery/jquery"
@@ -33,6 +33,8 @@ require.config
 
         # Plugins
         "image"          : "js-libs/requirejs-plugins/src/image"
+
+        "humane" : "app/mods/humane"
 
     # Sets the configuration for your third party scripts that are not AMD compatible
     shim:
