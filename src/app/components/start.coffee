@@ -45,6 +45,19 @@ define [
                         client_code : Session.getClientCode()
                 @connection.send message
 
+            Backbone.on 'user:register', (data={}) =>
+                message =
+                    route   : '/register'
+                    content :
+                        client_code : Session.getClientCode()
+                        username    : data.username
+                        password    : data.password
+                        email       : data.email
+                @connection.send message
+
+            Backbone.on 'ws:recv:/register', (data={}) =>
+                console.log  data ##   DEBUG!!!
+
             # Called when a start/get_client_code request succeeds
             Backbone.on "ws:recv:/get_client_code", (data={}) =>
                 clientCode = data.content.client_code

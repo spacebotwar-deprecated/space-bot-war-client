@@ -53,7 +53,7 @@ define [
                 parameters = {}
 
                 _.each ['username', 'password', 'email'], (elName) ->
-                    elValue = @$ elName
+                    elValue = @$ "##{elName}"
                         .val()
                     parameters[elName] = elValue
                 
