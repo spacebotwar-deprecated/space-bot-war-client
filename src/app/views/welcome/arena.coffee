@@ -50,7 +50,7 @@ define [
         #
         render: () ->
             @$el.html this.template()
-            console.log "######### arena (welcome) render! ##############"
+            # console.log "######### arena (welcome) render! ##############"
 
             @$(".draggable_canvas").draggable
                 containment: "parent"

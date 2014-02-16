@@ -13,6 +13,7 @@ define [
         setClientCode: (newClientCode) ->
             return if !newClientCode
             localStorage.clientCode = newClientCode
-            @clientCode = clientCode
+            @clientCode = newClientCode
+            console.log "Received new clientCode #{newClientCode}"
 
-    return new Session();
+    new Session

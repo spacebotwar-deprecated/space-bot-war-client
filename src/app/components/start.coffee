@@ -28,7 +28,6 @@ define [
 
             # Triggered when the user hits the login button.
             Backbone.on "user:login", (data={}) =>
-                console.log "BACKBONE: user:login #{JSON.stringify data}"
                 message =
                     route   : '/login_with_password'
                     content :
@@ -51,14 +50,14 @@ define [
                 clientCode = data.content.client_code
                 Session.setClientCode clientCode
 
-            # Called when a connection to a WebSocket on the server is
-            # established. Note, this is called for any WebSocket, while
-            # get_client_code on exists in  /start.
+            # TODO: is this defined in the right place to work with our 
+            # 'separation of concerns' development model?
             Backbone.on "ws:connected", () =>
-                message =
-                    route   : '/get_client_code'
-                    content :
-                        client_code : Session.getClientCode()
-                @connection.send message
+                if not Session.getClientCode()? and @connection.module == 'start'
+                    message =
+                        route   : '/get_client_code'
+                        content :
+                            client_code : Session.getClientCode()
+                    @connection.send message
 
-    return Start
+    Start

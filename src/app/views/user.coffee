@@ -28,8 +28,7 @@ define [
             'click #lostPassword'   : 'lostPassword'
 
         login: () ->
-            if (@model.get 'state') == 0
-                console.log "Logging in"
+            if @model.get('state') == 0
                 username = $ '#username'
                     .val()
                 password = $ '#password'
@@ -37,20 +36,20 @@ define [
                 Backbone.trigger "user:login", {username, password}
 
         logout: () ->
-            if (@model.get 'state') == 1
+            if @model.get('state') == 1
                 console.log "Logging out"
                 Backbone.trigger "user:logout"
         
         lostPassword: () ->
-            if (@model.get 'state') == 0
+            if @model.get('state') == 0
                 # TODO: implement lost password
                 throw new Erorr 'Not implemented!'
         
         register: () ->
-            if (@model.get 'state') == 0
+            if @model.get('state') == 0
                 @model.set 'state', 2
 
-            else if (@model.get 'state') == 2
+            else if @model.get('state') == 2
                 parameters = {}
 
                 _.each ['username', 'password', 'email'], (elName) ->
