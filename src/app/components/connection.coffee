@@ -14,12 +14,11 @@ define [
 
     class Connection
 
-        constructor: (url, prefix) ->
-            @url    = url
-            @prefix = prefix
+        constructor: (@url, @prefix) ->
+            @module = @getModuleName @url
 
         init: () ->
-            console.log "Debug: attempting connection to #{@url}"
+            console.log "Attempting connection to #{@url}"
             @connection = new WebSocket @url
 
             @connection.onerror     = @onError
@@ -48,7 +47,18 @@ define [
                 console.error "ERROR: #{content.code} - #{content.message}"
 
         send: (data={}) =>
-            console.log "Sending #{$.toJSON data} to  #{@url}"
-            #@connection.send $.toJSON data
+            console.log "Sending #{$.toJSON data} to #{@url}"
+            @connection.send $.toJSON data
 
-    return Connection
+        # TODO: this looks like a simple method to play with unit testing.
+        getModuleName: (name="") ->
+            # Get the module from the url.
+            # eg,
+            # ws://spacebotwar.com:5000/ws/start == start
+            # ws://spacebotwar.com:5000/ws/lobby == lobby
+            # ws://spacebotwar.com:5000/ws/match == match
+            # etc etc. :D
+            name.substr name.lastIndexOf('/') + 1, name.length - 1
+
+
+    Connection
