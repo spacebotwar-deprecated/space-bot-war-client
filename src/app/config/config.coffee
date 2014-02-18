@@ -70,6 +70,6 @@ requirejs [
         '
         alert error
         throw new Error error
-        require ['app/init/mobileInit'], (thing={}) ->
-            # do something
-            console.log thing
+        # require ['app/init/mobileInit'], (thing={}) ->
+        #     # do something
+        #     console.log thing

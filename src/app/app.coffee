@@ -41,4 +41,9 @@ define [
     app.addInitializer player.init
     app.addInitializer start.init
 
+    if 'debug' in window
+        app.debug = debug
+    else
+        app.debug = no
+
     return app
