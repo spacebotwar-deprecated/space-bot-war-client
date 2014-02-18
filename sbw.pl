@@ -57,6 +57,6 @@ sub run_command {
     # any errors but it makes $foo read more clearly when printed. Or something.
     $foo =~ s/  //g;
     $foo =~ s/\n//g;
-    # say $foo;
+    print STDERR "SYSTEM $foo\n";
     system $foo;
 }

@@ -16,7 +16,7 @@ require.config
         "humane"              : "js-libs/humane-js/humane"
 
         # jQuery and friends
-        "jquery"              : "js-libs/jquery/jquery"
+        "jquery"              : "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min"
         "jqueryviewport"      : "js-libs/jquery.viewport/jquery.viewport"
         "bootstrap"           : "js-libs/bootstrap/dist/js/bootstrap"
 
