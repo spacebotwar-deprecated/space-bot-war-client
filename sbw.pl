@@ -6,30 +6,41 @@ use v5.10;
 
 use feature 'switch';
 
-my $task = $ARGV[0] // "";
+run_task($ARGV[0] // "");
 
-given ($task) {
-    when (/(build|test|compile)/i) {
-        run_command(qq{
-            gulp $1 --require coffee-script/register;
-        });
-    }
-    when (/develop/i) {
-        my $port = $ARGV[1] || 8001;
-        run_command(qq{
-            PORT=$port gulp develop --require coffee-script/register;
-        })
-    }
-    when (/help/i) {
-        display_help_message();
-        exit;
-    }
-    default {
-        if ($_) {
-            die "I don't know what '$_' is!";
+sub run_task {
+    my $task = shift;
+
+    given ($task) {
+        when (/build/i) {
+            run_task('compile');
+            run_command(qq{
+                cd build;
+                ./build.sh;
+            });
         }
-        else {
-            die 'No task provided';
+        when (/(test|compile)/i) {
+            run_command(qq{
+                gulp $1 --require coffee-script/register;
+            });
+        }
+        when (/develop/i) {
+            my $port = $ARGV[1] || 8001;
+            run_command(qq{
+                PORT=$port gulp develop --require coffee-script/register;
+            })
+        }
+        when (/help/i) {
+            display_help_message();
+            exit;
+        }
+        default {
+            if ($_) {
+                die "I don't know what '$_' is!";
+            }
+            else {
+                die 'No task provided';
+            }
         }
     }
 }

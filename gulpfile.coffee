@@ -48,21 +48,6 @@ tasks =
             # TODO
             gutil.log chalk.red 'Error: Testing not implemented!'
 
-    build:
-        deps: []    #['compile', 'test']
-        func: () ->
-            # code = fs.readFileSync 'public/dist/build.js'
-            # cleanCode = cleanAMD.clean
-            #     code: code
-            # fs.writeFileSync 'public/dist/build.js', cleanCode
-            ###
-                TODO:
-                    - Use r.js to concatenate it and all deps
-                    - Run the Google Closure Compiler on it
-                    - Dump the remains into public/dist to be used my 
-                      public/production.html (which also needs to be done)
-            ###
-
     develop: 
         deps: ['compile']
         func: () ->
@@ -84,6 +69,7 @@ tasks =
     updatedeps:
         deps: []
         func: () ->
+            # TODO:
             # npm update
             # bower install
 
