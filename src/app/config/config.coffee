@@ -19,11 +19,7 @@ require.config
         "jquery"              : "js-libs/jquery/jquery"
         "jqueryviewport"      : "js-libs/jquery.viewport/jquery.viewport"
         "bootstrap"           : "js-libs/bootstrap/dist/js/bootstrap"
-
-        # This does not use Bower because jQueryUI needs to be built after
-        # downloaded. For now, it will sit here.
-        # TODO: get jQueryUI to be managed by Bower!
-        "jqueryui"            : "js-libs/jqueryui"
+        "jqueryui"            : "app/mods/jqueryui"
 
         # This is hosted on  Google Code, which, Bower can't download from.
         "jquery.json"    : "js-libs/plugins/jquery.json.min"
@@ -36,11 +32,14 @@ require.config
 
         "humane" : "app/mods/humane"
 
+        # Path to the dir which has all the jQueryUI components in it.
+        # See: app/mods/jquery for what it's used for.
+        "jqui-dir" : "js-libs/jquery.ui/ui"
+
     # Sets the configuration for your third party scripts that are not AMD compatible
     shim:
         # Get all these guys together.
         "bootstrap"   : ["jquery"]
-        "jqueryui"    : ["jquery"]
         "jquery.json" : ["jquery"]
 
         # *sigh* ... and you, too...

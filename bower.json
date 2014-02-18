@@ -29,6 +29,7 @@
     "lodash": "~2.4.1",
     "jquery.viewport": "git://github.com/borbit/jquery.viewport.git#~0.2.3",
     "requirejs-plugins": "git://github.com/millermedeiros/requirejs-plugins.git#~1.0.2",
-    "requirejs": "~2.1.10"
+    "requirejs": "~2.1.10",
+    "jquery-ui-git": "http://code.jquery.com/ui/jquery-ui-git.js"
   }
 }
