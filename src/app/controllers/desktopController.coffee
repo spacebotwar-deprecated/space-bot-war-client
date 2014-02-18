@@ -40,4 +40,7 @@ define [
         register: () ->
             App.mainRegion.show new ViewRegister
 
+        lostPassword: () ->
+            alert 'Lost password controller triggered.'
+
     DesktopController
