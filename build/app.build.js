@@ -16,18 +16,19 @@
         "handlebars": "js-libs/handlebars/handlebars.amd",
         "underscore": "js-libs/lodash/dist/lodash",
         "lodash": "js-libs/lodash/dist/lodash",
-        "humane": "js-libs/humane-js/humane",
+        "humane-js": "js-libs/humane-js/humane",
         "jquery": "js-libs/jquery/jquery",
         "jqueryviewport": "js-libs/jquery.viewport/jquery.viewport",
         "bootstrap": "js-libs/bootstrap/dist/js/bootstrap",
-        "jqueryui": "js-libs/jqueryui",
+        "jqueryui": "app/mods/jqueryui",
         "jquery.json": "js-libs/plugins/jquery.json.min",
         "my-config": "js-libs/my-config",
-        "image": "js-libs/requirejs-plugins/src/image"
-      },
+        "image": "js-libs/requirejs-plugins/src/image",
+        "humane": "app/mods/humane",
+        "jqui-dir": "js-libs/jquery.ui/ui"
+    },
     shim: {
         "bootstrap": ["jquery"],
-        "jqueryui": ["jquery"],
         "jquery.json": ["jquery"],
         "jqueryviewport": ["jqueryui"]
     }
