@@ -16,7 +16,7 @@ require.config
         "humane-js"           : "js-libs/humane-js/humane"
 
         # jQuery and friends
-        "jquery"              : "js-libs/jquery/jquery"
+        "jquery"              : "js-libs/jquery/dist/jquery"
         "jqueryviewport"      : "js-libs/jquery.viewport/jquery.viewport"
         "bootstrap"           : "js-libs/bootstrap/dist/js/bootstrap"
         "jqueryui"            : "app/mods/jqueryui"

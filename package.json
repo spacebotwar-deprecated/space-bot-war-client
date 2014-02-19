@@ -1,35 +1,11 @@
 {
-  "name": "SpaceBotWar",
-  "title": "SpaceBotWar",
-  "description": "SpaceBotWar",
-  "version": "0.0.4",
-  "homepage": "http://spacebotwar.com",
-  "author": {
-    "name": "Iain C Docherty",
-    "email": "spacebotwar@iain-docherty.com",
-    "url": "icydee.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:icydee/space-bot-war-client.git"
-  },
-  "bugs": {
-    "url": "https://github.com/icydee/space-bot-war-client/issues"
-  },
   "dependencies": {
-    "gulp": "*",
-    "gulp-util": "*",
-    "coffee-script": "*",
-    "connect": "*",
-    "chalk": "*",
-    "gulp-coffee": "*",
-    "gulp-coffeelint": "*",
-    "bower": "*"
-  },
-  "main": "./sbw.pl develop",
-  "keywords": [
-    "Space",
-    "Robot War",
-    "War"
-  ]
+    "gulp": "~3.5.x",
+    "gulp-util": "~2.2.x",
+    "coffee-script": "~1.7.x",
+    "connect": "~2.13.x",
+    "chalk": "~0.4.x",
+    "gulp-coffee": "~1.4.x",
+    "bower": "~1.2.x"
+  }
 }
