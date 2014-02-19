@@ -14,8 +14,8 @@ The following are the steps you'll need to take to get this thing running.
 - Install [Git](http://git-scm.com)
     - On Ubuntu: ` $ sudo apt-get install git`
 - Install [NodeJS](http://nodejs.org)
-- `git clone http://github.com/spacebotwar/space-bot-war-client`
-- `cd space-bot-war-client`
+- ` $ git clone http://github.com/spacebotwar/space-bot-war-client`
+- ` $ cd space-bot-war-client`
 - Install all the dependency management & build tools (*sigh*):
     - ` $ sudo npm install gulp -g`
     - ` $ sudo npm install bower -g`
@@ -23,7 +23,7 @@ The following are the steps you'll need to take to get this thing running.
     - ` $ npm install`
     - ` $ bower update`
 
-Once you have all that just `./sbw.pl develop` and you're good to go! Happy coding!
+Once you have all that just ` $ ./sbw.pl develop` and you're good to go! Happy coding!
 
 TODO (In order of priority)
 ===========================
