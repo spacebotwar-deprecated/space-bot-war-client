@@ -1,6 +1,5 @@
 define [
     'jquery'
-    'jqueryui'
     'backbone'
     'marionette'
     'image!/img/starmap1.jpg'
@@ -8,7 +7,6 @@ define [
     'app/util/templates'
 ], (
     $
-    UI
     Backbone
     Marionette
     imageStarmap

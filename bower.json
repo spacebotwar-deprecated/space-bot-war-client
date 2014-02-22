@@ -1,18 +1,19 @@
 {
-    "name": "SpaceBotWar",
-
-    "dependencies": {
-        "jquery": "~2.1.0",
-        "jquery.ui": "~1.10.4",
-        "backbone-amd": "~1.1.0",
-        "marionette": "~1.6.2",
-        "handlebars": "~1.3.0",
-        "almond": "~0.2.9",
-        "bootstrap": "~3.1.0",
-        "humane-js": "~3.1.0",
-        "lodash": "~2.4.1",
-        "jquery.viewport": "git://github.com/borbit/jquery.viewport.git#~0.2.3",
-        "requirejs-plugins": "git://github.com/millermedeiros/requirejs-plugins.git#~1.0.2",
-        "requirejs": "~2.1.10"
-    }
+  "name": "SpaceBotWar",
+  "dependencies": {
+    "jquery": "~2.1.0",
+    "jquery.ui": "~1.10.4",
+    "backbone-amd": "~1.1.0",
+    "marionette": "~1.6.2",
+    "handlebars": "~1.3.0",
+    "almond": "~0.2.9",
+    "bootstrap": "~3.1.0",
+    "humane-js": "~3.1.0",
+    "lodash": "~2.4.1",
+    "jquery.viewport": "git://github.com/borbit/jquery.viewport.git#~0.2.3",
+    "requirejs-plugins": "git://github.com/millermedeiros/requirejs-plugins.git#~1.0.2",
+    "requirejs": "~2.1.10",
+    "jquery.json-2.4": "https://jquery-json.googlecode.com/files/jquery.json-2.4.js",
+    "jasmine-standalone-2.0.0": "https://github.com/pivotal/jasmine/blob/master/dist/jasmine-standalone-2.0.0.zip?raw=true"
+  }
 }
