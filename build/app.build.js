@@ -3,33 +3,9 @@
     baseUrl: '../src',
     name: 'js-libs/almond/almond',
     include: 'app/config/config',
+    mainConfigFile: '../src/app/config/config.js',
     out: '../public/dist/build.js',
     keepBuildDir: true,
     optimize: 'uglify2',
     optimizeCss: 'none',
-
-    paths: {
-        "backbone": "js-libs/backbone-amd/backbone",
-        "marionette": "js-libs/marionette/lib/core/amd/backbone.marionette",
-        "backbone.babysitter": "js-libs/backbone.babysitter/lib/amd/backbone.babysitter",
-        "backbone.wreqr": "js-libs/backbone.wreqr/lib/amd/backbone.wreqr",
-        "handlebars": "js-libs/handlebars/handlebars.amd",
-        "underscore": "js-libs/lodash/dist/lodash",
-        "lodash": "js-libs/lodash/dist/lodash",
-        "humane-js": "js-libs/humane-js/humane",
-        "jquery": "js-libs/jquery/dist/jquery",
-        "jqueryviewport": "js-libs/jquery.viewport/jquery.viewport",
-        "bootstrap": "js-libs/bootstrap/dist/js/bootstrap",
-        "jqueryui": "app/mods/jqueryui",
-        "jquery.json": "js-libs/jquery.json-2.4/index",
-        "my-config": "js-libs/my-config",
-        "image": "js-libs/requirejs-plugins/src/image",
-        "humane": "app/mods/humane",
-        "jqui-dir": "js-libs/jquery.ui/ui"
-    },
-    shim: {
-        "bootstrap": ["jquery"],
-        "jquery.json": ["jquery"],
-        "jqueryviewport": ["jqueryui"]
-    }
 })
