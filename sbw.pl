@@ -1,5 +1,14 @@
 #!/usr/bin/perl
 
+=head1
+
+
+        One Script to rule them all, One Script to find them,
+        One Script to bring them all and in the darkness bind them,
+
+
+=cut
+
 use strict;
 use warnings;
 use v5.10;
@@ -138,16 +147,14 @@ $to_delete_pretty
 
 
 sub display_help_message {
+    # TODO: open the link with Browser::Open
+
     my $message = qq{
-    Usage: ./sbw.pl <task> <that task's options>
+    Please see the following link for usage and information about how all this
+    works. 
 
-    Available tasks:
-        build      builds the js code, basically a wrapper around 'gulp build'
-        test       not implemented.
-        develop    runs the development server, can pass in the port to run on
-        help       you're looking at it.
-
-    };
+    https://github.com/spacebotwar/space-bot-war-client/wiki/sbw.pl-Help
+};
 
     print $message;
 }
