@@ -79,6 +79,9 @@ sub run_task {
             # For some reason, these make it into the search.
             @to_delete = grep {not m/node_modules$|js\-libs$/i} @to_delete;
 
+            # Break out if there's nothing to delete.
+            return if (not scalar @to_delete);
+
             my $to_delete_pretty = join ",\n", @to_delete;
             say qq{
 WARNING: The following directories and their contents are about to be deleted!
@@ -86,7 +89,7 @@ You have a brief moment to cancel the script.
 
 $to_delete_pretty
             };
-            
+
             for (reverse 1..5) {
                 print "$_.. ";
                 sleep 1;
