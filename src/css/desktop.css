@@ -43,3 +43,114 @@
     left:   1200px;
     top:    1200px;
 }
+
+#chat-wrapper {
+    border-bottom-color: #3b3b3b;
+    border-bottom-style: none;
+    border-bottom-width: 0;
+    border-left-color: #3b3b3b;
+    border-left-style: none;
+    border-left-width: 0;
+    border-top-color: #3b3b3b;
+    border-top-style: none;
+    border-top-width: 0;
+    font-size: 12px;
+    line-height: 17px;
+    text-align: left;
+    font-family: Arial,sans-serif;
+    display: block;
+
+    bottom: 0;
+    height: 29px;
+    margin: 0 1%;
+    position: fixed;
+    right : 0;
+    z-index: 9999;
+}
+
+#chat {
+    border-bottom: 0;
+    float: left;
+    font-family: Arial,sans-serif;
+}
+
+#chat-wrapper * {
+    box sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+}
+
+#chat .item-list {
+    margin: 0;
+    padding: 0;
+    overflow: visibile;
+}
+
+#chat div, #chat ul, #chat li, #chat a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-shadow: none;
+    font-family: Arial,sans-serif;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+
+#chat .chatbox {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+}
+
+#chat ul li {
+    background: #e5e5e5;
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    list-style: none;
+    margin-right: 10px;
+    border-top: 1px solid #b5b5b5;
+}
+
+#chat ul li a.chatboxhead.active {
+    color: #222222;
+    font-weight: normal;
+}
+
+#chat ul li a.chatboxhead {
+    color: #ffffff;
+    font-weight: bold;
+    padding: 6px 18px 6px 8px;
+    width: 233px;
+}
+
+#chat ul li a.active {
+    background: #ffffff;
+    border-top: 0;
+    height: 18px;
+    margin-top: -2px;
+    position: relative;
+    z-index: 200;
+}
+
+#chat ul li a {
+    color: #222222;
+    border-left: 1px solid #b5b5b5;
+    border-right: 1px solid #b5b5b5;
+    color: #333;
+    float: left;
+    height: 16px;
+    line-height: 16px;
+    padding: 6px;
+    position: relative;
+    text-decoration: none;
+    width: auto;
+}
+
+#chat ul li a
+
+
