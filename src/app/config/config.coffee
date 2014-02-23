@@ -15,21 +15,20 @@ require.config
         "lodash"              : "js-libs/lodash/dist/lodash"
         "humane-js"           : "js-libs/humane-js/humane"
 
-        # jQuery and friends
+        # jquery and friends
         "jquery"              : "js-libs/jquery/dist/jquery"
         "jqueryviewport"      : "js-libs/jquery.viewport/jquery.viewport"
         "bootstrap"           : "js-libs/bootstrap/dist/js/bootstrap"
         "jqueryui"            : "app/mods/jqueryui"
         "jquery.json"         : "js-libs/jquery.json-2.4/index"
 
-        # We can't use Bower to manage our own configuration module.
         "my-config"           : "js-libs/my-config"
 
         # Plugins
         "image"               : "js-libs/requirejs-plugins/src/image"
-        "humane" : "app/mods/humane"
+        "humane"              : "app/mods/humane"
 
-        # Path to the dir which has all the jQueryUI components in it.
+        # Path to the dir which has all the jqueryui components in it.
         # Used in app/mods/jquery.
         "jqui-dir" : "js-libs/jquery.ui/ui"
 
@@ -38,6 +37,7 @@ require.config
         # Get all these guys together.
         "bootstrap"   : ["jquery"]
         "jquery.json" : ["jquery"]
+        "jqueryui"    : ["jquery"]
 
         # *sigh* ... and you, too...
         "jqueryviewport" : ["jqueryui"]
