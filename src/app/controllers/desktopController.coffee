@@ -24,15 +24,12 @@ define [
     ModelUser
 ) ->
     class DesktopController extends Backbone.Marionette.Controller 
-        initialize: (options) ->
+        intro: () ->
+            App.mainRegion.show new ViewWelcome
             App.menuRegion.show new ViewUser
                 model: new ModelUser
             App.headerRegion.show new ViewHeader
             App.footerRegion.show new ViewFooter
-
-        # These are mapped to appRouter's route declarations.
-        index: () ->
-            App.mainRegion.show new ViewWelcome
 
         login: () ->
             App.mainRegion.show new ViewLogin

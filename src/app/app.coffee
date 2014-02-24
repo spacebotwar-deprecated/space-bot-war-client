@@ -7,6 +7,7 @@ define [
     'app/components/player'
     'app/components/match'
     'app/components/start'
+    'app/util/templates'
 ], (
     MyConfig
     Backbone
@@ -16,7 +17,10 @@ define [
     Player
     Match
     Start
+    Templates
 ) ->
+
+    Templates.load 'baseHtml', 'baseHtml'
 
     app     = new Backbone.Marionette.Application
     lobby   = new Lobby
@@ -41,9 +45,20 @@ define [
     app.addInitializer player.init
     app.addInitializer start.init
 
-    if 'debug' in window
-        app.debug = debug
-    else
-        app.debug = no
+    app.addInitializer () ->
+        # If we're not testing, then show the main screen like everything is cool.
+        if not window.sbwTest
+            window.location.hash = 'intro'
 
-    return app
+        # This is not good MV* practice, but I'm not sure there's a better way.
+        $ document.body
+            .html Templates.get 'baseHtml'
+
+    app.on 'initialize:before', () ->
+        # TODO: remember what window.location.hash was so we can jump to it
+        # after logging in.
+        # do something with this variable, perhaps append it to `app` ?
+        oldLocation = window.location.hash
+        window.location.hash = ''
+
+    app

@@ -7,7 +7,7 @@ define [
 ) ->
     class AppRouter extends Backbone.Marionette.AppRouter
         appRoutes:
-            ''             : 'index'
+            'intro'        : 'intro'
             'login'        : 'login'
             'register'     : 'register'
             'lostPassword' : 'lostPassword'
