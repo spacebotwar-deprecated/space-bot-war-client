@@ -10,5 +10,7 @@ define [
     Templates
 ) ->
     Templates.load 'welcome/intro', 'welcomeIntro'
-    class WelcomeIntro extends Backbone.Marionette.Layout
+    class ViewWelcomeIntro extends Backbone.Marionette.Layout
         template: Templates.get 'welcomeIntro'
+
+    ViewWelcomeIntro

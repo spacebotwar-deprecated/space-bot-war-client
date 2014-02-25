@@ -7,9 +7,19 @@ define [
 ) ->
     class AppRouter extends Backbone.Marionette.AppRouter
         appRoutes:
-            'intro'        : 'intro'
-            'login'        : 'login'
-            'register'     : 'register'
+            # The first page the user sees when the open the site
+            'welcome'      : 'welcome'
+
+            # The buttons on the top of the 'welcome' screen
+            'about'        : 'about'
+            'faq'          : 'faq'
+
+            # The main game screen and its components
+            'game'             : 'game'
+            'game-editor'      : 'gameEditor'
+            'game-tournaments' : 'gameTournaments'
+
+            # TODO: work on this!
             'lostPassword' : 'lostPassword'
 
-    return AppRouter
+    AppRouter

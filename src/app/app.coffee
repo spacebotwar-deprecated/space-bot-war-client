@@ -48,7 +48,7 @@ define [
     app.addInitializer () ->
         # If we're not testing, then show the main screen like everything is cool.
         if not window.sbwTest
-            window.location.hash = 'intro'
+            window.location.hash = 'welcome'
 
         # This is not good MV* practice, but I'm not sure there's a better way.
         $ document.body
