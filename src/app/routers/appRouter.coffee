@@ -7,7 +7,7 @@ define [
 ) ->
     class AppRouter extends Backbone.Marionette.AppRouter
         appRoutes:
-            # The first page the user sees when the open the site
+            # The first page the user sees when they open the site
             'welcome'      : 'welcome'
 
             # The buttons on the top of the 'welcome' screen
