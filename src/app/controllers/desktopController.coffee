@@ -32,7 +32,8 @@ define [
             App.footerRegion.show new ViewFooter
 
         login: () ->
-            App.mainRegion.show new ViewLogin
+            console.log  'There isn\'t a login view!'
+            #App.mainRegion.show new ViewLogin
         
         register: () ->
             App.mainRegion.show new ViewRegister
