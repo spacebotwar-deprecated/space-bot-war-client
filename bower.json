@@ -14,6 +14,7 @@
     "requirejs-plugins": "git://github.com/millermedeiros/requirejs-plugins.git#~1.0.2",
     "requirejs": "~2.1.10",
     "jquery.json-2.4": "https://jquery-json.googlecode.com/files/jquery.json-2.4.js",
-    "jasmine-standalone-2.0.0": "https://github.com/pivotal/jasmine/blob/master/dist/jasmine-standalone-2.0.0.zip?raw=true"
+    "jasmine-standalone-2.0.0": "https://github.com/pivotal/jasmine/blob/master/dist/jasmine-standalone-2.0.0.zip?raw=true",
+    "r.js": "~2.1.11"
   }
 }
