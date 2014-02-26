@@ -19,7 +19,7 @@ define [
             names = ['loginLoggedOut', 'loginLoggedIn', 'loginRegister']
             template = Templates.get names[@model.get 'state']
             $ @el
-                .html template()
+                .html template @model.attributes
 
         events:
             'click #login'          : 'login'
@@ -37,7 +37,6 @@ define [
 
         logout: () ->
             if @model.get('state') == 1
-                console.log "Logging out"
                 Backbone.trigger "user:logout"
         
         lostPassword: () ->

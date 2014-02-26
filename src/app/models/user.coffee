@@ -29,7 +29,8 @@ define [
                 userId      : 0
                 state       : 0
 
-            console.log "MODEL: LOGOUT: logout_success"
+            # TODO: log that we have logged out successfully
+            #console.log "MODEL: LOGOUT: logout_success"
 
         loginSuccess: (data={}) ->
             @set
@@ -41,6 +42,7 @@ define [
             # TODO: still doesn't fix it, revisit!
             @set 'state', 1
 
-            console.log "MODEL: LOGIN: login_success #{JSON.stringify data}"
+            # TODO: log that we have logged in successfully
+            # console.log "MODEL: LOGIN: login_success #{JSON.stringify data}"
 
     User
