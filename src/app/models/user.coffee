@@ -34,13 +34,9 @@ define [
 
         loginSuccess: (data={}) ->
             @set
+                state       : 1
                 username    : data.content.username
                 userId      : data.content.user_id
-
-            # Explicitly set the `username` before the `state`, so that it's
-            # not an empty string when the template is rendered.
-            # TODO: still doesn't fix it, revisit!
-            @set 'state', 1
 
             # TODO: log that we have logged in successfully
             # console.log "MODEL: LOGIN: login_success #{JSON.stringify data}"
