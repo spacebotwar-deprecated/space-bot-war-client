@@ -2,7 +2,6 @@
 
 gulp    = require 'gulp'
 gutil   = require 'gulp-util'
-bower   = require 'bower'
 chalk   = require 'chalk'
 fs      = require 'fs'
 
@@ -42,11 +41,6 @@ startDevelopmentWebServer = (port) ->
     Just a clean way to define tasks. Because OCD.
 ###
 tasks =
-    test:
-        deps: []
-        func: () ->
-            # TODO
-            gutil.log chalk.red 'Error: Testing not implemented!'
 
     develop: 
         deps: ['compile']
@@ -65,12 +59,5 @@ tasks =
                     sourceMap : yes
                 ).on 'error', gutil.log
                 .pipe gulp.dest 'src/app'
-
-    updatedeps:
-        deps: []
-        func: () ->
-            # TODO:
-            # npm update
-            # bower install
 
 gulp.task name, task.deps, task.func for name, task of tasks
