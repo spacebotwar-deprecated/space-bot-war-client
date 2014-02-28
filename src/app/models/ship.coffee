@@ -63,7 +63,15 @@ define [
             context.translate x + 1000, 1000 - y
             context.rotate 0 - o
             image = ImageCache.getImage('/img/sp_ship.png')
-            context.drawImage(image, -20, -20)
+            context.drawImage(image, -30, -30)
             context.restore()
+
+            # Draw a circle where the ship should be.
+            context.beginPath()
+            context.arc x+1000, 1000-y, 30, 0, Math.PI * 2, yes
+            context.lineWidth = 2
+            context.strokeStyle = 'red'
+            context.stroke()
+
 
     return Ship
