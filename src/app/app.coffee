@@ -46,13 +46,16 @@ define [
     app.addInitializer start.init
 
     app.addInitializer () ->
-        # If we're not testing, then show the main screen like everything is cool.
-        if not window.sbwTest
-            window.location.hash = 'welcome'
+        if window.sbwTest
+            $ document.body
+                .append "<div class=\"container\">#{Templates.get('baseHtml')()}</div>"
+        else
+            # This is not good MV* practice, but I'm not sure there's a better way.
+            $ document.body
+                .html Templates.get 'baseHtml'
 
-        # This is not good MV* practice, but I'm not sure there's a better way.
-        $ document.body
-            .html Templates.get 'baseHtml'
+        # To the welcome page!
+        window.location.hash = 'welcome'
 
     app.on 'initialize:before', () ->
         # TODO: remember what window.location.hash was so we can jump to it

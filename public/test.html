@@ -6,16 +6,17 @@
 
     <link rel="shortcut icon" type="image/png" href="img/jasmine/jasmine_favicon.png">
     <link rel="stylesheet" type="text/css" href="css/jasmine.css">
+    <link rel="stylesheet" type="text/css" href="css/desktop.css"></link>
 
     <script type="text/javascript" src="js-libs/jasmine-standalone-2.0.0/lib/jasmine-2.0.0/jasmine.js"></script>
     <script type="text/javascript" src="js-libs/jasmine-standalone-2.0.0/lib/jasmine-2.0.0/jasmine-html.js"></script>
     <script type="text/javascript" src="js-libs/jasmine-standalone-2.0.0/lib/jasmine-2.0.0/boot.js"></script>
 
     <!-- include source files here... -->
-    <!-- TODO: get everything to load but not actually put anything on the screen -->
     <script type="text/javascript">
         window.sbwTest = window.sbwDebug = true;
     </script>
+    <script type="text/javascript" data-main="app/config/config" src="js-libs/requirejs/require.js"></script>
 
     <!-- include spec files here... -->
     <script type="text/javascript" src="spec/testSpec.js"></script>
