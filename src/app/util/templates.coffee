@@ -25,6 +25,7 @@ define [
                 cache   : no # because getting templates like this is for debug
                 success : (data="") =>
                     @cache[name] = Handlebars.compile data
+            return
 
         templateNotLoaded: (name) ->
             # TODO: log this to the debug console.

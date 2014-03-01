@@ -64,4 +64,19 @@ define [
         oldLocation = window.location.hash
         window.location.hash = ''
 
+    app.on 'initialize:after', () ->
+        # Used in the unit tests to know when it's safe to start interacting
+        # with the application.
+        # window.sbwLoaded = true
+
+        # TODO: perhaps here is the place to jump to the 
+        # previous window.location.hash?
+
+        if window.sbwTest
+            # Used to trick the RequireJS optimizer into not including the unit
+            # tests into the production build.
+            trick = 'app/test'
+            require [trick]
+
+
     app

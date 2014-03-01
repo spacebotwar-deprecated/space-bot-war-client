@@ -12,19 +12,19 @@
     <script type="text/javascript" src="js-libs/jasmine-standalone-2.0.0/lib/jasmine-2.0.0/jasmine-html.js"></script>
     <script type="text/javascript" src="js-libs/jasmine-standalone-2.0.0/lib/jasmine-2.0.0/boot.js"></script>
 
-    <!-- include source files here... -->
     <script type="text/javascript">
         window.sbwTest = window.sbwDebug = true;
-    </script>
-    <script type="text/javascript" data-main="app/config/config" src="js-libs/requirejs/require.js"></script>
 
-    <!-- include spec files here... -->
-    <script type="text/javascript" src="spec/testSpec.js"></script>
+        // Hook Jasmine's auto starter (that uses onload) into a function that
+        // isn't called automatically.
+        window.startJasmineTests = window.onload;
+        window.onload = function(){};
+    </script>
+
+    <!-- include source files here... -->
+    <script type="text/javascript" data-main="app/config/config" src="js-libs/requirejs/require.js"></script>
 </head>
 
 <body>
-
-<!-- TODO: does anything go in here? o_0 -->
-
 </body>
 </html>
