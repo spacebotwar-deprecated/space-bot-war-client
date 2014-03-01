@@ -18,14 +18,28 @@ define [
             @cache = Handlebars.templates or {}
 
         load: (path, name=path) ->
-            return if @cache[name]
-            $.ajax
-                url     : 'templates/' + path + '.html'
-                async   : no
-                cache   : no # because getting templates like this is for debug
-                success : (data="") =>
-                    @cache[name] = Handlebars.compile data
-            return
+            if @cache[name]
+                undefined
+            else
+                $.ajax
+                    url     : 'templates/' + path + '.html'
+                    async   : no
+                    cache   : no # Because getting templates like this is for debug
+                    success : (template="") =>
+                        @save name, template
+                undefined
+
+        # Mostly used for testing, checks if a template has been loaded
+        loaded: (name="") ->
+            if @cache[name] then yes else no
+
+        save: (name, template) ->
+            # Remove new lines so that the HTML is smaller, easier to
+            # test and if you look at in the Chrome DevTools, it's
+            # pretty printed anyway.
+            template = template.replace /^\s+|\s+$/g, ''
+
+            @cache[name] = Handlebars.compile template
 
         templateNotLoaded: (name) ->
             # TODO: log this to the debug console.
@@ -33,7 +47,6 @@ define [
 
         # Example usages:
         # template = Templates.get 'template'
-        # {template1, template2} = Templates.get 'template1', 'template2'
         get: (name="") ->
             @cache[name] or @templateNotLoaded(name)
 

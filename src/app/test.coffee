@@ -1,6 +1,5 @@
 # NOTE: update this array when you add more unit tests!
 tests = [
-    'testSpec'
     'templates'
 ]
 

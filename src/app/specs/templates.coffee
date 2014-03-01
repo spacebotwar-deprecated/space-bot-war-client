@@ -1,16 +1,26 @@
 define () ->
 
-    describe 'the Templates module', () ->
+    describe 'module app/util/templates =>', () ->
 
-        beforeEach (done) ->
+        beforeEach () ->
             @templates = require 'app/util/templates'
-            done()
 
-        describe 'the load() method', () ->
+        describe 'load()', () ->
 
             it 'should return nothing', () ->
                 expect @templates.load 'testTemplate', 'testTemplate'
                     .toBeUndefined()
 
-        describe 'the Templates#get() method', () ->
-            # console.log 'doing something'
+            it 'should load the template', () ->
+                expect @templates.loaded 'testTemplate'
+                    .toBe yes
+
+        describe 'get()', () ->
+
+            it 'should return a function', () ->
+                expect typeof @templates.get 'testTemplate'
+                    .toMatch /function/i
+
+            it 'should generate the correct HTML when called', () ->
+                expect @templates.get('testTemplate').call()
+                    .toEqual '<p>Test</p>'
