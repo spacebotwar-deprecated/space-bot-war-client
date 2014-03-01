@@ -22,8 +22,6 @@ Now hit ` $ perl sbw.pl help ` for instructions on how to develop with us!
 TODO (In order of priority)
 ===========================
 
-- Find a way to unit test the application. (Jasmine?)
+- Add unit tests for logging in and out
 - Add a debug-mode-only logger. Perhaps some hacky type of precompiler? Eg,
 in a build, remove all lines that have a `//debug` comment at the end?
-- `sbw.pl`: just for kicks, add a task to get the number of lines of coffee
-code there is in the src/app directory.

@@ -54,15 +54,16 @@ sub run_task {
                 gulp compile --require coffee-script/register;
             });
         }
+        when (/size/i) {
+            run_command(qq{
+                gulp size --require coffee-script/register
+            });
+        }
         when (/develop/i) {
             my $port = $ARGV[1] || 8001;
             run_command(qq{
                 PORT=$port gulp develop --require coffee-script/register;
-            })
-        }
-        when (/test/i) {
-            # TODO: use something like Browser::Open to open
-            # localhost:8001/test.html
+            });
         }
         when (/clean/i) {
             # Keep track of the number of files deleted.

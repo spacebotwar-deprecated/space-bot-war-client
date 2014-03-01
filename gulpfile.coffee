@@ -7,6 +7,7 @@ fs      = require 'fs'
 
 # Gulp plugins
 coffee = require 'gulp-coffee'
+sloc   = require 'gulp-sloc'
 
 
 
@@ -59,5 +60,11 @@ tasks =
                     sourceMap : yes
                 ).on 'error', gutil.log
                 .pipe gulp.dest 'src/app'
+
+    size:
+        deps: []
+        func: () ->
+            gulp.src ['src/app/**/*.coffee']
+                .pipe(sloc())
 
 gulp.task name, task.deps, task.func for name, task of tasks
