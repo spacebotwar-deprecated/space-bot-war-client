@@ -7,13 +7,15 @@ define () ->
 
         describe 'load()', () ->
 
-            it 'should return nothing', () ->
+            it 'should return nothing', (done) ->
                 expect @templates.load 'testTemplate', 'testTemplate'
                     .toBeUndefined()
+                done()
 
-            it 'should load the template', () ->
+            it 'should load the template', (done) ->
                 expect @templates.loaded 'testTemplate'
                     .toBe yes
+                done()
 
         describe 'get()', () ->
 
