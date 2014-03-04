@@ -41,6 +41,13 @@ define [
                 @context.strokeStyle = 'red'
                 @context.stroke()
 
+                # Put a marker in the centre
+                @context.beginPath()
+                @context.arc 20, 20, 19, 0, Math.PI * 2, yes
+                @context.lineWidth = 2
+                @context.strokeStyle = 'white'
+                @context.stroke()
+
                 # Render each ship
                 ships = @model.get 'ships'
                 ships.each (ship) =>
@@ -61,4 +68,4 @@ define [
             canvas.height = 3000
             canvas.width = 3000
             @context = canvas.getContext '2d'
-            @context.scale 0.5, 0.5
+            @context.scale 1, 1

@@ -60,7 +60,12 @@ define [
 
             #console.log "Model:Ship:render: #{fraction} #{previous_x} #{previous_y} #{x} #{y} #{orientaion}"
 
-            context.translate x + 1000, 1000 - y
+            # translate and scale from server co-ordinate system to canvas system
+            x = x + 1000
+            y = 1000 - y
+            x *= 1.5
+            y *= 1.5
+            context.translate x, y
             context.rotate 0 - o
             image = ImageCache.getImage('/img/sp_ship.png')
             context.drawImage(image, -30, -30)
@@ -68,9 +73,10 @@ define [
 
             # Draw a circle where the ship should be.
             context.beginPath()
-            context.arc x+1000, 1000-y, 30, 0, Math.PI * 2, yes
+            context.arc x, y, 30, 0, Math.PI * 2, yes
             context.lineWidth = 2
             context.strokeStyle = 'red'
+            context.setLineDash([1,2])
             context.stroke()
 
 
