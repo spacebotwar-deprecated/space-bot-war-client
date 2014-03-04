@@ -11,6 +11,7 @@ define [
 ) ->
     Templates.load 'game/intro', 'gameIntro'
     class ViewGameIntro extends Backbone.Marionette.Layout
+        name: 'ViewGameIntro'
         template: Templates.get 'gameIntro'
 
     ViewGameIntro

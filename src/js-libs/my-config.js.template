@@ -1,9 +1,5 @@
-define([], function() {
+define(function() {
     var Config = {
-        // The following doesn't work because 'this' ==  window.
-        // wat?
-        // serverPort: 5000,
-        // webSocketBaseUrl: 'ws://spacebotwar.co.uk:' + this.serverPort + '/ws',
         webSocketUrls: {
             // Log in, log out...
             start: 'ws://spacebotwar.com:5000/ws/start',
@@ -14,10 +10,16 @@ define([], function() {
             // Play a game
             match: 'ws://spacebotwar.com:5000/ws/match',
         },
+
+        // Used in testing:
+        user: {
+            name     : 'Vasari',
+            password : 's3cret'
+        },
+
         // Unused for the moment
         radius_api_key: "78855680-671c-4c70-b194-2e392a0a7c81"
     };
     
     return Config;
 });
-

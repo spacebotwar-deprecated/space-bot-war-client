@@ -15,6 +15,7 @@ define [
 ) ->
     Templates.load 'main/welcome', 'mainWelcome'
     class Welcome extends Backbone.Marionette.Layout
+        name: 'ViewWelcome'
         template: Templates.get 'mainWelcome'
 
         regions:
@@ -27,5 +28,5 @@ define [
             @arena.show new ViewWelcomeArena
                 model : new ModelMatch
 
-    return Welcome
+    Welcome
 
