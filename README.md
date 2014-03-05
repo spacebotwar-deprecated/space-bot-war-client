@@ -19,9 +19,11 @@ The following are the steps you'll need to take to get this thing running.
 Now hit ` $ perl sbw.pl help ` for instructions on how to develop with us!
 
 
-TODO (In order of priority)
+TODO (In no particular order)
 ===========================
-
-- Add unit tests for logging in and out
-- Add a debug-mode-only logger. Perhaps some hacky type of precompiler? Eg,
-in a build, remove all lines that have a `//debug` comment at the end?
+- Some sort of Chat system
+- Some sort of code editor
+- Setup [log4js](http://log4javascript.org/)
+- Start work on the Steampunk CSS styling/art
+- Perhaps a loading screen? Something to display while the JavaScript is 
+being pulled in? Maybe?? :P
