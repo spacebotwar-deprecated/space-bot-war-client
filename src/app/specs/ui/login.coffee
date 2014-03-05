@@ -2,12 +2,16 @@ define [
     'jquery'
     'backbone'
     'marionette'
+    'app/app'
     'my-config'
+    'app/util/constants'
 ], (
     $
     Backbone
     Marionette
+    App
     MyConfig
+    Constants
 ) ->
 
     describe 'ui logging in and out =>', () ->
@@ -48,36 +52,32 @@ define [
 
             beforeEach (done) ->
                 login()
-                setTimeout done, 1000
+                setTimeout done, Constants.DOM_UPDATE_TIME
 
             it 'should change the hash to #game', () ->
                 expect window.location.hash
                     .toEqual '#game'
 
-            it 'should render the ViewGameIntro view', () ->
-                expect require('app/app').mainRegion.currentView.name
-                    .toEqual 'ViewGameIntro'
+            it 'should render the game intro screen', () ->
+                expect $ App.mainRegion.el
+                    .toContainText '
+                        This is the main game screen, displayed after logging in.
+                    '
+
 
         describe 'logging out', ()  ->
 
             beforeEach (done) ->
                 logout()
-                setTimeout done, 1000
+                setTimeout done, Constants.DOM_UPDATE_TIME
 
             it 'should change the hash to #welcome', () ->
                 expect window.location.hash
                     .toEqual '#welcome'
 
-            it 'should render the ViewWelcome view', () ->
-                expect require('app/app').mainRegion.currentView.name
-                    .toEqual 'ViewWelcome'
-
-            ## Note: apparently you break stuff if you define custom view props
-            #
-            # it 'should render the ViewWelcomeArena region of ViewWelcome', () ->
-            #     expect require('app/app').mainRegion.currentView.regions.arena.name
-            #         .toEqual 'ViewWelcomeArena'
-
-            # it 'should render the ViewWelcomeIntro region of ViewWelcome', () ->
-            #     expect require('app/app').mainRegion.currentView.regions.intro.name
-            #         .toEqual 'ViewWelcomeIntro'
+            it 'should render welcome intro screen', () ->
+                expect $ App.mainRegion.el
+                    .toContainText '
+                        In the 31st Century mankind is exploring the galaxy
+                    '
+                
