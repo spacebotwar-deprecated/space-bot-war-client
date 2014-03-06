@@ -1,13 +1,13 @@
 define [
     'backbone'
     'marionette'
-    'humane'
+    'app/util/notify'
     'jquery'
     'jquery.json'
 ], (
     Backbone
     Marionette
-    Humane
+    Notify
     $
     JSON
 ) ->
@@ -42,7 +42,8 @@ define [
                 Backbone.trigger "#{@prefix}:recv:#{route}", data
             else
                 # For now, on an error, put up a 'humane' message.
-                Humane.error content.message
+                Notify.error content.message
+                # TODO: use a logger for this!
                 console.error "ERROR: #{content.code} - #{content.message}"
 
         send: (data={}) =>

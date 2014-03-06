@@ -1,6 +1,5 @@
 @import url("bootstrap.css");
 @import url("commonstyles.css");
-@import url("jackedup.css");
 @import url("jqueryui.css");
 
 
@@ -42,4 +41,16 @@
     height: 1500px;
     left:   450px;
     top:    450px;
+}
+
+/* Styling for app/util/notify's notifications */
+#notification {
+    display:    none;
+    position:   fixed;
+    cursor:     pointer;
+    width:      100%;
+    background: #EFEFEF;
+    text-align: center;
+    border-top: 2px solid #FFF;
+    z-index:    9999;
 }

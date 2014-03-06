@@ -4,14 +4,12 @@ define [
     'backbone'
     'app/components/connection'
     'app/components/session'
-    'humane'
 ], (
     MyConfig
     $
     Backbone
     Connection
     Session
-    Humane
 ) ->
 
     # The Start Module is responsible for handling login and registration

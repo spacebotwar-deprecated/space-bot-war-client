@@ -13,7 +13,6 @@ require.config
         "handlebars"          : "js-libs/handlebars/handlebars.amd"
         "underscore"          : "js-libs/lodash/dist/lodash"
         "lodash"              : "js-libs/lodash/dist/lodash"
-        "humane-js"           : "js-libs/humane-js/humane"
 
         # jquery and friends
         "jquery"              : "js-libs/jquery/dist/jquery"
@@ -26,7 +25,8 @@ require.config
 
         # Plugins
         "image"               : "js-libs/requirejs-plugins/src/image"
-        "humane"              : "app/mods/humane"
+
+        "notify-lib"          : "js-libs/jquery-mininotification/js/miniNotification"
 
         # Path to the dir which has all the jqueryui components in it.
         # Used in app/mods/jquery.
@@ -62,7 +62,7 @@ requirejs [
     else
         # TODO: fix this miserable mess!
         error =  '
-            We have absolutely zero mobile support! Use with caution!
+            You shall NOT pass!
         '
         alert error
         throw new Error error
