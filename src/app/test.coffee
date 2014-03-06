@@ -6,6 +6,7 @@ define [
     # NOTE: update these arrays when you add more unit tests!
     moduleTests = [
         'templates'
+        'connection'
     ]
 
     uiTests = [
