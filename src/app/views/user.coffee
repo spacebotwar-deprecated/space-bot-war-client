@@ -22,10 +22,11 @@ define [
                 .html template @model.attributes
 
         events:
-            'click #login'          : 'login'
-            'click #logout'         : 'logout'
-            'click #register'       : 'register'
-            'click #lostPassword'   : 'lostPassword'
+            'click #login'                 : 'login'
+            'click #logout'                : 'logout'
+            'click #register'              : 'register'
+            'click #lostPassword'          : 'lostPassword'
+            'keydown #username, #password' : 'keyPressed'
 
         login: () ->
             if @model.get('state') == 0
@@ -34,6 +35,11 @@ define [
                 password = $ '#password'
                     .val()
                 Backbone.trigger "user:login", {username, password}
+
+        keyPressed: (event={}) ->
+            if event.keyCode == 13 # login = 'enter' key
+                event.preventDefault()
+                @login()
 
         logout: () ->
             if @model.get('state') == 1
