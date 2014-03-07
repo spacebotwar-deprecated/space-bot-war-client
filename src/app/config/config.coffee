@@ -50,7 +50,7 @@ requirejs [
     # THIS is the main entry point of the application!
     console.log "O-hai there!"
 
-    # Figure out weather this is Mobile or Desktop to conditionally include
+    # Figure out weather this is Mobile or Desktop to conditionally start
     # the correct code. (It's not a size thing, it's loading the correct
     # templates and CSS, in case you were wondering...)
     userAgent = navigator.userAgent or navigator.vendor or window.opera

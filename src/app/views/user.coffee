@@ -15,9 +15,11 @@ define [
     Templates.load 'login/register', 'loginRegister'
     
     class User extends Backbone.Marionette.ItemView
+        
+        @names: ['loginLoggedOut', 'loginLoggedIn', 'loginRegister']
+        
         render: () ->
-            names = ['loginLoggedOut', 'loginLoggedIn', 'loginRegister']
-            template = Templates.get names[@model.get 'state']
+            template = Templates.get @names[@model.get 'state']
             $ @el
                 .html template @model.attributes
 
@@ -52,6 +54,7 @@ define [
         
         register: () ->
             if @model.get('state') == 0
+                # Change to the register form
                 @model.set 'state', 2
 
             else if @model.get('state') == 2
