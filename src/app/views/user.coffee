@@ -13,11 +13,11 @@ define [
     Templates.load 'login/loggedOut', 'loginLoggedOut'
     Templates.load 'login/loggedIn', 'loginLoggedIn'
     Templates.load 'login/register', 'loginRegister'
-    
+
     class User extends Backbone.Marionette.ItemView
-        
-        @names: ['loginLoggedOut', 'loginLoggedIn', 'loginRegister']
-        
+
+        names: ['loginLoggedOut', 'loginLoggedIn', 'loginRegister']
+
         render: () ->
             template = Templates.get @names[@model.get 'state']
             $ @el
@@ -46,12 +46,12 @@ define [
         logout: () ->
             if @model.get('state') == 1
                 Backbone.trigger "user:logout"
-        
+
         lostPassword: () ->
             if @model.get('state') == 0
                 # TODO: implement lost password
                 throw new Erorr 'Not implemented!'
-        
+
         register: () ->
             if @model.get('state') == 0
                 # Change to the register form
@@ -64,8 +64,8 @@ define [
                     elValue = @$ "##{elName}"
                         .val()
                     parameters[elName] = elValue
-                
-                Backbone.trigger 'user:register', parameters        
+
+                Backbone.trigger 'user:register', parameters
 
         initialize: () ->
             @model.bind 'change:state', @render, @
