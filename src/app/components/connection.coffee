@@ -15,9 +15,10 @@ define [
     class Connection
 
         constructor: (@url, @prefix) ->
-            @module = @getModuleName @url
+            @module = @getModuleName
 
         init: () ->
+            # TODO: use the logger for this!
             console.log "Attempting connection to #{@url}"
             @connection = new WebSocket @url
 
