@@ -3,7 +3,7 @@ define [
     'backbone'
     'marionette'
     'app/views/welcome'
-    'app/views/user' 
+    'app/views/user'
     'app/views/welcome/header'
     'app/views/welcome/footer'
     'app/views/register'
@@ -14,6 +14,7 @@ define [
     'app/views/game/header'
     'app/views/game/footer'
     'app/views/game/intro'
+    'app/views/game/editor'
 ], (
     App
     Backbone
@@ -30,8 +31,9 @@ define [
     ViewGameHeader
     ViewGameFooter
     ViewGameIntro
+    ViewGameEditor
 ) ->
-    class DesktopController extends Backbone.Marionette.Controller 
+    class DesktopController extends Backbone.Marionette.Controller
         ###
             Welcome page and its components
         ###
@@ -58,8 +60,7 @@ define [
             App.footerRegion.show new ViewGameFooter
 
         gameEditor: () ->
-            # TODO: build text editor component and template, render!
-            console.log 'Game code editor controller call'
+            App.mainRegion.show new ViewGameEditor
 
         gameTournaments: () ->
             # TODO: code viewing of tournaments (server and client!)

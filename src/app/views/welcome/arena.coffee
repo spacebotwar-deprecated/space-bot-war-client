@@ -1,6 +1,6 @@
 define [
     'jquery'
-#    'jqueryui'
+    'jqueryui'
     'backbone'
     'marionette'
     'image!/img/starmap1.jpg'
@@ -8,7 +8,7 @@ define [
     'app/util/templates'
 ], (
     $
-#    JqueryUI
+    JUI # Fixes some cache issue :/
     Backbone
     Marionette
     imageStarmap

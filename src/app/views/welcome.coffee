@@ -15,7 +15,6 @@ define [
 ) ->
     Templates.load 'main/welcome', 'mainWelcome'
     class Welcome extends Backbone.Marionette.Layout
-        name: 'ViewWelcome'
         template: Templates.get 'mainWelcome'
 
         regions:
