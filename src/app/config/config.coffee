@@ -32,8 +32,6 @@ require.config
         # Used in app/mods/jquery.
         "jqui-dir" : "js-libs/jquery.ui/ui"
 
-        "highlight" : "js-libs/highlight.min/index"
-
     # Sets the configuration for your third party scripts that are not AMD compatible
     shim:
         # Get all these guys together.
@@ -43,9 +41,6 @@ require.config
 
         # *sigh* ... and you, too...
         "jqueryviewport" : ["jqueryui"]
-
-        "highlight" :
-            exports : "hljs"
 
 
 requirejs [
