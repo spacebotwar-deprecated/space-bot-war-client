@@ -13,7 +13,7 @@ use strict;
 use warnings;
 use v5.10;
 
-STDOUT->autoflush;
+$|++;
 
 use feature 'switch';
 
