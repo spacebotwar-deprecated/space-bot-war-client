@@ -32,40 +32,42 @@ run_task($task);
 sub run_task {
     my $task = shift;
 
-    say '';
-    say "############### $task ###############";
-    say '';
+    if ($task) {
+        say '';
+        say "############### $task ###############";
+        say '';
+    }
 
     given ($task) {
-        when (/fresh_build/i) {
+        when ('fresh_build') {
             run_task('clean');
             run_task('update');
             run_task('build');
         }
-        when (/build/i) {
+        when ('build') {
             run_task('compile');
             run_command(qq{
                 cd build;
                 ./build.sh;
             });
         }
-        when (/compile/i) {
+        when ('compile') {
             run_command(qq{
                 gulp compile --require coffee-script/register;
             });
         }
-        when (/size/i) {
+        when ('size') {
             run_command(qq{
                 gulp size --require coffee-script/register
             });
         }
-        when (/develop/i) {
+        when ('develop') {
             my $port = $ARGV[1] || 8001;
             run_command(qq{
                 PORT=$port gulp develop --require coffee-script/register;
             });
         }
-        when (/clean/i) {
+        when ('clean') {
             # Keep track of the number of files deleted.
             my $delete_count = 0;
 
@@ -79,12 +81,12 @@ sub run_task {
                 ->maxdepth(1)
                 ->in(@to_search);
 
-            my @foo = File::Find::Rule->new
+            my @others = File::Find::Rule->new
                 ->file
                 ->name('*.js', '*.map')
                 ->in(catfile($dir, 'src', 'app'));
 
-            @to_delete = (@to_delete, @foo);
+            @to_delete = (@to_delete, @others);
 
             # For some reason, these make it into the search.
             @to_delete = grep {not m/node_modules$|js\-libs$/i} @to_delete;
@@ -113,13 +115,13 @@ $to_delete_pretty
 
             say "Successfully deleted $delete_count files";
         }
-        when (/update/i) {
+        when ('update') {
             run_command(qq{
                 npm install;
                 bower update;
             });
         }
-        when (/setup/i) {
+        when ('setup') {
             say 'Please ensure you have NodeJS and npm installed.';
             run_command(qq{
                 # Make sure we have latest npm
@@ -131,7 +133,7 @@ $to_delete_pretty
             run_task('clean');
             run_task('update');
         }
-        when (/help/i) {
+        when ('help') {
             display_help_message();
             exit;
         }
@@ -152,7 +154,7 @@ sub display_help_message {
 
     my $message = qq{
     Please see the following link for usage and information about how all this
-    works. 
+    works.
 
     https://github.com/spacebotwar/space-bot-war-client/wiki/sbw.pl-Help
 };
@@ -162,11 +164,10 @@ sub display_help_message {
 
 sub run_command {
     my $foo = shift;
-    
+
     # Strip any whitespace or newlines off. I don't know weather it prevents
     # any errors but it makes $foo read more clearly when printed. Or something.
     $foo =~ s/  //g;
     $foo =~ s/\n//g;
-    # say $foo;
     system $foo;
 }
