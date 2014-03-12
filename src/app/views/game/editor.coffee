@@ -12,17 +12,24 @@ define [
     Highlight
 ) ->
     Templates.load 'game/editor', 'gameEditor'
-    class ViewGameEditor extends Backbone.Marionette.Layout
+    class ViewGameEditor extends Backbone.Marionette.ItemView
+        editorElement: null
         template: Templates.get 'gameEditor'
 
         events:
-            'keydown #sbwEditorField' : 'highlightCode'
+            'keydown #sbwEditorField' : 'handleHighlight'
 
         onRender: () ->
-            @highlightCode()
+            @handleHighlight()
+
+        handleHighlight: () ->
+            # The onRender callback gets fired before the HTML hits the road.
+            # (Contrary to anything the Marionette Docs say)
+            # TODO: is there any way to avoid doing this?
+            setTimeout @highlightCode, 50
 
         highlightCode: () ->
-            console.log 'highlightCode() called'
-            Highlight.highlightBlock @el
+            @editorElement or= document.getElementById 'sbwEditorField'
+            Highlight.highlightBlock editorElement
 
     ViewGameEditor
