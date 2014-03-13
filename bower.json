@@ -16,7 +16,8 @@
     "jasmine-standalone-2.0.0": "https://github.com/pivotal/jasmine/blob/master/dist/jasmine-standalone-2.0.0.zip?raw=true",
     "r.js": "~2.1.11",
     "jasmine-jquery": "~2.0.3",
-    "jquery-mininotification": "*"
+    "jquery-mininotification": "*",
+    "woodman": "~1.1.0"
   },
   "resolutions": {
     "jquery": "~2.1.0"

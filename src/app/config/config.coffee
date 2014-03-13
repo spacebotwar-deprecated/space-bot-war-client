@@ -32,6 +32,13 @@ require.config
         # Used in app/mods/jquery.
         "jqui-dir" : "js-libs/jquery.ui/ui"
 
+
+        # Used to configure Woodman
+        "woodman" : "app/mods/woodman"
+
+        # The actual path to Woodman
+        "woodman-js" : "js-libs/woodman/dist/woodman-amd"
+
     # Sets the configuration for your third party scripts that are not AMD compatible
     shim:
         # Get all these guys together.

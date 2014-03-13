@@ -1,16 +1,20 @@
 define [
     'backbone'
     'marionette'
+    'woodman'
     'app/util/notify'
     'jquery'
     'jquery.json'
 ], (
     Backbone
     Marionette
+    Woodman
     Notify
     $
     JSON
 ) ->
+
+    logger = Woodman.getLogger 'app/components/connection'
 
     class Connection
 
@@ -18,8 +22,7 @@ define [
             @module = @getModuleName
 
         init: () ->
-            # TODO: use the logger for this!
-            console.log "Attempting connection to #{@url}"
+            logger.info "Attempting connection to #{@url}"
             @connection = new WebSocket @url
 
             @connection.onerror     = @onError
