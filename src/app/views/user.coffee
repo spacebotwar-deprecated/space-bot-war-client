@@ -59,11 +59,8 @@ define [
 
             else if @model.get('state') == 2
                 parameters = {}
-
-                _.each ['username', 'password', 'email'], (elName) ->
-                    elValue = @$ "##{elName}"
-                        .val()
-                    parameters[elName] = elValue
+                foo = ['username', 'password', 'email']
+                parameters[name] = @$("##{name}").val() for name in foo
 
                 Backbone.trigger 'user:register', parameters
 
