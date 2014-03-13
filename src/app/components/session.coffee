@@ -1,8 +1,11 @@
 define [
-
+    'woodman'
 ], (
-
+    Woodman
 ) ->
+
+    logger = Woodman.getLogger 'app/components/logger'
+
     class Session
         constructor: () ->
             {@clientCode} = localStorage
@@ -14,6 +17,6 @@ define [
             return if !newClientCode
             localStorage.clientCode = newClientCode
             @clientCode = newClientCode
-            console.log "Received new clientCode #{newClientCode}"
+            logger.info "Received new clientCode #{newClientCode}"
 
     new Session

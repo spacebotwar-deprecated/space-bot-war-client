@@ -1,12 +1,16 @@
 define [
     'handlebars'
+    'woodman'
 ], (
     Handlebars
+    Woodman
 ) ->
 
     # Handlebars AMD seems to do this for some reason. The Handlebars we all
     # know and love is hidden in this 'default' thing.
     Handlebars = Handlebars.default
+
+    logger = Woodman.getLogger 'app/util/templates'
 
     class Templates
 
@@ -38,12 +42,10 @@ define [
             # test and if you look at in the Chrome DevTools, it's
             # pretty printed anyway.
             template = template.replace /^\s+|\s+$/g, ''
-
             @cache[name] = Handlebars.compile template
 
         templateNotLoaded: (name) ->
-            # TODO: log this to the debug console.
-            console.log "ERROR: template #{name} is not loaded!"
+            logger.error "ERROR: template #{name} is not loaded!"
 
         # Example usages:
         # template = Templates.get 'template'

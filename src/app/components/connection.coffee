@@ -30,12 +30,12 @@ define [
             @connection.onmessage   = @onMessage
 
         onError: (e={}) =>
-            console.log "#{@prefix}:error", e
+            logger.error "#{@prefix}:error", e
             Backbone.trigger "#{@prefix}:error", e
 
         onOpen: () =>
+            logger.info "Successfully connected to #{@url}"
             Backbone.trigger "#{@prefix}:connected"
-            console.log "Successfully connected to #{@url}"
 
         onMessage: (e={}) =>
             data    = $.evalJSON e.data
@@ -43,15 +43,15 @@ define [
             content = data.content
 
             if content.code == 0
+                logger.info 'Call succeeded, received data:', data
                 Backbone.trigger "#{@prefix}:recv:#{route}", data
             else
-                # For now, on an error, put up a 'humane' message.
+                # For now, on an error, put up a big notification.
                 Notify.error content.message
-                # TODO: use a logger for this!
-                console.error "ERROR: #{content.code} - #{content.message}"
+                logger.error "ERROR: #{content.code} - #{content.message}"
 
         send: (data={}) =>
-            console.log "Sending #{$.toJSON data} to #{@url}"
+            logger.info 'Sending', data, 'to', @url
             @connection.send $.toJSON data
 
         getModuleName: () ->

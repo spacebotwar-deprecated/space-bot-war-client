@@ -51,11 +51,14 @@ require.config
 
 
 requirejs [
+    'woodman'
 ], (
-
+    Woodman
 ) ->
+
     # THIS is the main entry point of the application!
-    console.log "O-hai there!"
+    logger = Woodman.getLogger 'app/config/config'
+    logger.log 'Reached the main entry point of the application.'
 
     # Figure out weather this is Mobile or Desktop to conditionally start
     # the correct code. (It's not a size thing, it's loading the correct

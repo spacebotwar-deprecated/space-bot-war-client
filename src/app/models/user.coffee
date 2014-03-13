@@ -1,11 +1,15 @@
 define [
     "backbone"
     "marionette"
+    "woodman"
 ], (
     Backbone
     Marionette
+    Woodman
 ) ->
-    
+
+    logger = Woodman.getLogger 'app/models/user'
+
     class User extends Backbone.Model
         defaults:
             username : ''
@@ -17,7 +21,7 @@ define [
             # behind the scenes.
             # 0 = logged out, 1 = logged in, 2 = registering
             state    : 0
-        
+
         initialize: () ->
             # Setup the events for when login or logout requests succeed.
             Backbone.on "ws:recv:/login_with_password", @loginSuccess, @
@@ -29,8 +33,7 @@ define [
                 userId      : 0
                 state       : 0
 
-            # TODO: log that we have logged out successfully
-            #console.log "MODEL: LOGOUT: logout_success"
+            logger.log "Successfully logged out"
 
         loginSuccess: (data={}) ->
             @set
@@ -38,7 +41,6 @@ define [
                 username    : data.content.username
                 userId      : data.content.user_id
 
-            # TODO: log that we have logged in successfully
-            # console.log "MODEL: LOGIN: login_success #{JSON.stringify data}"
+            logger.log "Successfully logged in"
 
     User
