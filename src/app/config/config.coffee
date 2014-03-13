@@ -19,7 +19,6 @@ require.config
         "jqueryviewport"      : "js-libs/jquery.viewport/jquery.viewport"
         "bootstrap"           : "js-libs/bootstrap/dist/js/bootstrap"
         "jqueryui"            : "app/mods/jqueryui"
-        "jquery.json"         : "js-libs/jquery.json-2.4/index"
 
         "my-config"           : "js-libs/my-config"
 
@@ -43,7 +42,6 @@ require.config
     shim:
         # Get all these guys together.
         "bootstrap"   : ["jquery"]
-        "jquery.json" : ["jquery"]
         "jqueryui"    : ["jquery"]
 
         # *sigh* ... and you, too...

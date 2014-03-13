@@ -4,14 +4,12 @@ define [
     'woodman'
     'app/util/notify'
     'jquery'
-    'jquery.json'
 ], (
     Backbone
     Marionette
     Woodman
     Notify
     $
-    JSON
 ) ->
 
     logger = Woodman.getLogger 'app/components/connection'
@@ -38,7 +36,7 @@ define [
             Backbone.trigger "#{@prefix}:connected"
 
         onMessage: (e={}) =>
-            data    = $.evalJSON e.data
+            data    = $.parseJSON e.data
             route   = data.route
             content = data.content
 
@@ -52,7 +50,7 @@ define [
 
         send: (data={}) =>
             logger.info 'Sending', data, 'to', @url
-            @connection.send $.toJSON data
+            @connection.send JSON.stringify data
 
         getModuleName: () ->
             # Get the module from the url.
