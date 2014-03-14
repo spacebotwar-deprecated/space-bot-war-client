@@ -23,7 +23,6 @@ TODO (In no particular order)
 ===========================
 - Some sort of Chat system
 - Some sort of code editor (Kind of done, no syntax highlighting)
-- Setup [log4js](http://log4javascript.org/)
 - Start work on the Steampunk CSS styling/art
 - Perhaps a loading screen? Something to display while the JavaScript is
 being pulled in? Maybe?? :P
