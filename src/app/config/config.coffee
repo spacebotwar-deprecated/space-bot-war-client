@@ -66,7 +66,7 @@ requirejs [
 
     if not mobile
         require ['app/init/desktopInit'], () ->
-            # do something
+            logger.log 'Everything loaded.'
     else
         # TODO: fix this miserable mess!
         error =  '
