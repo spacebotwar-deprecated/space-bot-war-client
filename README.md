@@ -43,7 +43,7 @@ The technologies used in this application are covered below.
 - [Bootstrap](http://getbootstrap.com/) - (Note: To be changed)
 
 ##Extras
-- [CoffeeScript](http://coffee-script.org/) -
+- [CoffeeScript](http://coffeescript.org/) -
 
 
 TODO (In no particular order)
