@@ -25,25 +25,25 @@ Tech
 The technologies used in this application are covered below.
 
 ##Build
-- [GulpJs](http://gulpjs.com/) -
-- RequireJs Optimizer (r.js) -
-- [Bower](http://bower.io/) -
+- [GulpJs](http://gulpjs.com/) - the tool that is used to  do stuff to the code (build, update Bower deps, dev web server)
+- RequireJs Optimizer (r.js) - concatenates the app into one file
+- [Bower](http://bower.io/) - manages the downloading of libraries below
 
 ##Libraries in the Application
-- [jQuery](http://jquery.org) -
-- [jQueryUI](http://jqueryui.com/) -
-- [Backbone](http://backbonejs.org/) -
-- [Marionette](http://marionettejs.com/) -
-- [Handlebars](http://handlebarsjs.com/) -
-- [RequireJs](http://requirejs.org/) -
-- [Woodman](http://joshfire.github.io/woodman/index.html) -
+- [jQuery](http://jquery.org) - DOM manipulation
+- [jQueryUI](http://jqueryui.com/) - basic UI components
+- [Backbone](http://backbonejs.org/) - MC* structure library
+- [Marionette](http://marionettejs.com/) - Backbone plugin, MC* structure
+- [Handlebars](http://handlebarsjs.com/) - HTML template engine
+- [RequireJs](http://requirejs.org/) - gives the code modular structure
+- [Woodman](http://joshfire.github.io/woodman/index.html) - the logger of the app
 - And others that don't really need to be mentioned.
 
 ##CSS Things
 - [Bootstrap](http://getbootstrap.com/) - (Note: To be changed)
 
 ##Extras
-- [CoffeeScript](http://coffeescript.org/) -
+- [CoffeeScript](http://coffeescript.org/) - most (if not all) of the app is implemented in CoffeeScript
 
 
 TODO (In no particular order)
