@@ -32,7 +32,7 @@ The technologies used in this application are covered below.
 ##Libraries in the Application
 - [jQuery](http://jquery.org) - DOM manipulation
 - [jQueryUI](http://jqueryui.com/) - basic UI components
-- [Backbone](http://backbonejs.org/) - MC* structure library
+- [Backbone](http://backbonejs.org/) - MV* structure library
 - [Marionette](http://marionettejs.com/) - Backbone plugin, MC* structure
 - [Handlebars](http://handlebarsjs.com/) - HTML template engine
 - [RequireJs](http://requirejs.org/) - gives the code modular structure
