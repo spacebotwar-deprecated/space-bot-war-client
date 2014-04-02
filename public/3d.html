@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>K3D - 3D rendering in HTML5 Canvas and JavaScript</title>
+      <script src="mathlib-min.js"></script>
+      <script src="k3d-min.js"></script>
+      <script src="k3demos.js"></script>
+      <script>
+function openHelp()
+{
+   document.getElementById("help").style.display = "block";
+}
+
+function closeHelp()
+{
+   document.getElementById("help").style.display = "none";
+}
+      </script>
+      <style type="text/css">
+         body { font-family: Arial, Helvetica; color: black }
+         .title { padding: 8px; text-align: center; font-weight: bold; font-size: 1.2em; color: darkblue }
+         P { padding-left: 2em; padding-top: 0; line-height: 1em; font-size: 0.75em }
+         P.left { padding-left: 1em; line-height: 1em }
+         a, a:visited, a:active, a:hover { color: #000088 }
+         .button-overlay { position: absolute; right: 1em; }
+      </style>
+   </head>
+   
+   <body onload="onloadHandler();" style="background-color: #BFBFBF">
+      <div class="button-overlay">
+         <!-- AddThis Button BEGIN -->
+         <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+         <a class="addthis_button_preferred_1"></a>
+         <a class="addthis_button_preferred_2"></a>
+         <a class="addthis_button_compact"></a>
+         <a class="addthis_counter addthis_bubble_style"></a>
+         </div>
+         <!-- AddThis Button END -->
+      </div>
+      <div style="text-align:center">
+         <p class="title">Click on the sphere to start simulation</p>
+         <div style="width:240;display:inline-block">
+            <canvas id="canvas2" width="1000" height="1000" title="Sphere of points - motion blur point rendering, depth-cued shading" style="background-color:#000000"></canvas>
+         </div>
+      </div>
+   </body>
+</html>

@@ -77,6 +77,10 @@ define [
             context.lineWidth = 2
             context.strokeStyle = 'red'
             context.setLineDash([1,2])
+
+            # Draw a status bar above the ship
+
+
             context.stroke()
 
 

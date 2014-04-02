@@ -37,7 +37,7 @@ define [
         menuRegion   : "#menu"
 
     app.addInitializer () ->
-        Backbone.history.start();
+        Backbone.history.start()
 
     # Init the various web socket connections
     #app.addInitializer lobby.init # lobby is, let's just say, out of service ;)
@@ -69,7 +69,7 @@ define [
         # with the application.
         # window.sbwLoaded = true
 
-        # TODO: perhaps here is the place to jump to the 
+        # TODO: perhaps here is the place to jump to the
         # previous window.location.hash?
 
         if window.sbwTest

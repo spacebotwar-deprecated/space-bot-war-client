@@ -1,0 +1,269 @@
+
+############### fresh_build ###############
+
+
+############### clean ###############
+
+
+############### update ###############
+
+chalk@0.4.0 node_modules/chalk
+├── has-color@0.1.4
+├── ansi-styles@1.0.0
+└── strip-ansi@0.1.1
+
+gulp-coffee@1.4.1 node_modules/gulp-coffee
+└── event-stream@3.0.20 (stream-combiner@0.0.4, duplexer@0.1.1, from@0.1.3, pause-stream@0.0.11, map-stream@0.0.4, split@0.2.10, through@2.3.4)
+
+gulp-util@2.2.14 node_modules/gulp-util
+├── lodash._reinterpolate@2.4.1
+├── dateformat@1.0.7-1.2.3
+├── minimist@0.0.8
+├── multipipe@0.0.2 (duplexer2@0.0.1)
+├── vinyl@0.2.3 (clone-stats@0.0.1)
+├── lodash.template@2.4.1 (lodash._escapestringchar@2.4.1, lodash.values@2.4.1, lodash.templatesettings@2.4.1, lodash.defaults@2.4.1, lodash.keys@2.4.1, lodash.escape@2.4.1)
+└── through2@0.4.1 (xtend@2.1.2, readable-stream@1.0.26)
+
+coffee-script@1.7.1 node_modules/coffee-script
+└── mkdirp@0.3.5
+
+gulp@3.5.2 node_modules/gulp
+├── pretty-hrtime@0.2.0
+├── deprecated@0.0.1
+├── archy@0.0.2
+├── orchestrator@0.3.3 (sequencify@0.0.7)
+├── minimist@0.0.8
+├── semver@2.2.1
+├── resolve@0.6.1
+├── findup-sync@0.1.2 (glob@3.1.21, lodash@1.0.1)
+└── vinyl-fs@0.0.2 (map-stream@0.1.0, graceful-fs@2.0.2, vinyl@0.2.3, mkdirp@0.3.5, glob-stream@3.1.9, glob-watcher@0.0.3)
+
+connect@2.13.0 node_modules/connect
+├── uid2@0.0.3
+├── methods@0.1.0
+├── cookie-signature@1.0.1
+├── pause@0.0.1
+├── fresh@0.2.0
+├── qs@0.6.6
+├── debug@0.7.4
+├── bytes@0.2.1
+├── buffer-crc32@0.2.1
+├── raw-body@1.1.2
+├── batch@0.5.0
+├── cookie@0.1.0
+├── compressible@1.0.0
+├── negotiator@0.3.0
+├── send@0.1.4 (range-parser@0.0.4, mime@1.2.11)
+└── multiparty@2.2.0 (stream-counter@0.2.0, readable-stream@1.1.11)
+
+bower@1.2.8 node_modules/bower
+├── junk@0.2.2
+├── stringify-object@0.1.8
+├── abbrev@1.0.4
+├── which@1.0.5
+├── chmodr@0.1.0
+├── osenv@0.0.3
+├── archy@0.0.2
+├── graceful-fs@2.0.2
+├── rimraf@2.2.6
+├── open@0.0.4
+├── p-throttler@0.0.1
+├── bower-endpoint-parser@0.2.1
+├── bower-logger@0.2.2
+├── lru-cache@2.3.1
+├── nopt@2.1.2
+├── retry@0.6.0
+├── mkdirp@0.3.5
+├── tmp@0.0.23
+├── q@0.9.7
+├── request-progress@0.3.1 (throttleit@0.0.2)
+├── sudo-block@0.2.1 (chalk@0.1.1)
+├── semver@2.1.0
+├── bower-json@0.4.0 (deep-extend@0.2.8, intersect@0.0.3)
+├── fstream@0.1.25 (inherits@2.0.1)
+├── fstream-ignore@0.0.7 (inherits@2.0.1, minimatch@0.2.14)
+├── promptly@0.2.0 (read@1.0.5)
+├── glob@3.2.8 (inherits@2.0.1, minimatch@0.2.14)
+├── tar@0.1.19 (inherits@2.0.1, block-stream@0.0.7)
+├── chalk@0.2.1 (has-color@0.1.4, ansi-styles@0.2.0)
+├── decompress-zip@0.0.4 (mkpath@0.1.0, touch@0.0.2, readable-stream@1.1.11, binary@0.3.0)
+├── request@2.27.0 (json-stringify-safe@5.0.0, aws-sign@0.3.0, forever-agent@0.5.2, qs@0.6.6, tunnel-agent@0.3.0, oauth-sign@0.3.0, cookie-jar@0.3.0, node-uuid@1.4.1, mime@1.2.11, form-data@0.1.2, http-signature@0.10.0, hawk@1.0.0)
+├── cardinal@0.4.4 (ansicolors@0.2.1, redeyed@0.4.2)
+├── handlebars@1.0.12 (optimist@0.3.7, uglify-js@2.3.6)
+├── inquirer@0.3.5 (mute-stream@0.0.3, async@0.2.10, lodash@1.2.1, cli-color@0.2.3)
+├── mout@0.7.1
+├── bower-config@0.5.0 (optimist@0.6.1, mout@0.6.0)
+├── update-notifier@0.1.7 (configstore@0.1.7)
+└── bower-registry-client@0.1.6 (request-replay@0.2.0, async@0.2.10, bower-config@0.4.5)
+bower requirejs-plugins#~1.0.2  cached git://github.com/millermedeiros/requirejs-plugins.git#1.0.2
+bower requirejs-plugins#~1.0.2         validate 1.0.2 against git://github.com/millermedeiros/requirejs-plugins.git#~1.0.2
+bower jquery.viewport#~0.2.3             cached git://github.com/borbit/jquery.viewport.git#0.2.3
+bower jquery.viewport#~0.2.3           validate 0.2.3 against git://github.com/borbit/jquery.viewport.git#~0.2.3
+bower jasmine-standalone-2.0.0#*         cached https://github.com/pivotal/jasmine/blob/master/dist/jasmine-standalone-2.0.0.zip?raw=true#e-tag:db51e67ac
+bower jasmine-standalone-2.0.0#*       validate e-tag:db51e67ac against https://github.com/pivotal/jasmine/blob/master/dist/jasmine-standalone-2.0.0.zip?raw=true#*
+bower jquery.json-2.4#*                  cached https://jquery-json.googlecode.com/files/jquery.json-2.4.js
+bower jquery.json-2.4#*                validate https://jquery-json.googlecode.com/files/jquery.json-2.4.js#*
+bower jquery#~2.1.0                      cached git://github.com/jquery/jquery.git#2.1.0
+bower jquery#~2.1.0                    validate 2.1.0 against git://github.com/jquery/jquery.git#~2.1.0
+bower lodash#~2.4.1                      cached git://github.com/lodash/lodash.git#2.4.1
+bower lodash#~2.4.1                    validate 2.4.1 against git://github.com/lodash/lodash.git#~2.4.1
+bower almond#~0.2.9                      cached git://github.com/jrburke/almond.git#0.2.9
+bower almond#~0.2.9                    validate 0.2.9 against git://github.com/jrburke/almond.git#~0.2.9
+bower handlebars#~1.3.0                  cached git://github.com/components/handlebars.js.git#1.3.0
+bower handlebars#~1.3.0                validate 1.3.0 against git://github.com/components/handlebars.js.git#~1.3.0
+bower humane-js#~3.1.0                   cached git://github.com/wavded/humane-js.git#3.1.0
+bower humane-js#~3.1.0                 validate 3.1.0 against git://github.com/wavded/humane-js.git#~3.1.0
+bower bootstrap#~3.1.0                   cached git://github.com/twbs/bootstrap.git#3.1.1
+bower bootstrap#~3.1.0                 validate 3.1.1 against git://github.com/twbs/bootstrap.git#~3.1.0
+bower requirejs#~2.1.10                  cached git://github.com/jrburke/requirejs-bower.git#2.1.11
+bower requirejs#~2.1.10                validate 2.1.11 against git://github.com/jrburke/requirejs-bower.git#~2.1.10
+bower marionette#~1.6.2                  cached git://github.com/marionettejs/backbone.marionette.git#1.6.2
+bower marionette#~1.6.2                validate 1.6.2 against git://github.com/marionettejs/backbone.marionette.git#~1.6.2
+bower backbone-amd#~1.1.0                cached git://github.com/amdjs/backbone.git#1.1.0
+bower backbone-amd#~1.1.0              validate 1.1.0 against git://github.com/amdjs/backbone.git#~1.1.0
+bower jquery.ui#~1.10.4                  cached git://github.com/jquery/jquery-ui.git#1.10.4
+bower jquery.ui#~1.10.4                validate 1.10.4 against git://github.com/jquery/jquery-ui.git#~1.10.4
+bower jquery.json-2.4#*                     new version for https://jquery-json.googlecode.com/files/jquery.json-2.4.js#*
+bower jquery.json-2.4#*                 resolve https://jquery-json.googlecode.com/files/jquery.json-2.4.js#*
+bower jquery.json-2.4#*                download https://jquery-json.googlecode.com/files/jquery.json-2.4.js
+bower jquery#>= 1.9.0                    cached git://github.com/jquery/jquery.git#2.1.0
+bower jquery#>= 1.9.0                  validate 2.1.0 against git://github.com/jquery/jquery.git#>= 1.9.0
+bower backbone.babysitter#~0.0.6         cached git://github.com/marionettejs/backbone.babysitter.git#0.0.6
+bower backbone.babysitter#~0.0.6       validate 0.0.6 against git://github.com/marionettejs/backbone.babysitter.git#~0.0.6
+bower backbone.wreqr#~0.2.0              cached git://github.com/marionettejs/backbone.wreqr.git#0.2.0
+bower backbone.wreqr#~0.2.0            validate 0.2.0 against git://github.com/marionettejs/backbone.wreqr.git#~0.2.0
+bower backbone#~1.1.0                    cached git://github.com/jashkenas/backbone.git#1.1.2
+bower backbone#~1.1.0                  validate 1.1.2 against git://github.com/jashkenas/backbone.git#~1.1.0
+bower underscore#~1.5.1                  cached git://github.com/jashkenas/underscore.git#1.5.2
+bower underscore#~1.5.1                validate 1.5.2 against git://github.com/jashkenas/underscore.git#~1.5.1
+bower jquery.json-2.4#*                resolved https://jquery-json.googlecode.com/files/jquery.json-2.4.js
+bower underscore#>=1.5.0                 cached git://github.com/jashkenas/underscore.git#1.6.0
+bower underscore#>=1.5.0               validate 1.6.0 against git://github.com/jashkenas/underscore.git#>=1.5.0
+bower requirejs-plugins#~1.0.2          install requirejs-plugins#1.0.2
+bower jquery.viewport#~0.2.3            install jquery.viewport#0.2.3
+bower almond#~0.2.9                     install almond#0.2.9
+bower lodash#~2.4.1                     install lodash#2.4.1
+bower marionette#~1.6.2                 install marionette#1.6.2
+bower requirejs#~2.1.10                 install requirejs#2.1.11
+bower jquery#~2.1.0                     install jquery#2.1.0
+bower humane-js#~3.1.0                  install humane-js#3.1.0
+bower handlebars#~1.3.0                 install handlebars#1.3.0
+bower backbone-amd#~1.1.0               install backbone-amd#1.1.0
+bower bootstrap#~3.1.0                  install bootstrap#3.1.1
+bower backbone.babysitter#~0.0.6        install backbone.babysitter#0.0.6
+bower jquery.ui#~1.10.4                 install jquery.ui#1.10.4
+bower backbone.wreqr#~0.2.0             install backbone.wreqr#0.2.0
+bower jquery.json-2.4#*                 install jquery.json-2.4
+bower underscore#~1.5.1                 install underscore#1.5.2
+bower jasmine-standalone-2.0.0#*        install jasmine-standalone-2.0.0#e-tag:db51e67ac
+bower backbone#~1.1.0                   install backbone#1.1.2
+
+requirejs-plugins#1.0.2 src/js-libs/requirejs-plugins
+
+jquery.viewport#0.2.3 src/js-libs/jquery.viewport
+
+almond#0.2.9 src/js-libs/almond
+
+lodash#2.4.1 src/js-libs/lodash
+
+marionette#1.6.2 src/js-libs/marionette
+├── backbone#1.1.2
+├── backbone.babysitter#0.0.6
+├── backbone.wreqr#0.2.0
+└── underscore#1.5.2
+
+requirejs#2.1.11 src/js-libs/requirejs
+
+jquery#2.1.0 src/js-libs/jquery
+
+humane-js#3.1.0 src/js-libs/humane-js
+
+handlebars#1.3.0 src/js-libs/handlebars
+
+backbone-amd#1.1.0 src/js-libs/backbone-amd
+
+bootstrap#3.1.1 src/js-libs/bootstrap
+└── jquery#2.1.0
+
+backbone.babysitter#0.0.6 src/js-libs/backbone.babysitter
+
+jquery.ui#1.10.4 src/js-libs/jquery.ui
+
+backbone.wreqr#0.2.0 src/js-libs/backbone.wreqr
+
+jquery.json-2.4 src/js-libs/jquery.json-2.4
+
+underscore#1.5.2 src/js-libs/underscore
+
+jasmine-standalone-2.0.0#e-tag:db51e67ac src/js-libs/jasmine-standalone-2.0.0
+
+backbone#1.1.2 src/js-libs/backbone
+└── underscore#1.5.2
+
+############### build ###############
+
+
+############### compile ###############
+
+[gulp] Requiring external module coffee-script/register
+[gulp] Using file /home/icydee/space-bot-war-client/gulpfile.coffee
+[gulp] Working directory changed to /home/icydee/space-bot-war-client
+[gulp] Running 'compile'...
+[gulp] Finished 'compile' in 903 ms
+
+Tracing dependencies for: js-libs/almond/almond
+Uglify2 file: /home/icydee/space-bot-war-client/public/dist/build.js
+
+/home/icydee/space-bot-war-client/public/dist/build.js
+----------------
+/home/icydee/space-bot-war-client/src/js-libs/almond/almond.js
+/home/icydee/space-bot-war-client/src/js-libs/my-config.js
+/home/icydee/space-bot-war-client/src/js-libs/lodash/dist/lodash.js
+/home/icydee/space-bot-war-client/src/js-libs/jquery/dist/jquery.js
+/home/icydee/space-bot-war-client/src/js-libs/backbone-amd/backbone.js
+/home/icydee/space-bot-war-client/src/js-libs/backbone.wreqr/lib/amd/backbone.wreqr.js
+/home/icydee/space-bot-war-client/src/js-libs/backbone.babysitter/lib/amd/backbone.babysitter.js
+/home/icydee/space-bot-war-client/src/js-libs/marionette/lib/core/amd/backbone.marionette.js
+/home/icydee/space-bot-war-client/src/app/components/lobby.js
+/home/icydee/space-bot-war-client/src/js-libs/humane-js/humane.js
+/home/icydee/space-bot-war-client/src/app/mods/humane.js
+/home/icydee/space-bot-war-client/src/js-libs/jquery.json-2.4/index.js
+/home/icydee/space-bot-war-client/src/app/components/connection.js
+/home/icydee/space-bot-war-client/src/app/components/player.js
+/home/icydee/space-bot-war-client/src/app/components/match.js
+/home/icydee/space-bot-war-client/src/app/components/session.js
+/home/icydee/space-bot-war-client/src/app/components/start.js
+/home/icydee/space-bot-war-client/src/app/app.js
+/home/icydee/space-bot-war-client/src/app/routers/appRouter.js
+/home/icydee/space-bot-war-client/src/js-libs/handlebars/handlebars.amd.js
+/home/icydee/space-bot-war-client/src/app/util/templates.js
+/home/icydee/space-bot-war-client/src/app/views/welcome/intro.js
+/home/icydee/space-bot-war-client/src/js-libs/requirejs-plugins/src/image.js
+image!/img/starmap1.jpg
+/home/icydee/space-bot-war-client/src/js-libs/jquery.ui/ui/jquery.ui.widget.js
+/home/icydee/space-bot-war-client/src/js-libs/jquery.ui/ui/jquery.ui.mouse.js
+/home/icydee/space-bot-war-client/src/js-libs/jquery.ui/ui/jquery.ui.effect.js
+/home/icydee/space-bot-war-client/src/js-libs/jquery.ui/ui/jquery.ui.core.js
+/home/icydee/space-bot-war-client/src/js-libs/jquery.ui/ui/jquery.ui.draggable.js
+/home/icydee/space-bot-war-client/src/app/mods/jqueryui.js
+/home/icydee/space-bot-war-client/src/js-libs/jquery.viewport/jquery.viewport.js
+/home/icydee/space-bot-war-client/src/app/views/welcome/arena.js
+/home/icydee/space-bot-war-client/src/app/models/competitor.js
+/home/icydee/space-bot-war-client/src/app/collections/competitors.js
+/home/icydee/space-bot-war-client/src/app/models/image.js
+/home/icydee/space-bot-war-client/src/app/models/image_cache.js
+/home/icydee/space-bot-war-client/src/app/models/ship.js
+/home/icydee/space-bot-war-client/src/app/collections/ships.js
+/home/icydee/space-bot-war-client/src/app/models/match.js
+/home/icydee/space-bot-war-client/src/app/views/welcome.js
+/home/icydee/space-bot-war-client/src/app/views/user.js
+/home/icydee/space-bot-war-client/src/app/views/header.js
+/home/icydee/space-bot-war-client/src/app/views/footer.js
+/home/icydee/space-bot-war-client/src/app/views/register.js
+/home/icydee/space-bot-war-client/src/app/views/about.js
+/home/icydee/space-bot-war-client/src/app/views/faq.js
+/home/icydee/space-bot-war-client/src/app/models/user.js
+/home/icydee/space-bot-war-client/src/app/controllers/desktopController.js
+/home/icydee/space-bot-war-client/src/app/init/desktopInit.js
+/home/icydee/space-bot-war-client/src/app/config/config.js
+

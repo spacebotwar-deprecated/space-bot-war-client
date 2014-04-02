@@ -3,7 +3,7 @@ define [
     'backbone'
     'marionette'
     'app/views/welcome'
-    'app/views/user' 
+    'app/views/user'
     'app/views/welcome/header'
     'app/views/welcome/footer'
     'app/views/register'
@@ -31,7 +31,7 @@ define [
     ViewGameFooter
     ViewGameIntro
 ) ->
-    class DesktopController extends Backbone.Marionette.Controller 
+    class DesktopController extends Backbone.Marionette.Controller
         ###
             Welcome page and its components
         ###
