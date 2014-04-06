@@ -13,10 +13,16 @@ define [
     Templates.load 'login/loggedOut', 'loginLoggedOut'
     Templates.load 'login/loggedIn', 'loginLoggedIn'
     Templates.load 'login/register', 'loginRegister'
+    Templates.load 'login/forgotPassword', 'loginForgotPassword'
 
     class User extends Backbone.Marionette.ItemView
 
-        names: ['loginLoggedOut', 'loginLoggedIn', 'loginRegister']
+        names: {
+            show_login          : 'loginLoggedOut'
+            show_lost_password  : 'loginForgotPassword'
+            show_register       : 'loginRegister'
+            show_logout         : 'loginLoggedOut'
+        }
 
         render: () ->
             template = Templates.get @names[@model.get 'state']
@@ -24,45 +30,57 @@ define [
                 .html template @model.attributes
 
         events:
-            'click #login'                 : 'login'
-            'click #logout'                : 'logout'
-            'click #register'              : 'register'
-            'click #lostPassword'          : 'lostPassword'
-            'keydown #username, #password' : 'keyPressed'
+            'click #login'                  : 'triggerLogin'
+            'click #logout'                 : 'triggerLogout'
+            'click #register'               : 'triggerRegister'
+            'click #send_reminder'          : 'triggerLostPassword'
+            'click #to_register'            : 'toRegister'
+            'click #to_lost_password'       : 'toLostPassword'
 
-        login: () ->
-            if @model.get('state') == 0
-                username = $ '#username'
-                    .val()
-                password = $ '#password'
-                    .val()
-                Backbone.trigger "user:login", {username, password}
+            'click #cancel'                 : 'toLogin'
+
+            'keydown #username, #password'  : 'keyPressed'
+
+        triggerLogin: () ->
+            username = $ '#username'
+                .val()
+            password = $ '#password'
+                .val()
+            Backbone.trigger "user:login", {username, password}
+
+        triggerLogout: () ->
+            Backbone.trigger "user:logout"
+
+        triggerRegister: () ->
+            parameters = {}
+            parameters[name] = @$("##{name}").val() for name in ['username', 'password', 'email']
+
+            Backbone.trigger 'user:register', parameters
+
+        triggerLostPassword: () ->
+            username_or_email = $ '#username_or_email'
+                .val()
+            Backbone.trigger 'user:lost_password', {username_or_email}
 
         keyPressed: (event={}) ->
-            if event.keyCode == 13 # login = 'enter' key
+            if event.keyCode == 13 # 'enter' key
                 event.preventDefault()
-                @login()
+                if @model.get('state') == 'show_login'
+                    @triggerLogin()
+                else if @model.get('state') == 'show_register'
+                    @inRegister()
+                else if @model.get('state') == 'show_lost_password'
+                    @inLostPassword()
 
-        logout: () ->
-            if @model.get('state') == 1
-                Backbone.trigger "user:logout"
+        toLogin: () ->
+            @model.set 'state', 'show_login'
 
-        lostPassword: () ->
-            if @model.get('state') == 0
-                # TODO: implement lost password
-                throw new Erorr 'Not implemented!'
+        toLostPassword: () ->
+            @model.set 'state', 'show_lost_password'
 
-        register: () ->
-            if @model.get('state') == 0
-                # Change to the register form
-                @model.set 'state', 2
+        toRegister: () ->
+            @model.set 'state', 'show_register'
 
-            else if @model.get('state') == 2
-                parameters = {}
-                foo = ['username', 'password', 'email']
-                parameters[name] = @$("##{name}").val() for name in foo
-
-                Backbone.trigger 'user:register', parameters
 
         initialize: () ->
             @model.bind 'change:state', @render, @

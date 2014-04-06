@@ -19,7 +19,4 @@ define [
             'game-editor'      : 'gameEditor'
             'game-tournaments' : 'gameTournaments'
 
-            # TODO: work on this!
-            'lostPassword' : 'lostPassword'
-
     AppRouter

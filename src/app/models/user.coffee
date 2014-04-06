@@ -20,7 +20,7 @@ define [
             # and prototypes. It seems Backbone does some weird stuff with prototypes
             # behind the scenes.
             # 0 = logged out, 1 = logged in, 2 = registering
-            state    : 0
+            state    : 'show_login'
 
         initialize: () ->
             # Setup the events for when login or logout requests succeed.
@@ -31,7 +31,7 @@ define [
             @set
                 username    : ''
                 userId      : 0
-                state       : 0
+                state       : 'show_login'
 
             logger.log "Successfully logged out"
 
@@ -40,6 +40,7 @@ define [
                 state       : 1
                 username    : data.content.username
                 userId      : data.content.user_id
+                state       : 'show_logout'
 
             logger.log "Successfully logged in"
 

@@ -66,12 +66,4 @@ define [
             # TODO: code viewing of tournaments (server and client!)
             console.log 'Game code tournaments viewing controller call'
 
-
-
-
-
-        lostPassword: () ->
-            # TODO: it seems like this is not the way to go. (Unsure)
-            alert 'Lost password controller triggered.'
-
     DesktopController
