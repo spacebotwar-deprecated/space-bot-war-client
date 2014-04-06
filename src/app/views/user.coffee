@@ -10,22 +10,15 @@ define [
     Templates
 ) ->
 
-    Templates.load 'login/loggedOut', 'loginLoggedOut'
-    Templates.load 'login/loggedIn', 'loginLoggedIn'
-    Templates.load 'login/register', 'loginRegister'
-    Templates.load 'login/forgotPassword', 'loginForgotPassword'
+    Templates.load 'login/loggedOut', 'show_login'
+    Templates.load 'login/loggedIn', 'show_logout'
+    Templates.load 'login/register', 'show_register'
+    Templates.load 'login/forgotPassword', 'show_lost_password'
 
     class User extends Backbone.Marionette.ItemView
 
-        names: {
-            show_login          : 'loginLoggedOut'
-            show_lost_password  : 'loginForgotPassword'
-            show_register       : 'loginRegister'
-            show_logout         : 'loginLoggedOut'
-        }
-
         render: () ->
-            template = Templates.get @names[@model.get 'state']
+            template = Templates.get @model.get 'state'
             $ @el
                 .html template @model.attributes
 

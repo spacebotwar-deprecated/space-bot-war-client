@@ -61,6 +61,14 @@ define [
                         email       : data.email
                 @connection.send message
 
+            Backbone.on 'user:lost_password', (data={}) =>
+                message =
+                    route   : '/lost_password'
+                    content :
+                        client_code : Session.getClientCode()
+                        thingy      : 'foo'
+                @connection.send message
+
             Backbone.on 'ws:recv:/register', (data={}) =>
                 # console.log  data ## DEBUG!!!
 
@@ -69,7 +77,7 @@ define [
                 clientCode = data.content.client_code
                 Session.setClientCode clientCode
 
-            # TODO: is this defined in the right place to work with our 
+            # TODO: is this defined in the right place to work with our
             # 'separation of concerns' development model?
             Backbone.on "ws:connected", () =>
                 if not Session.getClientCode()? and @connection.module == 'start'
