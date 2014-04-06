@@ -61,12 +61,33 @@ define [
                         email       : data.email
                 @connection.send message
 
+            # User changes their password from an email code
+            Backbone.on 'user:login_with_email_code', (data={}) =>
+                message =
+                    route   : '/login_with_email_code'
+                    content :
+                        client_code     : Session.getClientCode()
+                        email_code      : data.email_password_token
+                        new_password    : data.new_password
+                @connection.send message
+
+            # User (who is logged in) changes their password
+            Backbone.on 'user:change_password', (data={}) =>
+                message =
+                    route   : '/change_password'
+                    content :
+                        client_code         : Session.getClientCode()
+                        current_password    : data.current_password
+                        new_password        : data.new_password
+                @connection.send message
+
+            # User sends a lost password notification
             Backbone.on 'user:lost_password', (data={}) =>
                 message =
-                    route   : '/lost_password'
+                    route   : '/forgot_password'
                     content :
-                        client_code : Session.getClientCode()
-                        thingy      : 'foo'
+                        client_code         : Session.getClientCode()
+                        username_or_email   : data.username_or_email
                 @connection.send message
 
             Backbone.on 'ws:recv:/register', (data={}) =>
