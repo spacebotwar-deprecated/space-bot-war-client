@@ -67,7 +67,7 @@ define [
                     route   : '/login_with_email_code'
                     content :
                         client_code     : Session.getClientCode()
-                        email_code      : data.email_password_token
+                        email_code      : data.email_code
                         new_password    : data.new_password
                 @connection.send message
 
